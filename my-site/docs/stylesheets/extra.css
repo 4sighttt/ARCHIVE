@@ -40,3 +40,15 @@ body,
   color: #2f2a22 !important;
 }
 
+/* 드래그 선택 색상 */
+::selection {
+  background: #cdb676;
+  color: #1f1a12;
+}
+
+::-moz-selection {
+  background: #cdb676;
+  color: #1f1a12;
+}
+
+
