@@ -20,7 +20,18 @@ body,
 /* 헤더 */
 .md-header,
 .md-tabs {
-  background-color: #e8dcc0 !important;
+  background-color: #e3c074 !important;
+}
+
+/* 좌측 상단 ARCHIVE 박스 배경 */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav__source {
+  background: #e3c074 !important;
+}
+
+/* 우측 Table of contents 박스 배경 */
+.md-sidebar--secondary .md-nav__title {
+  background: #e3c074 !important;
 }
 
 /* 카드, 표, 코드 블록 */
