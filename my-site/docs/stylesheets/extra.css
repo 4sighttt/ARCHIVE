@@ -23,15 +23,33 @@ body,
   background-color: #eadfc6 !important;
 }
 
-/* 좌측 상단 ARCHIVE 박스 배경 */
+/* 좌우 사이드바 제목 박스 통일 */
 .md-sidebar--primary .md-nav__title,
-.md-sidebar--primary .md-nav__source {
-  background: #eadfc6 !important;
-}
-
-/* 우측 Table of contents 박스 배경 */
+.md-sidebar--primary .md-nav__source,
 .md-sidebar--secondary .md-nav__title {
   background: #eadfc6 !important;
+  background-image: none !important;
+  box-shadow: 0 0.08rem 0.24rem rgba(80, 60, 30, 0.10) !important;
+  border-bottom: 1px solid rgba(80, 60, 30, 0.08) !important;
+}
+
+/* 제목 박스에 남는 밝은 띠/오버레이 제거 */
+.md-sidebar--primary .md-nav__title::before,
+.md-sidebar--primary .md-nav__title::after,
+.md-sidebar--primary .md-nav__source::before,
+.md-sidebar--primary .md-nav__source::after,
+.md-sidebar--secondary .md-nav__title::before,
+.md-sidebar--secondary .md-nav__title::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* 사이드바 내부 상단 영역도 같은 톤으로 정리 */
+.md-sidebar__scrollwrap,
+.md-sidebar__inner {
+  background: #eadfc6 !important;
+  background-image: none !important;
 }
 
 /* 카드, 표, 코드 블록 */
