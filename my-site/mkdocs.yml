@@ -6,3 +6,6 @@ theme:
 plugins:
   - search
   - awesome-pages
+
+markdown_extensions:
+  - nl2br
