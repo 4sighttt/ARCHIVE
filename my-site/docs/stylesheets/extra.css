@@ -80,4 +80,15 @@ body,
   color: #1f1a12;
 }
 
+/* 페이지 제목 진하게 */
+.md-typeset h1 {
+  color: #1f1a12 !important;
+  font-weight: 800 !important;
+}
 
+/* 본문 소제목도 조금 더 진하게 하고 싶으면 */
+.md-typeset h2,
+.md-typeset h3 {
+  color: #2f2a22 !important;
+  font-weight: 700 !important;
+}
