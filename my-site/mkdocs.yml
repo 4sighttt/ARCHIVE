@@ -3,6 +3,7 @@ site_name: ARCHIVE
 theme:
   name: material
   logo: assets/logo.png
+  favicon: assets/images/favicon.png
   font: false
   
 plugins:
