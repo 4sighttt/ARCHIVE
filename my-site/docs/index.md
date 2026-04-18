@@ -13,6 +13,7 @@
 [기억에 대하여 ㅡ 진실 이후의 진실](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EA%B8%B0%EC%96%B5%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC%20%E3%85%A1%20%EC%A7%84%EC%8B%A4%20%EC%9D%B4%ED%9B%84%EC%9D%98%20%EC%A7%84%EC%8B%A4/)  
 [니체의 엘리트주의는 민주주의와 양립 가능한가](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%8B%88%EC%B2%B4%EC%9D%98%20%EC%97%98%EB%A6%AC%ED%8A%B8%EC%A3%BC%EC%9D%98%EB%8A%94%20%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98%EC%99%80%20%EC%96%91%EB%A6%BD%20%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80/)  
 [당신만을 위한 중독 설계](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%8B%B9%EC%8B%A0%EB%A7%8C%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%A4%91%EB%8F%85%20%EC%84%A4%EA%B3%84/)  
+[대가를 치르는 존재](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%8C%80%EA%B0%80%EB%A5%BC%20%EC%B9%98%EB%A5%B4%EB%8A%94%20%EC%A1%B4%EC%9E%AC/))  
 [드라큘라에 대한 모든 것](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%93%9C%EB%9D%BC%ED%81%98%EB%9D%BC%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%AA%A8%EB%93%A0%20%EA%B2%83/)  
 [범죄는 어디에서 발생하는가](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%B2%94%EC%A3%84%EB%8A%94%20%EC%96%B4%EB%94%94%EC%97%90%EC%84%9C%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%EA%B0%80/)  
 [불순한 존재의 조건](https://4sighttt.github.io/ARCHIVE/000_Writes/07_Essay/%EB%B6%88%EC%88%9C%ED%95%9C%20%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4/)  
