@@ -21,7 +21,7 @@ theme:
 plugins:
   - search
   - awesome-pages
-  - blogging
+  - blogging:
       dirs:
         - 000_Writings/07_Essay
 
