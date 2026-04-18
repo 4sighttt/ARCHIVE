@@ -30,11 +30,36 @@
   font-display: swap;
 }
 
-/* 눈이 편한 누런 종이색 톤 */
+/* 공통 폰트 */
 :root {
-  --md-default-bg-color: #eadfc6;
   --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+/* 라이트 모드 */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #eadfc6;
+  --archive-bg: #eadfc6;
+  --archive-bg-soft: #efe6d1;
+  --archive-text: #2f2a22;
+  --archive-text-strong: #1f1a12;
+  --archive-border: rgba(80, 60, 30, 0.08);
+  --archive-shadow: rgba(80, 60, 30, 0.10);
+  --archive-selection-bg: #fff291;
+  --archive-selection-text: #1f1a12;
+}
+
+/* 다크 모드 */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161311;
+  --archive-bg: #161311;
+  --archive-bg-soft: #211d1a;
+  --archive-text: #e6dcc8;
+  --archive-text-strong: #f4ead5;
+  --archive-border: rgba(255, 240, 210, 0.08);
+  --archive-shadow: rgba(0, 0, 0, 0.28);
+  --archive-selection-bg: #6f5a2a;
+  --archive-selection-text: #fff8ea;
 }
 
 /* 사이트 전체 폰트 통일 */
@@ -66,29 +91,30 @@ body,
 .md-content__inner,
 .md-sidebar,
 .md-sidebar__scrollwrap,
+.md-sidebar__inner,
 .md-nav,
 .md-nav__source,
 .md-search__scrollwrap {
-  background-color: #eadfc6 !important;
+  background-color: var(--archive-bg) !important;
 }
 
 /* 헤더 */
 .md-header,
 .md-tabs {
-  background-color: #eadfc6 !important;
+  background-color: var(--archive-bg) !important;
 }
 
 /* 좌우 사이드바 제목 박스 통일 */
 .md-sidebar--primary .md-nav__title,
 .md-sidebar--primary .md-nav__source,
 .md-sidebar--secondary .md-nav__title {
-  background: #eadfc6 !important;
+  background: var(--archive-bg) !important;
   background-image: none !important;
-  box-shadow: 0 0.08rem 0.24rem rgba(80, 60, 30, 0.10) !important;
-  border-bottom: 1px solid rgba(80, 60, 30, 0.08) !important;
+  box-shadow: 0 0.08rem 0.24rem var(--archive-shadow) !important;
+  border-bottom: 1px solid var(--archive-border) !important;
 }
 
-/* 제목 박스에 남는 밝은 띠/오버레이 제거 */
+/* 제목 박스 오버레이 제거 */
 .md-sidebar--primary .md-nav__title::before,
 .md-sidebar--primary .md-nav__title::after,
 .md-sidebar--primary .md-nav__source::before,
@@ -100,19 +126,23 @@ body,
   box-shadow: none !important;
 }
 
-/* 사이드바 내부 상단 영역도 같은 톤으로 정리 */
-.md-sidebar__scrollwrap,
-.md-sidebar__inner {
-  background: #eadfc6 !important;
-  background-image: none !important;
-}
-
 /* 카드, 표, 코드 블록 */
 .md-typeset table:not([class]),
 .md-typeset pre > code,
 .md-typeset .admonition,
-.md-typeset details {
-  background-color: #efe6d1 !important;
+.md-typeset details,
+.md-typeset .tabbed-set,
+.md-typeset .tabbed-content,
+.md-typeset blockquote {
+  background-color: var(--archive-bg-soft) !important;
+}
+
+/* 표/박스 경계 */
+.md-typeset table:not([class]),
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset blockquote {
+  border-color: var(--archive-border) !important;
 }
 
 /* 글자색 */
@@ -120,30 +150,88 @@ body,
 .md-typeset,
 .md-nav,
 .md-header,
-.md-tabs {
-  color: #2f2a22 !important;
+.md-tabs,
+.md-ellipsis,
+.md-nav__link,
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  color: var(--archive-text) !important;
 }
 
-/* 드래그 선택 색상 */
-::selection {
-  background: #fff291;
-  color: #1f1a12;
-}
-
-::-moz-selection {
-  background: #cdb676;
-  color: #1f1a12;
-}
-
-/* 페이지 제목 진하게 */
+/* 제목 */
 .md-typeset h1 {
-  color: #1f1a12 !important;
+  color: var(--archive-text-strong) !important;
+  font-weight: 700 !important;
+}
+
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--archive-text) !important;
   font-weight: 600 !important;
 }
 
-/* 본문 소제목도 조금 더 진하게 */
-.md-typeset h2,
-.md-typeset h3 {
-  color: #2f2a22 !important;
-  font-weight: 500 !important;
+/* 헤더 로고/사이트명 */
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-tabs__link {
+  color: var(--archive-text-strong) !important;
+}
+
+/* 선택 색상 */
+::selection {
+  background: var(--archive-selection-bg);
+  color: var(--archive-selection-text);
+}
+
+::-moz-selection {
+  background: var(--archive-selection-bg);
+  color: var(--archive-selection-text);
+}
+
+/* 코드 텍스트 가독성 */
+.md-typeset code,
+.md-typeset pre,
+.highlighttable,
+.highlight {
+  color: var(--archive-text) !important;
+}
+
+/* 링크 색상 미세 조정 */
+[data-md-color-scheme="default"] .md-typeset a {
+  color: #4b57d1 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #9db2ff !important;
+}
+
+/* 토글 아이콘 및 검색 영역 */
+.md-search__form,
+.md-search__input,
+.md-search__icon,
+.md-header__option,
+.md-toggle,
+.md-icon {
+  color: var(--archive-text-strong) !important;
+}
+
+/* 다크 모드에서 표 헤더 약간 구분 */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #2a2521 !important;
+}
+
+/* 다크 모드에서 코드 블록 내부 가독성 개선 */
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(255, 240, 210, 0.06);
+}
+
+/* 라이트 모드에서 코드 블록 경계 */
+[data-md-color-scheme="default"] .md-typeset pre > code {
+  border: 1px solid rgba(80, 60, 30, 0.06);
 }
