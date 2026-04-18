@@ -3,7 +3,8 @@ site_name: ARCHIVE
 theme:
   name: material
   logo: assets/logo.png
-
+  font: false
+  
 plugins:
   - search
   - awesome-pages
