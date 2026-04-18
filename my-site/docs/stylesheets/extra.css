@@ -1,6 +1,61 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* 눈이 편한 누런 종이색 톤 */
 :root {
   --md-default-bg-color: #eadfc6;
+  --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+/* 사이트 전체 폰트 통일 */
+body,
+button,
+input,
+select,
+textarea,
+.md-typeset,
+.md-nav,
+.md-header,
+.md-tabs,
+.md-search,
+.md-ellipsis,
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--md-text-font) !important;
 }
 
 /* 전체 배경 */
@@ -83,12 +138,12 @@ body,
 /* 페이지 제목 진하게 */
 .md-typeset h1 {
   color: #1f1a12 !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
-/* 본문 소제목도 조금 더 진하게 하고 싶으면 */
+/* 본문 소제목도 조금 더 진하게 */
 .md-typeset h2,
 .md-typeset h3 {
   color: #2f2a22 !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
