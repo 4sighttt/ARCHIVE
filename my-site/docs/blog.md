@@ -1,3 +1,3 @@
 # Blog
 
-<!-- BLOG-POST-LIST -->
+{{ blog_content }}
