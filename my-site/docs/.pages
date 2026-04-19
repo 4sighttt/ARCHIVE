@@ -1,4 +1,6 @@
 nav:
+  - index.md
+  - Essay list.md
   - 000_Writings
   - 111_questions
   - 001_AI
@@ -10,3 +12,4 @@ nav:
   - 009_history
   - 010_science
   - 007_brain science & psychology
+  - E-mail.md
