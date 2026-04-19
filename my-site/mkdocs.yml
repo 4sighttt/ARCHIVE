@@ -17,6 +17,8 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: sunny
+
+copyright: © 2023 - 2026 4sighttt. All rights reserved.
   
 plugins:
   - search
