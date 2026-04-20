@@ -236,8 +236,6 @@ body,
   border: 1px solid rgba(80, 60, 30, 0.06);
 }
 
-
-/* 홈 카드 링크를 일반 텍스트처럼 보이도록 색상/스타일 제거 */
 /* 홈 카드 링크를 일반 텍스트처럼 보이도록 색상/스타일 제거 */
 .home-card {
   color: var(--archive-text) !important;
