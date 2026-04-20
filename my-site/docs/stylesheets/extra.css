@@ -231,9 +231,17 @@ body,
   border: 1px solid rgba(255, 240, 210, 0.06);
 }
 
-/* 홈 카드 링크 색상 기본 파란색 덮어쓰기 */
+/* 라이트 모드에서 코드 블록 경계 */
+[data-md-color-scheme="default"] .md-typeset pre > code {
+  border: 1px solid rgba(80, 60, 30, 0.06);
+}
+
+
+/* 홈 카드 링크를 일반 텍스트처럼 보이도록 색상/스타일 제거 */
+/* 홈 카드 링크를 일반 텍스트처럼 보이도록 색상/스타일 제거 */
 .home-card {
   color: var(--archive-text) !important;
+  text-decoration: none !important;
 }
 
 .home-card:visited {
@@ -241,9 +249,5 @@ body,
 }
 
 .home-card:hover {
-  color: var(--archive-text-strong) !important;
-}
-/* 라이트 모드에서 코드 블록 경계 */
-[data-md-color-scheme="default"] .md-typeset pre > code {
-  border: 1px solid rgba(80, 60, 30, 0.06);
+  color: var(--archive-text) !important;   /* ← 이거 수정 */
 }
