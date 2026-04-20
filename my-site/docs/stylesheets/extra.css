@@ -246,6 +246,10 @@ body,
   text-decoration: none !important;
 }
 
+/* 라이트 모드 카드 배경색 적용 */
+[data-md-color-scheme="default"] .home-card {
+  background: var(--archive-card-bg) !important;
+}
 /* 홈 카드 제목도 링크색 상속 말고 일반 글자색으로 고정 */
 .home-card-title {
   color: var(--archive-text) !important;
