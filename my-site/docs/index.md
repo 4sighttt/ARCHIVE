@@ -3,8 +3,6 @@ hide:
   - toc
 ---
 
-# Essay lists
-
 <div class="grid cards" markdown>
 
 -   __거짓말, 지독한 거짓말 그리고 산타클로스__
