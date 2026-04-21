@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%9E%90%EC%9C%A0%EB%8A%94%20%EC%99%9C%20%22%ED%95%98%EA%B3%A0%20%EC%8B%B6%EC%9D%80%20%EB%8C%80%EB%A1%9C%20%ED%95%98%EB%8A%94%20%EA%B2%83%22%EB%B3%B4%EB%8B%A4%20%EB%8D%94%20%EC%96%B4%EB%A0%A4%EC%9A%B4%EA%B0%80/" class="home-card">
+  <div class="home-card-title">자유는 왜 "하고 싶은 대로 하는 것"보다 더 어려운가</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%AC%B8%ED%95%B4%EB%A0%A5%EC%9D%98%20%EC%A1%B0%EA%B1%B4%20%E2%80%94%20%EC%98%88%EC%B8%A1%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%95%88%EC%A0%95%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80/" class="home-card">
   <div class="home-card-title">문해력의 조건 — 예측은 어떻게 안정화되는가</div>
 </a>
