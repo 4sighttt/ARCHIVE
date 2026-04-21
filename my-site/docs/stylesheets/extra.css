@@ -254,3 +254,20 @@ body,
 .home-card-title {
   color: var(--archive-text) !important;
 }
+
+/* TOC 현재 위치 강조 */
+.md-nav__link--active {
+  color: #ffcc66 !important;
+  font-weight: 700;
+}
+
+/* 활성 항목 왼쪽 바 추가 */
+.md-nav__link--active::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  background: #ffcc66;
+  margin-right: 6px;
+  vertical-align: middle;
+}
