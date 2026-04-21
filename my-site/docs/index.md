@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%AC%B8%ED%95%B4%EB%A0%A5%EC%9D%98%20%EC%A1%B0%EA%B1%B4%20%E2%80%94%20%EC%98%88%EC%B8%A1%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%95%88%EC%A0%95%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80/" class="home-card">
+  <div class="home-card-title">문해력의 조건 — 예측은 어떻게 안정화되는가</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC/" class="home-card">
   <div class="home-card-title">중력의 정신을 넘어서: 농담으로서의 철학에 관하여</div>
 </a>
