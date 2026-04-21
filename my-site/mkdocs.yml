@@ -21,7 +21,6 @@ copyright: Copyright © 2026 4sighttt. All rights reserved.
 plugins:
   - search
   - awesome-pages
-  - sitemap
   
 markdown_extensions:
   - nl2br
