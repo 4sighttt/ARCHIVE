@@ -22,7 +22,8 @@ plugins:
   - search
   - awesome-pages
   - sitemap
-
+      sitemap_filename: sitemap.xml
+      
 markdown_extensions:
   - nl2br
   - attr_list
