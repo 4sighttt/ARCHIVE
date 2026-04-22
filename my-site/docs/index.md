@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%9C%A0%EB%AC%BC%EB%A1%A0%EC%9D%98%20%EC%84%B1%EA%B3%B5%EA%B3%BC%20%EA%B7%9C%EB%B2%94%20%EC%96%B8%EC%96%B4%EC%9D%98%20%ED%99%98%EC%9B%90%20%EB%B6%88%EA%B0%80%EB%8A%A5%EC%84%B1/" class="home-card">
+  <div class="home-card-title">유물론의 성공과 규범 언어의 환원 불가능성</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%9D%98%EC%8B%9D%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%A1%B0%EC%A7%81%EB%90%98%EC%96%B4%20%EC%9E%88%EB%8A%94%EA%B0%80/" class="home-card">
   <div class="home-card-title">의식은 어떻게 조직되어 있는가</div>
 </a>
