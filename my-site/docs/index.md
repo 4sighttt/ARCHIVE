@@ -68,7 +68,7 @@ hide:
   <div class="home-card-title">출구 있는 닫힌 방</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B0%80%EB%9D%BC%EC%95%89%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%83%20(%EC%82%B0%ED%8B%B0%EC%95%84%EA%B3%A0)/" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EA%B0%80%EB%9D%BC%EC%95%89%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%83%20(%EC%82%B0%ED%8B%B0%EC%95%84%EA%B3%A0)/" class="home-card">
   <div class="home-card-title">가라앉지 않는 것 (산티아고)</div>
 </a>
 
@@ -97,7 +97,7 @@ hide:
   <div class="home-card-title">세계는 상태가 아니라 긴장이다</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%AC%B4%EB%AA%85%20(%E7%84%A1%E5%90%8D)/" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EB%AC%B4%EB%AA%85%20(%E7%84%A1%E5%90%8D)/" class="home-card">
   <div class="home-card-title">무명 (無名)</div>
 </a>
 
@@ -109,7 +109,7 @@ hide:
   <div class="home-card-title">전지한 신이 있다면 인간의 자유는 가능한가</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/36%20%EC%9E%AC%20%EC%95%84%EB%9E%98%EC%9D%98%20%EB%B6%88%20(%EC%A7%80%ED%99%94%EB%AA%85%EC%9D%B4(%E5%9C%B0%E7%81%AB%E6%98%8E%E5%A4%B7)%EC%9D%98%20%EC%9A%B0%ED%99%94%EC%A0%81%20%ED%95%B4%EC%84%9D)/" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/64_%EC%A3%BC%EC%97%AD/36%20%EC%9E%AC%20%EC%95%84%EB%9E%98%EC%9D%98%20%EB%B6%88%20(%EC%A7%80%ED%99%94%EB%AA%85%EC%9D%B4(%E5%9C%B0%E7%81%AB%E6%98%8E%E5%A4%B7)%EC%9D%98%20%EC%9A%B0%ED%99%94%EC%A0%81%20%ED%95%B4%EC%84%9D)/" class="home-card">
   <div class="home-card-title">36 재 아래의 불 (지화명이(地火明夷)의 우화적 해석)</div>
 </a>
 
@@ -137,7 +137,7 @@ hide:
   <div class="home-card-title">감당의 구조: 가능성이 인간을 통과하는 방식</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%A0%88%EB%B2%BD/" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EC%A0%88%EB%B2%BD/" class="home-card">
   <div class="home-card-title">절벽</div>
 </a>
 
@@ -165,7 +165,7 @@ hide:
   <div class="home-card-title">비참의 진단에서 계시의 독점으로</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%ED%83%9C%EC%96%91%EC%9D%98%20%EB%AC%B4%EA%B2%8C%20(%EB%AB%BC%EB%A5%B4%EC%86%8C)/" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%ED%83%9C%EC%96%91%EC%9D%98%20%EB%AC%B4%EA%B2%8C%20(%EB%AB%BC%EB%A5%B4%EC%86%8C)/" class="home-card">
   <div class="home-card-title">태양의 무게 (뫼르소)</div>
 </a>
 
