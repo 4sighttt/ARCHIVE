@@ -109,6 +109,10 @@ hide:
   <div class="home-card-title">전지한 신이 있다면 인간의 자유는 가능한가</div>
 </a>
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/36%20%EC%9E%AC%20%EC%95%84%EB%9E%98%EC%9D%98%20%EB%B6%88%20(%EC%A7%80%ED%99%94%EB%AA%85%EC%9D%B4(%E5%9C%B0%E7%81%AB%E6%98%8E%E5%A4%B7)%EC%9D%98%20%EC%9A%B0%ED%99%94%EC%A0%81%20%ED%95%B4%EC%84%9D)/" class="home-card">
+  <div class="home-card-title">36 재 아래의 불 (지화명이(地火明夷)의 우화적 해석)</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%ED%94%BC%ED%95%B4%EC%9E%90%EC%A1%B0%EC%B0%A8%20%EA%B2%B0%EC%BD%94%20%EC%88%9C%EC%88%98%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8B%A4%EB%8A%94%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%B3%B5%EC%9E%A1%EC%84%B1/" class="home-card">
   <div class="home-card-title">피해자조차 결코 순수하지 않다는 인간의 복잡성</div>
 </a>
