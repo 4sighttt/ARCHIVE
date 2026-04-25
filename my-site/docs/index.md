@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%AA%A8%EB%93%A0%20%EB%B0%A9%ED%96%A5%EC%9D%84%20%EB%8B%B4%EB%8A%94%EB%8B%A4%EB%8A%94%20%EA%B2%83/" class="home-card">
+  <div class="home-card-title">모든 방향을 담는다는 것</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/10_Novel/%EC%99%84%EC%A0%84%ED%95%9C%20%EB%B3%B4%EA%B3%A0%EC%84%9C/" class="home-card">
   <div class="home-card-title">완전한 보고서</div>
 </a>
