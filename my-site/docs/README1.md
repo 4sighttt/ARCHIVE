@@ -1,4 +1,4 @@
-# 4sighttt / ARCHIVE
+# 4sighttt / ARCHIVE 의 목적
 
 ## 한국어
 
