@@ -1,6 +1,7 @@
 # 이 사이트의 목적
+## 영원히 미완성
 
-## 한국어
+### 한국어
 
 **4sighttt / ARCHIVE**는 개인적 사고와 글쓰기를 축적하기 위해 만든 공개 아카이브입니다. 이 사이트는 단순한 블로그가 아니라, 흩어진 질문과 글, 철학적 사유와 문학적 실험을 하나의 구조 안에 보존하기 위한 외부 기억장치에 가깝습니다.
 
@@ -17,7 +18,7 @@
 
 ---
 
-## English
+### English
 
 **4sighttt / ARCHIVE** is a public archive created to preserve personal thinking and writing. It is not merely a blog, but closer to an external memory system designed to hold scattered questions, essays, philosophical reflections, and literary experiments within a structured form.
 
