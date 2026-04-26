@@ -255,14 +255,14 @@ body,
   color: var(--archive-text) !important;
 }
 
-/* TOC 현재 위치 강조 */
-.md-nav__link--active {
+/* TOC 현재 위치 강조: 우측 목차에만 적용 */
+.md-sidebar--secondary .md-nav__link--active {
   color: #ffcc66 !important;
   font-weight: 700;
 }
 
-/* 활성 항목 왼쪽 바 추가 */
-.md-nav__link--active::before {
+/* 활성 항목 왼쪽 바 추가: 우측 목차에만 적용 */
+.md-sidebar--secondary .md-nav__link--active::before {
   content: "";
   display: inline-block;
   width: 4px;
@@ -288,13 +288,32 @@ body,
 
 }
 
-/* TOC 강조 (라이트 모드용 색 따로) */
-[data-md-color-scheme="default"] .md-nav__link--active {
+/* TOC 강조 (라이트 모드용 색 따로): 우측 목차에만 적용 */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active {
   color: #b8860b !important;
   font-weight: 700;
 }
 
-/* TOC 왼쪽 바 */
-[data-md-color-scheme="default"] .md-nav__link--active::before {
+/* TOC 왼쪽 바: 우측 목차에만 적용 */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active::before {
   background: #b8860b;
+}
+
+/* =========================
+   Heading anchor / TOC 보정
+   - 목차 클릭 시 제목이 상단 헤더에 붙거나 가려지는 현상 완화
+   - 값은 5rem~8rem 사이에서 사이트에 맞게 조정
+========================= */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  scroll-margin-top: 6.5rem;
+}
+
+/* 우측 TOC 스크롤 영역 안정화 */
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  scroll-padding-top: 6.5rem;
 }
