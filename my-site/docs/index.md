@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/AI%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%84%20%EA%B0%90%EB%8F%99%EC%8B%9C%ED%82%A4%EB%8A%94%20%EC%9E%91%ED%92%88%EC%9D%84%20%EB%A7%8C%EB%93%A4%20%EC%88%98%20%EC%9E%88%EB%8B%A4%EB%A9%B4%2C%20%EC%B0%BD%EC%9D%98%EC%84%B1%EC%9D%98%20%EA%B8%B0%EC%A4%80%EC%9D%80%20%EB%B0%94%EB%80%8C%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80/" class="home-card">
+  <div class="home-card-title">AI가 인간을 감동시키는 작품을 만들 수 있다면, 창의성의 기준은 바뀌어야 하는가</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B3%84%EC%82%B0%EC%9D%B4%20%EB%81%9D%EB%82%9C%20%EB%92%A4%EC%97%90%EB%8F%84%20%EB%82%A8%EB%8A%94%20%EA%B2%83/" class="home-card">
   <div class="home-card-title">계산이 끝난 뒤에도 남는 것</div>
 </a>
