@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%9D%B8%EA%B0%84%20%EC%A4%91%EC%8B%AC%20%EC%9D%B4%ED%9B%84%EC%9D%98%20%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%9C%B4%EB%A8%B8%EB%8B%88%EC%A6%98/" class="home-card">
+  <div class="home-card-title">인간 중심 이후의 포스트휴머니즘</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%84%B1%EC%9E%A5%EC%9D%80%20%EC%99%9C%20%ED%8F%90%ED%97%88%EB%A5%BC%20%ED%95%84%EC%9A%94%EB%A1%9C%20%ED%95%98%EB%8A%94%EA%B0%80/" class="home-card">
   <div class="home-card-title">성장은 왜 폐허를 필요로 하는가</div>
 </a>
