@@ -363,3 +363,88 @@ body,
   font-weight: 400 !important;
   border-left-color: transparent !important;
 }
+/* =========================================================
+   Final TOC Active-State Override
+   - Targets the actual Material for MkDocs right-side TOC
+   - Handles class-based, aria-current, and intersection states
+   - Placed at the end so it overrides earlier sidebar/link rules
+========================================================= */
+
+/* TOC color variables */
+[data-md-color-scheme="default"] {
+  --archive-toc-active: #8f6500;
+  --archive-toc-active-bg: rgba(184, 134, 11, 0.16);
+}
+
+[data-md-color-scheme="slate"] {
+  --archive-toc-active: #ffcc66;
+  --archive-toc-active-bg: rgba(255, 204, 102, 0.14);
+}
+
+/* Reset right-side TOC links */
+.md-nav--secondary .md-nav__link,
+[data-md-component="toc"] .md-nav__link,
+.md-sidebar--secondary .md-nav__link {
+  border-left: 4px solid transparent !important;
+  padding-left: 0.65rem !important;
+  margin-left: 0 !important;
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+  border-radius: 0.2rem !important;
+}
+
+/* Active TOC item: Material class / ARIA state / current location */
+.md-nav--secondary .md-nav__link--active,
+.md-nav--secondary .md-nav__link[aria-current="true"],
+.md-nav--secondary .md-nav__link[aria-current="location"],
+.md-nav--secondary .md-nav__link[aria-current="page"],
+[data-md-component="toc"] .md-nav__link--active,
+[data-md-component="toc"] .md-nav__link[aria-current="true"],
+[data-md-component="toc"] .md-nav__link[aria-current="location"],
+[data-md-component="toc"] .md-nav__link[aria-current="page"],
+.md-sidebar--secondary .md-nav__link--active,
+.md-sidebar--secondary .md-nav__link[aria-current="true"],
+.md-sidebar--secondary .md-nav__link[aria-current="location"],
+.md-sidebar--secondary .md-nav__link[aria-current="page"] {
+  color: var(--archive-toc-active) !important;
+  font-weight: 800 !important;
+  border-left-color: var(--archive-toc-active) !important;
+  background: var(--archive-toc-active-bg) !important;
+}
+
+/* Some Material versions mark already-passed headings.
+   Keep them slightly emphasized but weaker than the active heading. */
+.md-nav--secondary .md-nav__link--passed:not(.md-nav__link--active):not([aria-current]),
+[data-md-component="toc"] .md-nav__link--passed:not(.md-nav__link--active):not([aria-current]),
+.md-sidebar--secondary .md-nav__link--passed:not(.md-nav__link--active):not([aria-current]) {
+  color: var(--archive-text-strong) !important;
+  font-weight: 600 !important;
+}
+
+/* Hover state for right-side TOC */
+.md-nav--secondary .md-nav__link:hover,
+[data-md-component="toc"] .md-nav__link:hover,
+.md-sidebar--secondary .md-nav__link:hover {
+  color: var(--archive-toc-active) !important;
+}
+
+/* Do not let generic link color rules override TOC active links */
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link--active,
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link[aria-current="true"],
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link[aria-current="location"],
+[data-md-color-scheme="default"] .md-nav--secondary .md-nav__link[aria-current="page"],
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link[aria-current="true"],
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link[aria-current="location"],
+[data-md-color-scheme="slate"] .md-nav--secondary .md-nav__link[aria-current="page"] {
+  color: var(--archive-toc-active) !important;
+  border-left-color: var(--archive-toc-active) !important;
+  background: var(--archive-toc-active-bg) !important;
+}
+
+/* Keep TOC scroll behavior stable */
+.md-sidebar--secondary .md-sidebar__scrollwrap,
+.md-nav--secondary .md-nav__list {
+  scroll-padding-top: 6.5rem;
+}
