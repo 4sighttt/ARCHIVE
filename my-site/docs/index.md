@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%ED%95%9C%20%EC%9D%B8%EA%B0%84%EC%9D%B4%20%EB%8B%AC%EB%A0%B8%EC%A7%80%EB%A7%8C%2C%20%ED%98%BC%EC%9E%90%20%EB%8B%AC%EB%A6%B0%20%EA%B2%83%EC%9D%80%20%EC%95%84%EB%8B%88%EC%97%88%EB%8B%A4/" class="home-card">
+  <div class="home-card-title">한 인간이 달렸지만, 혼자 달린 것은 아니었다</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%96%B4%EB%A6%AC%EC%84%9D%EC%9D%8C%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B2%95/" class="home-card">
   <div class="home-card-title">어리석음을 넘어서는 법</div>
 </a>
