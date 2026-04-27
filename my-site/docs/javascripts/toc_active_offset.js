@@ -10,7 +10,7 @@
 
 (function () {
   const ACTIVE_CLASS = "md-nav__link--active";
-  const OFFSET_RATIO = 0.35;
+  const OFFSET_RATIO = 0.20;
 
   function normalizeHash(hash) {
     if (!hash) return "";
