@@ -510,3 +510,18 @@ html body .md-sidebar--secondary .md-sidebar__scrollwrap,
 html body .md-nav--secondary .md-nav__list {
   scroll-padding-top: 6.5rem;
 }
+
+/* ==== TOC passed 완전 제거 (핵심 수정) ==== */
+
+.md-nav__link--passed {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left: none !important;
+  background: transparent !important;
+}
+
+/* passed + active 충돌 시 active 유지 */
+.md-nav__link--passed.md-nav__link--active {
+  color: var(--archive-toc-active) !important;
+  font-weight: 800 !important;
+}
