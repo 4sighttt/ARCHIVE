@@ -52,6 +52,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/AI%EC%9D%98%20%EC%8B%9C%EC%84%A0%20%E2%80%94%20%ED%95%A9%EB%A6%AC%EC%A0%81%20%ED%96%89%EC%9C%84%EC%9E%90%20%EB%AA%A8%EB%8D%B8%EC%9D%98%20%ED%98%95%EC%84%B1%EA%B3%BC%20%ED%95%9C%EA%B3%84_Claude_Sonnet4.6.html" class="home-card">
+  <div class="home-card-title">AI의 시선 — 합리적 행위자 모델의 형성과 한계_Claude_Sonnet4.6</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%B6%88%ED%96%89%EC%9D%84%20%EB%B0%98%EB%B3%B5%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B0%84_GPT5.5_Extended_Thinking.html" class="home-card">
   <div class="home-card-title">불행을 반복하는 인간_GPT5.5_Extended_Thinking</div>
 </a>
