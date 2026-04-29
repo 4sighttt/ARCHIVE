@@ -52,8 +52,8 @@ hide:
 
 <div class="home-card-grid">
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%B6%88%ED%96%89%EC%9D%84%20%EB%B0%98%EB%B3%B5%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B0%84.html" class="home-card">
-  <div class="home-card-title">불행을 반복하는 인간</div>
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EB%B6%88%ED%96%89%EC%9D%84%20%EB%B0%98%EB%B3%B5%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B0%84_GPT5.5_Extended_Thinking.html" class="home-card">
+  <div class="home-card-title">불행을 반복하는 인간_GPT5.5_Extended_Thinking</div>
 </a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EC%9D%B5%EC%88%99%ED%95%9C%20%ED%99%94%EB%A9%B4%2C%20%EC%84%A4%EB%AA%85%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EC%8B%9C%EB%AF%BC.html" class="home-card">
