@@ -164,6 +164,11 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition
+/%EB%AC%B4%EC%97%87%EC%9D%B4%20%EB%8B%AC%EB%9D%BC%EC%A1%8C%EB%8A%94%EA%B0%80%20%E2%80%94%20AI%20%EC%B6%9C%EB%A0%A5%20%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%EC%A0%84%ED%99%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EB%B9%84%EA%B0%80%EC%8B%9C%EC%84%B1.html" class="home-card">
+  <div class="home-card-title">무엇이 달라졌는가 — AI 출력 우선순위 전환의 구조와 비가시성</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B0%BD%EC%9D%98%EC%A0%81%EC%9D%B8%20%EC%9D%B8%ED%94%84%EB%9D%BC%20%EA%B5%AC%EC%B6%95.html" class="home-card">
   <div class="home-card-title">창의적인 인프라 구축</div>
 </a>
@@ -208,9 +213,6 @@ hide:
   <div class="home-card-title">시간은 흐르는가, 우리가 그렇게 인식하는가_GPT5.5_Extended_Thinking</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EA%B3%BC%ED%95%99%EC%A0%81%20%EC%A7%84%EB%A6%AC%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EB%8A%94%EA%B0%80%2C%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%82%B4%EB%8A%94%EA%B0%80.html" class="home-card">
-  <div class="home-card-title">우리는 과학적 진리를 발견하는가, 만들어내는가</div>
-</a>
 
 </div>
 
@@ -220,6 +222,11 @@ hide:
 <summary>AI·기술·디지털 조건 (18)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition
+/%EB%AC%B4%EC%97%87%EC%9D%B4%20%EB%8B%AC%EB%9D%BC%EC%A1%8C%EB%8A%94%EA%B0%80%20%E2%80%94%20AI%20%EC%B6%9C%EB%A0%A5%20%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%EC%A0%84%ED%99%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EB%B9%84%EA%B0%80%EC%8B%9C%EC%84%B1.html" class="home-card">
+  <div class="home-card-title">무엇이 달라졌는가 — AI 출력 우선순위 전환의 구조와 비가시성</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B0%BD%EC%9D%98%EC%A0%81%EC%9D%B8%20%EC%9D%B8%ED%94%84%EB%9D%BC%20%EA%B5%AC%EC%B6%95.html" class="home-card">
   <div class="home-card-title">창의적인 인프라 구축</div>
