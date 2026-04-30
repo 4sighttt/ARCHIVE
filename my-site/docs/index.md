@@ -436,7 +436,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>실존·의미·죽음·자기 형성 (20)</summary>
+<summary>실존·의미·죽음·자기 형성 (21)</summary>
 
 <div class="home-card-grid">
 
