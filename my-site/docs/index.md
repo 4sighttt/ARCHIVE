@@ -158,7 +158,7 @@ hide:
 
 </style>
 
-## 선별 글
+## 최신 글
 
 <!-- 이 영역은 첫 화면에 노출할 글입니다. 기존처럼 수동으로 추가·삭제·순서 변경하면 됩니다. -->
 
@@ -215,8 +215,6 @@ hide:
 </div>
 
 ## 주제별 글 목록
-
-<div class="section-note">주제를 클릭하면 해당 분류의 글 목록이 펼쳐집니다.</div>
 
 <details class="essay-section">
 <summary>AI·기술·디지털 조건 (18)</summary>
