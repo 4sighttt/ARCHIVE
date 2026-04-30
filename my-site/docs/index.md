@@ -308,7 +308,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어 (16)</summary>
+<summary>지식·진리·과학·언어 (17)</summary>
 
 <div class="home-card-grid">
 
@@ -318,6 +318,10 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A7%80%EC%8B%9D%EC%9D%80%20%EC%84%B8%EA%B3%84%EB%A5%BC%20%EB%84%93%ED%9E%88%EB%8A%94%EA%B0%80%2C%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EA%B2%BD%EA%B3%84%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EA%B2%8C%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">지식은 세계를 넓히는가, 자신의 경계를 발견하게 하는가</div>
+</a>
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC.html" class="home-card">
+  <div class="home-card-title">중력의 정신을 넘어서: 농담으로서의 철학에 관하여</div>
 </a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EA%B3%BC%ED%95%99%EC%A0%81%20%EC%A7%84%EB%A6%AC%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EB%8A%94%EA%B0%80%2C%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%82%B4%EB%8A%94%EA%B0%80.html" class="home-card">
@@ -637,14 +641,9 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>기타 글 (1)</summary>
+<summary>기타 글 (0)</summary>
 
 <div class="home-card-grid">
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC.html" class="home-card">
-  <div class="home-card-title">중력의 정신을 넘어서: 농담으로서의 철학에 관하여</div>
-</a>
-
 
 
 </div>
