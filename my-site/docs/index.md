@@ -561,7 +561,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·역사·문화 독해 (6)</summary>
+<summary>문학·역사·문화 독해 (13)</summary>
 
 <div class="home-card-grid">
 
@@ -589,14 +589,6 @@ hide:
   <div class="home-card-title">침묵하는 창조자의 표(表): 목격자 없는 삶을 위하여</div>
 </a>
 
-</div>
-</details>
-
-<details class="essay-section">
-<summary>기타 글 (8)</summary>
-
-<div class="home-card-grid">
-
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%ED%9D%B0%20%EA%B3%A0%EB%9E%98%20%EC%95%9E%EC%97%90%EC%84%9C.html" class="home-card">
   <div class="home-card-title">흰 고래 앞에서</div>
 </a>
@@ -607,10 +599,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EA%B0%80%EB%9D%BC%EC%95%89%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%83%20(%EC%82%B0%ED%8B%B0%EC%95%84%EA%B3%A0).html" class="home-card">
   <div class="home-card-title">가라앉지 않는 것 (산티아고)</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC.html" class="home-card">
-  <div class="home-card-title">중력의 정신을 넘어서: 농담으로서의 철학에 관하여</div>
 </a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EB%AC%B4%EB%AA%85%20(%E7%84%A1%E5%90%8D).html" class="home-card">
@@ -628,6 +616,20 @@ hide:
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%ED%83%9C%EC%96%91%EC%9D%98%20%EB%AC%B4%EA%B2%8C%20%20%28%EB%AB%BC%EB%A5%B4%EC%86%8C%29.html" class="home-card">
   <div class="home-card-title">태양의 무게 (뫼르소)</div>
 </a>
+
+</div>
+</details>
+
+<details class="essay-section">
+<summary>기타 글 (1)</summary>
+
+<div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC.html" class="home-card">
+  <div class="home-card-title">중력의 정신을 넘어서: 농담으로서의 철학에 관하여</div>
+</a>
+
+
 
 </div>
 </details>
