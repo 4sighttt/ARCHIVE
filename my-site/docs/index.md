@@ -49,43 +49,69 @@ hide:
 }
 
 
-.essay-section {
+.essay-section,
+.md-typeset details.essay-section,
+.md-typeset details.essay-section[open] {
   margin-top: 1.2rem;
-  border: none;
-  background: transparent;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
-.essay-section > summary {
+
+.essay-section > summary,
+.md-typeset details.essay-section > summary {
   cursor: pointer;
   padding: 1rem 1.1rem;
-  border: 1px solid rgba(80, 60, 30, 0.12);
-  border-radius: 0.28rem;
-  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(80, 60, 30, 0.12) !important;
+  border-radius: 0.28rem !important;
+  background: rgba(255,255,255,0.06) !important;
   font-size: 1.05rem;
   font-weight: 800;
   color: var(--md-default-fg-color);
   list-style: none;
   transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
-.essay-section > summary:hover {
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(80, 60, 30, 0.24);
+
+.essay-section > summary:hover,
+.md-typeset details.essay-section > summary:hover {
+  background: rgba(255,255,255,0.14) !important;
+  border-color: rgba(80, 60, 30, 0.24) !important;
   transform: translateY(-1px);
 }
-.essay-section > summary::-webkit-details-marker {
+
+.essay-section > summary::-webkit-details-marker,
+.md-typeset details.essay-section > summary::-webkit-details-marker {
   display: none;
 }
-.essay-section > summary::before {
+
+.essay-section > summary::before,
+.md-typeset details.essay-section > summary::before {
   content: "▸";
   display: inline-block;
   margin-right: 0.55rem;
   transition: transform 0.15s ease;
 }
-.essay-section[open] > summary::before {
+
+.essay-section[open] > summary::before,
+.md-typeset details.essay-section[open] > summary::before {
   transform: rotate(90deg);
 }
-.essay-section .home-card-grid {
-  margin-top: 1rem;
+
+.md-typeset details.essay-section > summary::after {
+  display: none !important;
 }
+
+.essay-section .home-card-grid,
+.md-typeset details.essay-section .home-card-grid {
+  margin: 1rem 0 0 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.md-typeset details.essay-section > *:not(summary) {
+  background: transparent !important;
+}
+
 .section-note {
   margin-top: 0.4rem;
   opacity: 0.72;
