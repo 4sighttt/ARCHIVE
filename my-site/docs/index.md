@@ -164,6 +164,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">자기기만은 왜 진화했는가</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%98%EB%8A%94%20%EA%B8%B0%EA%B3%84.html" class="home-card">
   <div class="home-card-title">구조화하는 기계</div>
 </a>
@@ -208,10 +212,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EC%88%A0%EC%9D%B4%20%ED%95%B4%EB%B0%A9%EC%A0%81%EC%9D%B4%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A1%B0%EA%B1%B4.html" class="home-card">
   <div class="home-card-title">기술이 해방적이기 위한 조건</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%ED%83%80%EC%9D%B8%EC%9D%84%20%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%80%20%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80.html" class="home-card">
-  <div class="home-card-title">타인을 이해하는 것은 가능한가</div>
 </a>
 
 </div>
@@ -439,6 +439,10 @@ hide:
 <summary>실존·의미·죽음·자기 형성 (20)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">자기기만은 왜 진화했는가</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood
 /%EC%A7%80%EC%84%B1%2C%20%EC%86%8C%EC%99%B8%2C%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4%3A%20%EA%B9%8A%EC%9D%80%20%EC%82%AC%EA%B3%A0%EB%8A%94%20%EC%99%9C%20%EC%82%AC%ED%9A%8C%EC%A0%81%20%EB%A7%88%EC%B0%B0%EC%9D%84%20%EB%82%B3%EB%8A%94%EA%B0%80.html" class="home-card">
