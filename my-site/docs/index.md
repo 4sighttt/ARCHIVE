@@ -62,13 +62,19 @@ hide:
   line-height: 1.45;
 }
 
+/* 기본 상태 */
 .essay-section,
-.md-typeset details.essay-section,
-.md-typeset details.essay-section[open] {
-  margin-top: 1.2rem;
-  border: none !important;
+.md-typeset details.essay-section {
   background: transparent !important;
-  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 열린 상태만 색 적용 */
+.md-typeset details.essay-section[open] {
+  background: var(--home-card-bg) !important;
+  background-color: var(--home-card-bg) !important;
+  border: none !important;
   box-shadow: none !important;
 }
 
