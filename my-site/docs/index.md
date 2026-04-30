@@ -145,8 +145,6 @@ hide:
 
 ## 주제별 글 목록
 
-<div class="section-note">주제를 클릭하면 해당 분류의 글 목록이 펼쳐집니다.</div>
-
 <details class="essay-section">
 <summary>AI·기술·디지털 조건 (18)</summary>
 
