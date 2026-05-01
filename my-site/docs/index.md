@@ -597,9 +597,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·역사·문화 독해 (13)</summary>
+<summary>문학·역사·문화 독해 (14)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/09_Poem /%EB%91%90%20%EC%9E%A5%EC%9D%98%20%ED%91%9C.html" class="home-card">
+  <div class="home-card-title">두 장의 표</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%99%95%EC%9D%84%20%EC%82%B0%20%EC%83%81%EC%9D%B8%3A%20%EC%97%AC%EB%B6%88%EC%9C%84%EC%99%80%20%EC%A0%84%ED%99%98%EA%B8%B0%EC%9D%98%20%EA%B6%8C%EB%A0%A5.html" class="home-card">
   <div class="home-card-title">왕을 산 상인: 여불위와 전환기의 권력</div>
