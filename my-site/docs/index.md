@@ -601,7 +601,7 @@ hide:
 
 <div class="home-card-grid">
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/09_Poem /%EB%91%90%20%EC%9E%A5%EC%9D%98%20%ED%91%9C.html" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/09_Poem/%EB%91%90%20%EC%9E%A5%EC%9D%98%20%ED%91%9C.html" class="home-card">
   <div class="home-card-title">두 장의 표</div>
 </a>
 
