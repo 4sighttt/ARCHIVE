@@ -164,6 +164,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
+  <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">자기기만은 왜 진화했는가</div>
 </a>
@@ -210,18 +214,18 @@ hide:
   <div class="home-card-title">지식은 세계를 넓히는가, 자신의 경계를 발견하게 하는가</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EC%88%A0%EC%9D%B4%20%ED%95%B4%EB%B0%A9%EC%A0%81%EC%9D%B4%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A1%B0%EA%B1%B4.html" class="home-card">
-  <div class="home-card-title">기술이 해방적이기 위한 조건</div>
-</a>
-
 </div>
 
 ## 주제별 글 목록
 
 <details class="essay-section">
-<summary>AI·기술·디지털 조건 (20)</summary>
+<summary>AI·기술·디지털 조건 (21)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
+  <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%98%EB%8A%94%20%EA%B8%B0%EA%B3%84.html" class="home-card">
   <div class="home-card-title">구조화하는 기계</div>
