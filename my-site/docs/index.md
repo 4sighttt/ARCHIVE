@@ -653,7 +653,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>기타 글 (0)</summary>
+<summary>미분류 글 (0)</summary>
 
 <div class="home-card-grid">
 
