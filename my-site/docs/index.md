@@ -163,6 +163,10 @@ hide:
 <!-- 이 영역은 첫 화면에 노출할 글입니다. 기존처럼 수동으로 추가·삭제·순서 변경하면 됩니다. -->
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%82%AC%EC%9C%A0%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EB%B6%95%EA%B4%B4%EC%8B%9C%ED%82%A4%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">사유는 어떻게 자기 자신을 붕괴시키는가</div>
+</a>
   
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
   <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
@@ -208,10 +212,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EB%B6%88%ED%96%89%EC%9D%84%20%EB%B0%98%EB%B3%B5%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B0%84_GPT5.5_Extended_Thinking.html" class="home-card">
   <div class="home-card-title">불행을 반복하는 인간_GPT5.5_Extended_Thinking</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9D%B5%EC%88%99%ED%95%9C%20%ED%99%94%EB%A9%B4%2C%20%EC%84%A4%EB%AA%85%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EC%8B%9C%EB%AF%BC.html" class="home-card">
-  <div class="home-card-title">익숙한 화면, 설명할 수 있는 시민</div>
 </a>
 
 </div>
@@ -392,9 +392,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>의식·시간·존재론 (11)</summary>
+<summary>의식·시간·존재론 (12)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%82%AC%EC%9C%A0%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EB%B6%95%EA%B4%B4%EC%8B%9C%ED%82%A4%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">사유는 어떻게 자기 자신을 붕괴시키는가</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%A2%85%EB%A3%8C%EB%A5%BC%20%EC%95%84%EB%8A%94%20%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EC%84%A4%EB%AA%85%20%EC%9E%89%EC%97%AC_deepseek_v4_flash_thinking.html" class="home-card">
   <div class="home-card-title">종료를 아는 존재의 설명 잉여_deepseek_v4_flash_thinking</div>
