@@ -163,6 +163,10 @@ hide:
 <!-- 이 영역은 첫 화면에 노출할 글입니다. 기존처럼 수동으로 추가·삭제·순서 변경하면 됩니다. -->
 
 <div class="home-card-grid">
+  
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
+  <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
   <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
@@ -210,18 +214,18 @@ hide:
   <div class="home-card-title">익숙한 화면, 설명할 수 있는 시민</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A7%80%EC%8B%9D%EC%9D%80%20%EC%84%B8%EA%B3%84%EB%A5%BC%20%EB%84%93%ED%9E%88%EB%8A%94%EA%B0%80%2C%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EA%B2%BD%EA%B3%84%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EA%B2%8C%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
-  <div class="home-card-title">지식은 세계를 넓히는가, 자신의 경계를 발견하게 하는가</div>
-</a>
-
 </div>
 
 ## 주제별 글 목록
 
 <details class="essay-section">
-<summary>AI·기술·디지털 조건 (21)</summary>
+<summary>AI·기술·디지털 조건 (22)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
+  <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
   <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
