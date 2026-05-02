@@ -205,6 +205,14 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="home-card">
+  <div class="home-card-title">해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6</div>
+</a>
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%B8%EA%B0%84%EC%9D%80%20%ED%95%B4%EC%84%9D%EC%9C%BC%EB%A1%9C%20%EC%82%B4%EA%B3%A0%20%ED%99%95%EC%8B%A0%EC%9C%BC%EB%A1%9C%20%EB%8B%AB%ED%9E%8C%EB%8B%A4_GPT5.5_Extended_Thinking.html" class="home-card">
+  <div class="home-card-title">인간은 해석으로 살고 확신으로 닫힌다_GPT5.5_Extended_Thinking</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가</div>
 </a>
@@ -361,9 +369,17 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어·인식 (17)</summary>
+<summary>지식·진리·과학·언어·인식 (19)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="home-card">
+  <div class="home-card-title">해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6</div>
+</a>
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%B8%EA%B0%84%EC%9D%80%20%ED%95%B4%EC%84%9D%EC%9C%BC%EB%A1%9C%20%EC%82%B4%EA%B3%A0%20%ED%99%95%EC%8B%A0%EC%9C%BC%EB%A1%9C%20%EB%8B%AB%ED%9E%8C%EB%8B%A4_GPT5.5_Extended_Thinking.html" class="home-card">
+  <div class="home-card-title">인간은 해석으로 살고 확신으로 닫힌다_GPT5.5_Extended_Thinking</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20%ED%8C%A8%ED%84%B4%EC%9D%84%20%EB%B3%B4%EB%8A%94%20%EC%9D%B8%EA%B0%84.html" class="home-card">
   <div class="home-card-title">존재하지 않는 패턴을 보는 인간</div>
