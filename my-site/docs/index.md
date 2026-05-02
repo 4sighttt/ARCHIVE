@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B4%84%ED%98%B8%20%EC%95%88%EC%9D%98%20%EC%A0%95%EC%A7%81%ED%95%A8%2C%20%EA%B4%84%ED%98%B8%20%EB%B0%96%EC%9D%98%20%EB%B4%89%ED%95%A9.html" class="home-card">
+  <div class="home-card-title">괄호 안의 정직함, 괄호 밖의 봉합</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="home-card">
   <div class="home-card-title">해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6</div>
 </a>
@@ -251,18 +255,20 @@ hide:
   <div class="home-card-title">무엇이 달라졌는가 — AI 출력 우선순위 전환의 구조와 비가시성</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B0%BD%EC%9D%98%EC%A0%81%EC%9D%B8%20%EC%9D%B8%ED%94%84%EB%9D%BC%20%EA%B5%AC%EC%B6%95.html" class="home-card">
-  <div class="home-card-title">창의적인 인프라 구축</div>
-</a>
+
 
 </div>
 
 ## 주제별 글 목록
 
 <details class="essay-section">
-<summary>AI·기술·알고리즘·디지털 (23)</summary>
+<summary>AI·기술·알고리즘·디지털 (24)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B4%84%ED%98%B8%20%EC%95%88%EC%9D%98%20%EC%A0%95%EC%A7%81%ED%95%A8%2C%20%EA%B4%84%ED%98%B8%20%EB%B0%96%EC%9D%98%20%EB%B4%89%ED%95%A9.html" class="home-card">
+  <div class="home-card-title">괄호 안의 정직함, 괄호 밖의 봉합</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가</div>
