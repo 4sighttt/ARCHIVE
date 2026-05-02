@@ -219,7 +219,7 @@ hide:
 ## 주제별 글 목록
 
 <details class="essay-section">
-<summary>AI·기술·디지털 조건 (22)</summary>
+<summary>AI·기술·알고리즘·디지털 (22)</summary>
 
 <div class="home-card-grid">
 
@@ -316,7 +316,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어 (17)</summary>
+<summary>지식·진리·과학·언어·인식 (17)</summary>
 
 <div class="home-card-grid">
 
@@ -392,7 +392,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>의식·시간·존재론 (12)</summary>
+<summary>의식·시간·형이상학·존재론 (12)</summary>
 
 <div class="home-card-grid">
 
@@ -448,7 +448,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>실존·의미·죽음·자기 형성 (21)</summary>
+<summary>실존·의미·죽음·자기형성 (21)</summary>
 
 <div class="home-card-grid">
 
@@ -541,7 +541,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>윤리·타자성·책임 (12)</summary>
+<summary>윤리·타자성·악·책임·사회 (12)</summary>
 
 <div class="home-card-grid">
 
@@ -597,7 +597,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·역사·문화 독해 (14)</summary>
+<summary>문학·사상가·역사·문화 (14)</summary>
 
 <div class="home-card-grid">
 
