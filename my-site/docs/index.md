@@ -157,29 +157,44 @@ hide:
 }
 
 
+/* MkDocs Material details/admonition 기본 파란 아이콘 제거 및 사용자 화살표만 표시 */
+.md-typeset details.essay-section > summary::before,
+.md-typeset details.essay-section[open] > summary::before,
+.essay-section > summary::before,
+.essay-section[open] > summary::before {
+  content: "▸" !important;
+  position: static !important;
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0.55rem 0 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  transform: none !important;
+  transition: transform 0.15s ease !important;
+  vertical-align: baseline !important;
+}
 
-/* Material for MkDocs가 summary/details 제목 옆에 자동으로 표시하는 아이콘 제거 */
+.md-typeset details.essay-section[open] > summary::before,
+.essay-section[open] > summary::before {
+  transform: rotate(90deg) !important;
+}
+
+/* summary 오른쪽 접힘 아이콘/앵커/편집 계열 아이콘까지 차단 */
+.md-typeset details.essay-section > summary::after,
 .md-typeset details.essay-section > summary .md-icon,
 .md-typeset details.essay-section > summary .md-clipboard,
-.md-typeset details.essay-section > summary svg,
+.md-typeset details.essay-section > summary .headerlink,
 .md-typeset details.essay-section > summary a.headerlink,
-.md-typeset details.essay-section > summary .headerlink {
+.md-typeset details.essay-section > summary svg {
   display: none !important;
   visibility: hidden !important;
-}
-
-/* summary 왼쪽에 만든 사용자 지정 펼침 화살표는 유지 */
-.essay-section > summary::before,
-.md-typeset details.essay-section > summary::before {
-  content: "▸" !important;
-  display: inline-block !important;
-  margin-right: 0.55rem !important;
-  transition: transform 0.15s ease !important;
-}
-
-.essay-section[open] > summary::before,
-.md-typeset details.essay-section[open] > summary::before {
-  transform: rotate(90deg) !important;
 }
 
 </style>
