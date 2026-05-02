@@ -654,9 +654,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·사상가·역사·문화 (14)</summary>
+<summary>문학·사상가·역사·문화 (15)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EC%9D%B4%EB%A6%84%ED%91%9C%EC%9D%98%20%EB%92%B7%EB%A9%B4.html" class="home-card">
+  <div class="home-card-title">이름표의 뒷면</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EB%91%90%20%EC%9E%A5%EC%9D%98%20%ED%91%9C.html" class="home-card">
   <div class="home-card-title">두 장의 표</div>
