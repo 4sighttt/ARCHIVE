@@ -156,6 +156,32 @@ hide:
   font-size: 0.92rem;
 }
 
+
+
+/* Material for MkDocs가 summary/details 제목 옆에 자동으로 표시하는 아이콘 제거 */
+.md-typeset details.essay-section > summary .md-icon,
+.md-typeset details.essay-section > summary .md-clipboard,
+.md-typeset details.essay-section > summary svg,
+.md-typeset details.essay-section > summary a.headerlink,
+.md-typeset details.essay-section > summary .headerlink {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* summary 왼쪽에 만든 사용자 지정 펼침 화살표는 유지 */
+.essay-section > summary::before,
+.md-typeset details.essay-section > summary::before {
+  content: "▸" !important;
+  display: inline-block !important;
+  margin-right: 0.55rem !important;
+  transition: transform 0.15s ease !important;
+}
+
+.essay-section[open] > summary::before,
+.md-typeset details.essay-section[open] > summary::before {
+  transform: rotate(90deg) !important;
+}
+
 </style>
 
 ## 최신 글
