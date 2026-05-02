@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%AC%B8%ED%95%99%EC%9D%B4%20%ED%98%84%EC%8B%A4%EB%A1%9C%20%EB%93%A4%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B0%A9%EC%8B%9D%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="home-card">
+  <div class="home-card-title">문학이 현실로 들어서는 방식의 계보</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B4%84%ED%98%B8%20%EC%95%88%EC%9D%98%20%EC%A0%95%EC%A7%81%ED%95%A8%2C%20%EA%B4%84%ED%98%B8%20%EB%B0%96%EC%9D%98%20%EB%B4%89%ED%95%A9.html" class="home-card">
   <div class="home-card-title">괄호 안의 정직함, 괄호 밖의 봉합</div>
 </a>
@@ -249,13 +253,6 @@ hide:
 /%EC%A7%80%EC%84%B1%2C%20%EC%86%8C%EC%99%B8%2C%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4%3A%20%EA%B9%8A%EC%9D%80%20%EC%82%AC%EA%B3%A0%EB%8A%94%20%EC%99%9C%20%EC%82%AC%ED%9A%8C%EC%A0%81%20%EB%A7%88%EC%B0%B0%EC%9D%84%20%EB%82%B3%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">지성, 소외, 쇼펜하우어: 깊은 사고는 왜 사회적 마찰을 낳는가</div>
 </a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition
-/%EB%AC%B4%EC%97%87%EC%9D%B4%20%EB%8B%AC%EB%9D%BC%EC%A1%8C%EB%8A%94%EA%B0%80%20%E2%80%94%20AI%20%EC%B6%9C%EB%A0%A5%20%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%EC%A0%84%ED%99%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EB%B9%84%EA%B0%80%EC%8B%9C%EC%84%B1.html" class="home-card">
-  <div class="home-card-title">무엇이 달라졌는가 — AI 출력 우선순위 전환의 구조와 비가시성</div>
-</a>
-
-
 
 </div>
 
@@ -660,9 +657,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·사상가·역사·문화 (15)</summary>
+<summary>문학·사상가·역사·문화 (16)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%AC%B8%ED%95%99%EC%9D%B4%20%ED%98%84%EC%8B%A4%EB%A1%9C%20%EB%93%A4%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B0%A9%EC%8B%9D%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="home-card">
+  <div class="home-card-title">문학이 현실로 들어서는 방식의 계보</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/09_Poem/%EC%9D%B4%EB%A6%84%ED%91%9C%EC%9D%98%20%EB%92%B7%EB%A9%B4.html" class="home-card">
   <div class="home-card-title">이름표의 뒷면</div>
