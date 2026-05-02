@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%83%9D%EC%A1%B4%20%EC%84%A4%EB%AA%85%EC%9D%98%20%EC%9C%A4%EB%A6%AC%EC%A0%81%20%ED%95%9C%EA%B3%84.html" class="home-card">
   <div class="home-card-title">생존 설명의 윤리적 한계</div>
 </a>
@@ -251,18 +255,18 @@ hide:
   <div class="home-card-title">종료를 아는 존재의 설명 잉여_deepseek_v4_flash_thinking</div>
 </a>
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%EC%9D%98%20%EC%8B%9C%EC%84%A0%20%E2%80%94%20%ED%95%A9%EB%A6%AC%EC%A0%81%20%ED%96%89%EC%9C%84%EC%9E%90%20%EB%AA%A8%EB%8D%B8%EC%9D%98%20%ED%98%95%EC%84%B1%EA%B3%BC%20%ED%95%9C%EA%B3%84_Claude_Sonnet4.6.html" class="home-card">
-  <div class="home-card-title">AI의 시선 — 합리적 행위자 모델의 형성과 한계_Claude_Sonnet4.6</div>
-</a>
-
 </div>
 
 ## 주제별 글 목록
 
 <details class="essay-section">
-<summary>AI·기술·알고리즘·디지털 (22)</summary>
+<summary>AI·기술·알고리즘·디지털 (23)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
+  <div class="home-card-title">잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
   <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
