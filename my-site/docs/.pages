@@ -1,7 +1,6 @@
 nav:
   - index.md
   - 000_Writings
-  - 111_questions
   - 001_AI
   - 003_philosophy
   - 004_math
@@ -12,5 +11,6 @@ nav:
   - 009_history
   - 010_science
   - 011_brain science
+  - 111_questions
   - README1.md
 
