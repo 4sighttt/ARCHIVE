@@ -451,7 +451,7 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>의식·시간·형이상학·존재론 (12)</summary>
+<summary>의식·시간·형이상학·존재론 (13)</summary>
 
 <div class="home-card-grid">
 
