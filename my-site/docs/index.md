@@ -660,9 +660,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·사상가·역사·문화 (16)</summary>
+<summary>문학·사상가·역사·문화 (17)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/09_Poem/1914%20%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4.html" class="home-card">
+  <div class="home-card-title">1914 크리스마스</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%AC%B8%ED%95%99%EC%9D%B4%20%ED%98%84%EC%8B%A4%EB%A1%9C%20%EB%93%A4%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B0%A9%EC%8B%9D%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="home-card">
   <div class="home-card-title">문학이 현실로 들어서는 방식의 계보</div>
