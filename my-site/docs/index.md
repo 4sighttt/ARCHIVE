@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%9D%B4%EC%84%B1%EC%9D%98%20%EC%A0%9C%EC%A0%84%3A%20%EA%B3%84%EB%AA%BD%EC%A3%BC%EC%9D%98%EA%B0%80%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%EB%A5%BC%20%EB%B0%98%EB%B0%95%ED%95%9C%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
+  <div class="home-card-title">이성의 제전: 계몽주의가 스스로를 반박한 방식</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EC%96%B5%EC%9D%98%20%EC%A0%9C%EB%8F%84%ED%99%94%20%E2%80%94%20AI%20%ED%98%91%EC%97%85%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="home-card">
   <div class="home-card-title">기억의 제도화 — AI 협업 구조의 계보</div>
 </a>
@@ -247,10 +251,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">자기기만은 왜 진화했는가</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%98%EB%8A%94%20%EA%B8%B0%EA%B3%84.html" class="home-card">
-  <div class="home-card-title">구조화하는 기계</div>
 </a>
 
 </div>
@@ -660,9 +660,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>문학·사상가·역사·문화 (17)</summary>
+<summary>문학·사상가·역사·문화 (18)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%9D%B4%EC%84%B1%EC%9D%98%20%EC%A0%9C%EC%A0%84%3A%20%EA%B3%84%EB%AA%BD%EC%A3%BC%EC%9D%98%EA%B0%80%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%EB%A5%BC%20%EB%B0%98%EB%B0%95%ED%95%9C%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
+  <div class="home-card-title">이성의 제전: 계몽주의가 스스로를 반박한 방식</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/09_Poem/1914%20%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4.html" class="home-card">
   <div class="home-card-title">1914 크리스마스</div>
