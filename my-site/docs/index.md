@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EA%B2%BD%EA%B3%84%EA%B0%80%20%ED%9D%90%EB%A0%A4%EC%A7%88%20%EB%95%8C%3A%20%EC%88%AD%EA%B3%A0%20%EA%B2%BD%ED%97%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="home-card">
+  <div class="home-card-title">경계가 흐려질 때: 숭고 경험의 구조에 대하여</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%9D%B4%EC%84%B1%EC%9D%98%20%EC%A0%9C%EC%A0%84%3A%20%EA%B3%84%EB%AA%BD%EC%A3%BC%EC%9D%98%EA%B0%80%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%EB%A5%BC%20%EB%B0%98%EB%B0%95%ED%95%9C%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
   <div class="home-card-title">이성의 제전: 계몽주의가 스스로를 반박한 방식</div>
 </a>
@@ -247,10 +251,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
   <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="home-card">
-  <div class="home-card-title">자기기만은 왜 진화했는가</div>
 </a>
 
 </div>
@@ -454,6 +454,10 @@ hide:
 <summary>의식·시간·형이상학·존재론 (12)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EA%B2%BD%EA%B3%84%EA%B0%80%20%ED%9D%90%EB%A0%A4%EC%A7%88%20%EB%95%8C%3A%20%EC%88%AD%EA%B3%A0%20%EA%B2%BD%ED%97%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="home-card">
+  <div class="home-card-title">경계가 흐려질 때: 숭고 경험의 구조에 대하여</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%82%AC%EC%9C%A0%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EB%B6%95%EA%B4%B4%EC%8B%9C%ED%82%A4%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">사유는 어떻게 자기 자신을 붕괴시키는가</div>
