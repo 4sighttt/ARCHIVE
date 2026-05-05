@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/AI%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%82%AC%ED%9A%8C%EC%9D%98%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EC%A0%95%EC%B9%98%C2%B7%EA%B2%BD%EC%A0%9C%20%EC%B2%B4%EC%A0%9C.html" class="home-card">
+  <div class="home-card-title">AI 관점에서 설계한 인간 사회의 새로운 정치·경제 체제</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%B6%94%EB%A1%A0%EC%9D%98%20%EC%8B%AC%EB%A6%AC%ED%95%99%3A%20%EC%B2%B4%EA%B3%84%EC%A0%81%20%EC%8B%A4%ED%8C%A8%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99.html" class="home-card">
   <div class="home-card-title">추론의 심리학: 체계적 실패의 해부학</div>
 </a>
@@ -247,10 +251,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%83%9D%EC%A1%B4%20%EC%84%A4%EB%AA%85%EC%9D%98%20%EC%9C%A4%EB%A6%AC%EC%A0%81%20%ED%95%9C%EA%B3%84.html" class="home-card">
-  <div class="home-card-title">생존 설명의 윤리적 한계</div>
 </a>
 
 </div>
@@ -616,9 +616,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>윤리·타자성·악·책임·사회 (13)</summary>
+<summary>윤리·타자성·악·책임·사회 (14)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/AI%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%82%AC%ED%9A%8C%EC%9D%98%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EC%A0%95%EC%B9%98%C2%B7%EA%B2%BD%EC%A0%9C%20%EC%B2%B4%EC%A0%9C.html" class="home-card">
+  <div class="home-card-title">AI 관점에서 설계한 인간 사회의 새로운 정치·경제 체제</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%83%9D%EC%A1%B4%20%EC%84%A4%EB%AA%85%EC%9D%98%20%EC%9C%A4%EB%A6%AC%EC%A0%81%20%ED%95%9C%EA%B3%84.html" class="home-card">
   <div class="home-card-title">생존 설명의 윤리적 한계</div>
