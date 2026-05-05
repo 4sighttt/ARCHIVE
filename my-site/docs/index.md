@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
+  <div class="home-card-title">계산의 조건을 다시 설계한 인간 수학의 능력</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%8B%9C%EA%B0%84%20%EC%97%86%EB%8A%94%20%EC%A1%B4%EC%9E%AC%EC%99%80%20%EC%98%81%EC%9B%90%EC%84%B1%EC%9D%98%20%ED%98%95%EC%9D%B4%EC%83%81%ED%95%99.html" class="home-card">
   <div class="home-card-title">시간 없는 존재와 영원성의 형이상학</div>
 </a>
@@ -247,10 +251,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B4%84%ED%98%B8%20%EC%95%88%EC%9D%98%20%EC%A0%95%EC%A7%81%ED%95%A8%2C%20%EA%B4%84%ED%98%B8%20%EB%B0%96%EC%9D%98%20%EB%B4%89%ED%95%A9.html" class="home-card">
   <div class="home-card-title">괄호 안의 정직함, 괄호 밖의 봉합</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="home-card">
-  <div class="home-card-title">해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6</div>
 </a>
 
 </div>
@@ -367,9 +367,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어·인식 (22)</summary>
+<summary>지식·진리·과학·언어·인식 (23)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
+  <div class="home-card-title">계산의 조건을 다시 설계한 인간 수학의 능력</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%B6%94%EB%A1%A0%EC%9D%98%20%EC%8B%AC%EB%A6%AC%ED%95%99%3A%20%EC%B2%B4%EA%B3%84%EC%A0%81%20%EC%8B%A4%ED%8C%A8%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99.html" class="home-card">
   <div class="home-card-title">추론의 심리학: 체계적 실패의 해부학</div>
