@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%A9%EB%A6%AC%EC%84%B1%EC%9D%80%20%EC%9D%B4%EC%9C%A0%EC%97%90%20%EC%9D%98%ED%95%B4%20%EC%88%98%EC%A0%95%EB%90%98%EB%8A%94%20%ED%8C%90%EB%8B%A8%20%EA%B5%AC%EC%A1%B0%EB%8B%A4.html" class="home-card">
+  <div class="home-card-title">합리성은 이유에 의해 수정되는 판단 구조다</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%BD%EA%B8%B0%EB%8A%94%20%EB%B0%9C%EB%AA%85%EC%9D%B4%EB%8B%A4%3A%20%EB%8F%85%EC%84%9C%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%87%8C%EB%A5%BC%20%EC%9E%AC%EC%A1%B0%EC%A7%81%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
   <div class="home-card-title">읽기는 발명이다: 독서가 인간의 뇌를 재조직하는 방식</div>
 </a>
@@ -247,10 +251,6 @@ hide:
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%82%AC%EC%9C%A0%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EB%B6%95%EA%B4%B4%EC%8B%9C%ED%82%A4%EB%8A%94%EA%B0%80.html" class="home-card">
   <div class="home-card-title">사유는 어떻게 자기 자신을 붕괴시키는가</div>
-</a>
-  
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
-  <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
 </a>
 
 </div>
@@ -367,9 +367,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어·인식 (20)</summary>
+<summary>지식·진리·과학·언어·인식 (21)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%A9%EB%A6%AC%EC%84%B1%EC%9D%80%20%EC%9D%B4%EC%9C%A0%EC%97%90%20%EC%9D%98%ED%95%B4%20%EC%88%98%EC%A0%95%EB%90%98%EB%8A%94%20%ED%8C%90%EB%8B%A8%20%EA%B5%AC%EC%A1%B0%EB%8B%A4.html" class="home-card">
+  <div class="home-card-title">합리성은 이유에 의해 수정되는 판단 구조다</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%BD%EA%B8%B0%EB%8A%94%20%EB%B0%9C%EB%AA%85%EC%9D%B4%EB%8B%A4%3A%20%EB%8F%85%EC%84%9C%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%87%8C%EB%A5%BC%20%EC%9E%AC%EC%A1%B0%EC%A7%81%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
   <div class="home-card-title">읽기는 발명이다: 독서가 인간의 뇌를 재조직하는 방식</div>
