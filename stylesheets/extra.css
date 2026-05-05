@@ -1,0 +1,527 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 공통 폰트 */
+:root {
+  --md-text-font: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+/* 라이트 모드 */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #eadfc6;
+  --archive-bg: #eadfc6;
+  --archive-bg-soft: #bdb39f;
+  --archive-card-bg: #bdb39f; /* ← 이거 추가 (조금 더 진한 색) */
+  --archive-text: #2f2a22;
+  --archive-text-strong: #1f1a12;
+  --archive-border: rgba(80, 60, 30, 0.08);
+  --archive-shadow: rgba(80, 60, 30, 0.10);
+  --archive-selection-bg: #fff291;
+  --archive-selection-text: #1f1a12;
+  --archive-toc-active: #b8860b;
+}
+
+/* 다크 모드 */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161311;
+  --archive-bg: #161311;
+  --archive-bg-soft: #211d1a;
+  --archive-text: #e6dcc8;
+  --archive-text-strong: #f4ead5;
+  --archive-border: rgba(255, 240, 210, 0.08);
+  --archive-shadow: rgba(0, 0, 0, 0.28);
+  --archive-selection-bg: #6f5a2a;
+  --archive-selection-text: #fff8ea;
+  --archive-toc-active: #ffcc66;
+}
+
+/* 사이트 전체 폰트 통일 */
+body,
+button,
+input,
+select,
+textarea,
+.md-typeset,
+.md-nav,
+.md-header,
+.md-tabs,
+.md-search,
+.md-ellipsis,
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--md-text-font) !important;
+}
+
+/* 전체 배경 */
+body,
+.md-main,
+.md-main__inner,
+.md-content,
+.md-content__inner,
+.md-sidebar,
+.md-sidebar__scrollwrap,
+.md-sidebar__inner,
+.md-nav,
+.md-nav__source,
+.md-search__scrollwrap {
+  background-color: var(--archive-bg) !important;
+}
+
+/* 헤더 */
+.md-header,
+.md-tabs {
+  background-color: var(--archive-bg) !important;
+}
+
+/* 좌우 사이드바 제목 박스 통일 */
+.md-sidebar--primary .md-nav__title,
+.md-sidebar--primary .md-nav__source,
+.md-sidebar--secondary .md-nav__title {
+  background: var(--archive-bg) !important;
+  background-image: none !important;
+  box-shadow: 0 0.08rem 0.24rem var(--archive-shadow) !important;
+  border-bottom: 1px solid var(--archive-border) !important;
+}
+
+/* 제목 박스 오버레이 제거 */
+.md-sidebar--primary .md-nav__title::before,
+.md-sidebar--primary .md-nav__title::after,
+.md-sidebar--primary .md-nav__source::before,
+.md-sidebar--primary .md-nav__source::after,
+.md-sidebar--secondary .md-nav__title::before,
+.md-sidebar--secondary .md-nav__title::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* 카드, 표, 코드 블록 */
+.md-typeset table:not([class]),
+.md-typeset pre > code,
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset .tabbed-set,
+.md-typeset .tabbed-content,
+.md-typeset blockquote {
+  background-color: var(--archive-bg-soft) !important;
+}
+
+/* 표/박스 경계 */
+.md-typeset table:not([class]),
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset blockquote {
+  border-color: var(--archive-border) !important;
+}
+
+/* 글자색 */
+body,
+.md-typeset,
+.md-nav,
+.md-header,
+.md-tabs,
+.md-ellipsis,
+.md-nav__link,
+.md-typeset p,
+.md-typeset li,
+.md-typeset td,
+.md-typeset th {
+  color: var(--archive-text) !important;
+}
+
+/* 제목 */
+.md-typeset h1 {
+  color: var(--archive-text-strong) !important;
+  font-weight: 700 !important;
+}
+
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  color: var(--archive-text) !important;
+  font-weight: 600 !important;
+}
+
+/* 헤더 로고/사이트명 */
+.md-header__title,
+.md-header__topic,
+.md-header__button,
+.md-tabs__link {
+  color: var(--archive-text-strong) !important;
+}
+
+/* 선택 색상 */
+::selection {
+  background: var(--archive-selection-bg);
+  color: var(--archive-selection-text);
+}
+
+::-moz-selection {
+  background: var(--archive-selection-bg);
+  color: var(--archive-selection-text);
+}
+
+/* 코드 텍스트 가독성 */
+.md-typeset code,
+.md-typeset pre,
+.highlighttable,
+.highlight {
+  color: var(--archive-text) !important;
+}
+
+/* 링크 색상 미세 조정 */
+[data-md-color-scheme="default"] .md-typeset a {
+  color: #4b57d1 !important;
+}
+
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #9db2ff !important;
+}
+
+/* 토글 아이콘 및 검색 영역 */
+.md-search__form,
+.md-search__input,
+.md-search__icon,
+.md-header__option,
+.md-toggle,
+.md-icon {
+  color: var(--archive-text-strong) !important;
+}
+
+/* 다크 모드에서 표 헤더 약간 구분 */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: #2a2521 !important;
+}
+
+/* 다크 모드에서 코드 블록 내부 가독성 개선 */
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border: 1px solid rgba(255, 240, 210, 0.06);
+}
+
+/* 라이트 모드에서 코드 블록 경계 */
+[data-md-color-scheme="default"] .md-typeset pre > code {
+  border: 1px solid rgba(80, 60, 30, 0.06);
+}
+
+/* 홈 카드 링크를 일반 텍스트처럼 보이도록 색상/스타일 제거 */
+.md-typeset a.home-card,
+.md-typeset a.home-card:visited,
+.md-typeset a.home-card:hover,
+.md-typeset a.home-card:active {
+  color: var(--archive-text) !important;
+  text-decoration: none !important;
+}
+
+/* 라이트 모드 카드 배경색 적용 */
+[data-md-color-scheme="default"] .home-card {
+  background: var(--archive-card-bg) !important;
+}
+/* 홈 카드 제목도 링크색 상속 말고 일반 글자색으로 고정 */
+.home-card-title {
+  color: var(--archive-text) !important;
+}
+
+
+/* 좌측 사이드바 현재 문서 강조 */
+.md-sidebar--primary .md-nav__link--active {
+  color: var(--archive-text-strong) !important;
+  font-weight: 700;
+}
+
+/* 좌측 사이드바 현재 문서 강조: 라이트 모드 */
+[data-md-color-scheme="default"] .md-sidebar--primary .md-nav__link--active {
+  color: #1f1a12 !important;
+  font-weight: 700;
+}
+
+/* TOC 현재 위치 강조: 우측 목차에만 적용
+   - 기존의 중복 선택자(.md-sidebar--secondary .md-sidebar--secondary)를 제거
+   - Material for MkDocs의 활성 클래스와 aria-current 상태를 함께 처리
+   - ::before 대신 border-left를 사용해 표시 안정성 개선
+*/
+.md-sidebar--secondary .md-nav__link--active,
+.md-sidebar--secondary .md-nav__link[aria-current="true"],
+.md-sidebar--secondary .md-nav__link[aria-current="location"] {
+  color: var(--archive-toc-active) !important;
+  font-weight: 700 !important;
+  border-left: 4px solid var(--archive-toc-active) !important;
+  padding-left: 0.55rem !important;
+}
+
+/* =========================
+   라이트 모드 전용 스타일
+========================= */
+[data-md-color-scheme="default"] {
+
+  /* 배경 */
+  --md-default-bg-color: #f4ecd8;
+
+  /* 카드/컨텐츠 영역 */
+  --md-code-bg-color: #efe6cf;
+
+  /* 텍스트 */
+  --md-default-fg-color: #2b2b2b;
+
+}
+
+/* TOC 강조 (라이트 모드용 색 따로): 우측 목차에만 적용 */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link--active,
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link[aria-current="true"],
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link[aria-current="location"] {
+  color: var(--archive-toc-active) !important;
+  font-weight: 700 !important;
+  border-left-color: var(--archive-toc-active) !important;
+}
+
+
+/* =========================
+   Heading anchor / TOC 보정
+   - 목차 클릭 시 제목이 상단 헤더에 붙거나 가려지는 현상 완화
+   - 값은 5rem~8rem 사이에서 사이트에 맞게 조정
+========================= */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  scroll-margin-top: 6.5rem;
+}
+
+/* 우측 TOC 스크롤 영역 안정화 */
+.md-sidebar--secondary .md-sidebar__scrollwrap {
+  scroll-padding-top: 6.5rem;
+}
+
+/* =========================
+   다크 모드 TOC/사이드바 활성 강조 보정
+   - 라이트 모드와 별도로 다크 모드에서 우측 TOC 활성 표시를 명시적으로 지정
+   - 우측 TOC의 왼쪽 바는 우측 목차에만 적용
+========================= */
+
+/* 다크 모드: 좌측 사이드바 현재 문서 */
+[data-md-color-scheme="slate"] .md-sidebar--primary .md-nav__link--active {
+  color: #f4ead5 !important;
+  font-weight: 700 !important;
+}
+
+/* 다크 모드: 우측 TOC 현재 위치 */
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link--active,
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link[aria-current="true"],
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link[aria-current="location"] {
+  color: var(--archive-toc-active) !important;
+  font-weight: 700 !important;
+  border-left-color: var(--archive-toc-active) !important;
+}
+
+
+/* 다크 모드: 우측 TOC 일반 링크는 기존 본문색 유지 */
+[data-md-color-scheme="slate"] .md-sidebar--secondary .md-nav__link:not(.md-nav__link--active) {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+}
+
+/* 라이트 모드: 우측 TOC 일반 링크는 기존 본문색 유지 */
+[data-md-color-scheme="default"] .md-sidebar--secondary .md-nav__link:not(.md-nav__link--active):not([aria-current="true"]):not([aria-current="location"]) {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left-color: transparent !important;
+}
+
+/* =========================================================
+   Strict Sidebar / TOC Consistency Fix
+   ---------------------------------------------------------
+   This block must stay at the very end of extra.css.
+
+   Goals:
+   1. Left sidebar and right TOC use the same active style.
+   2. "Passed" TOC items are fully neutralized in both light/dark mode.
+   3. Only the real current item gets the strong highlight.
+   4. Parent items are not force-highlighted, because CSS-only parent
+      detection can be inconsistent across Material versions and browsers.
+   5. Existing broad .md-nav__link rules are overridden with higher specificity.
+========================================================= */
+
+/* Shared active colors */
+html[data-md-color-scheme="default"],
+[data-md-color-scheme="default"] {
+  --archive-active: #8f6500;
+  --archive-active-bg: rgba(184, 134, 11, 0.16);
+}
+
+html[data-md-color-scheme="slate"],
+[data-md-color-scheme="slate"] {
+  --archive-active: #ffcc66;
+  --archive-active-bg: rgba(255, 204, 102, 0.14);
+}
+
+/* ---------------------------------------------------------
+   1. Universal baseline for all sidebar navigation links
+--------------------------------------------------------- */
+
+html body .md-sidebar .md-nav__link,
+html body .md-nav--secondary .md-nav__link,
+html body [data-md-component="toc"] .md-nav__link {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left: 4px solid transparent !important;
+  padding-left: 0.65rem !important;
+  margin-left: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0.2rem !important;
+  text-decoration: none !important;
+}
+
+/* ---------------------------------------------------------
+   2. Neutralize every "passed" state explicitly
+   This fixes the dark-mode issue where all already-read TOC
+   headings remain bold.
+--------------------------------------------------------- */
+
+html body .md-sidebar--secondary .md-nav__link--passed,
+html body .md-sidebar--secondary .md-nav__item--passed > .md-nav__link,
+html body .md-nav--secondary .md-nav__link--passed,
+html body .md-nav--secondary .md-nav__item--passed > .md-nav__link,
+html body [data-md-component="toc"] .md-nav__link--passed,
+html body [data-md-component="toc"] .md-nav__item--passed > .md-nav__link {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ---------------------------------------------------------
+   3. Neutralize expanded/open parent items
+   Some Material builds mark ancestors with item-level active
+   classes. Ancestors should not look like the current heading.
+--------------------------------------------------------- */
+
+html body .md-sidebar--secondary .md-nav__item--active > .md-nav__link:not(.md-nav__link--active):not([aria-current]),
+html body .md-nav--secondary .md-nav__item--active > .md-nav__link:not(.md-nav__link--active):not([aria-current]),
+html body [data-md-component="toc"] .md-nav__item--active > .md-nav__link:not(.md-nav__link--active):not([aria-current]) {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left-color: transparent !important;
+  background: transparent !important;
+}
+
+/* ---------------------------------------------------------
+   4. Strong active state: left current document + right current heading
+   This is placed after all neutralization rules.
+--------------------------------------------------------- */
+
+html body .md-sidebar--primary .md-nav__link--active,
+html body .md-sidebar--primary .md-nav__link[aria-current="page"],
+html body .md-sidebar--primary .md-nav__link[aria-current="true"],
+html body .md-sidebar--primary .md-nav__link[aria-current="location"],
+html body .md-sidebar--secondary .md-nav__link--active,
+html body .md-sidebar--secondary .md-nav__link[aria-current="page"],
+html body .md-sidebar--secondary .md-nav__link[aria-current="true"],
+html body .md-sidebar--secondary .md-nav__link[aria-current="location"],
+html body .md-nav--secondary .md-nav__link--active,
+html body .md-nav--secondary .md-nav__link[aria-current="page"],
+html body .md-nav--secondary .md-nav__link[aria-current="true"],
+html body .md-nav--secondary .md-nav__link[aria-current="location"],
+html body [data-md-component="toc"] .md-nav__link--active,
+html body [data-md-component="toc"] .md-nav__link[aria-current="page"],
+html body [data-md-component="toc"] .md-nav__link[aria-current="true"],
+html body [data-md-component="toc"] .md-nav__link[aria-current="location"] {
+  color: var(--archive-active) !important;
+  font-weight: 800 !important;
+  border-left-color: var(--archive-active) !important;
+  background: var(--archive-active-bg) !important;
+}
+
+/* ---------------------------------------------------------
+   5. If a link is both passed and active, active wins
+--------------------------------------------------------- */
+
+html body .md-sidebar--secondary .md-nav__link--passed.md-nav__link--active,
+html body .md-nav--secondary .md-nav__link--passed.md-nav__link--active,
+html body [data-md-component="toc"] .md-nav__link--passed.md-nav__link--active {
+  color: var(--archive-active) !important;
+  font-weight: 800 !important;
+  border-left-color: var(--archive-active) !important;
+  background: var(--archive-active-bg) !important;
+}
+
+/* ---------------------------------------------------------
+   6. Hover state
+--------------------------------------------------------- */
+
+html body .md-sidebar .md-nav__link:hover,
+html body .md-nav--secondary .md-nav__link:hover,
+html body [data-md-component="toc"] .md-nav__link:hover {
+  color: var(--archive-active) !important;
+}
+
+/* ---------------------------------------------------------
+   7. Stable anchor offset
+--------------------------------------------------------- */
+
+html body .md-typeset h1,
+html body .md-typeset h2,
+html body .md-typeset h3,
+html body .md-typeset h4,
+html body .md-typeset h5,
+html body .md-typeset h6 {
+  scroll-margin-top: 6.5rem;
+}
+
+html body .md-sidebar--secondary .md-sidebar__scrollwrap,
+html body .md-nav--secondary .md-nav__list {
+  scroll-padding-top: 6.5rem;
+}
+
+/* ==== TOC passed 완전 제거 (핵심 수정) ==== */
+
+.md-nav__link--passed {
+  color: var(--archive-text) !important;
+  font-weight: 400 !important;
+  border-left: none !important;
+  background: transparent !important;
+}
+
+/* passed + active 충돌 시 active 유지 */
+.md-nav__link--passed.md-nav__link--active {
+  color: var(--archive-toc-active) !important;
+  font-weight: 800 !important;
+}

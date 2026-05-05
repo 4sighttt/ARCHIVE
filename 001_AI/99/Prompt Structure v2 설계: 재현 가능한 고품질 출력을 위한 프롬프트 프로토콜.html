@@ -1,0 +1,10088 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://4sighttt.github.io/ARCHIVE/001_AI/99/Prompt%20Structure%20v2%20%EC%84%A4%EA%B3%84%3A%20%EC%9E%AC%ED%98%84%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EA%B3%A0%ED%92%88%EC%A7%88%20%EC%B6%9C%EB%A0%A5%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C.html">
+      
+      
+        <link rel="prev" href="MCP%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.html">
+      
+      
+        <link rel="next" href="homogenization%20%EB%8F%99%EC%A7%88%ED%99%94.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Prompt Structure v2 설계: 재현 가능한 고품질 출력을 위한 프롬프트 프로토콜 - ARCHIVE</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-structure-v2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="ARCHIVE" class="md-header__button md-logo" aria-label="ARCHIVE" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ARCHIVE
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Structure v2 설계: 재현 가능한 고품질 출력을 위한 프롬프트 프로토콜
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="night"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="night" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="sunny"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="sunny" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="ARCHIVE" class="md-nav__button md-logo" aria-label="ARCHIVE" data-md-component="logo">
+      
+  <img src="../../assets/images/logo.png" alt="logo">
+
+    </a>
+    ARCHIVE
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    글쓰기
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    글쓰기
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    에세이
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    에세이
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI·기술·알고리즘·디지털
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI·기술·알고리즘·디지털
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%20%EC%8B%9C%EB%8C%80%EC%9D%98%20%EA%B5%90%EC%9C%A1%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EA%B0%80%EB%A5%B4%EC%B3%90%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 시대의 교육은 무엇을 가르쳐야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%20%ED%99%98%EA%B0%81%EC%9D%80%20%EA%B0%9C%EC%86%8C%EB%A6%AC%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 환각은 개소리인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%84%20%EA%B0%90%EB%8F%99%EC%8B%9C%ED%82%A4%EB%8A%94%20%EC%9E%91%ED%92%88%EC%9D%84%20%EB%A7%8C%EB%93%A4%20%EC%88%98%20%EC%9E%88%EB%8B%A4%EB%A9%B4%2C%20%EC%B0%BD%EC%9D%98%EC%84%B1%EC%9D%98%20%EA%B8%B0%EC%A4%80%EC%9D%80%20%EB%B0%94%EB%80%8C%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI가 인간을 감동시키는 작품을 만들 수 있다면, 창의성의 기준은 바뀌어야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%EB%8A%94%20%EC%82%B0%EC%97%85%EA%B8%B0%EC%88%A0%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%82%AC%ED%9A%8C%EA%B5%AC%EC%A1%B0%EB%A5%BC%20%EC%9E%AC%ED%8E%B8%ED%95%98%EB%8A%94%20%EA%B8%B0%EC%88%A0%EC%9D%B4%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI는 산업기술이 아니라 사회구조를 재편하는 기술이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%EC%97%90%20%EC%9D%B5%EC%88%99%ED%95%B4%EC%A7%88%EC%88%98%EB%A1%9D%20%EC%9D%B8%EA%B0%84%EC%9D%80%20%EC%96%B4%EB%96%A4%20%EC%A1%B4%EC%9E%AC%EA%B0%80%20%EB%90%98%EC%96%B4%20%EA%B0%80%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI에 익숙해질수록 인간은 어떤 존재가 되어 가는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/AI%EC%9D%98%20%EC%8B%9C%EC%84%A0%20%E2%80%94%20%ED%95%A9%EB%A6%AC%EC%A0%81%20%ED%96%89%EC%9C%84%EC%9E%90%20%EB%AA%A8%EB%8D%B8%EC%9D%98%20%ED%98%95%EC%84%B1%EA%B3%BC%20%ED%95%9C%EA%B3%84_Claude_Sonnet4.6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI의 시선 — 합리적 행위자 모델의 형성과 한계_Claude_Sonnet4.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B4%84%ED%98%B8%20%EC%95%88%EC%9D%98%20%EC%A0%95%EC%A7%81%ED%95%A8%2C%20%EA%B4%84%ED%98%B8%20%EB%B0%96%EC%9D%98%20%EB%B4%89%ED%95%A9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    괄호 안의 정직함, 괄호 밖의 봉합
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B5%AC%EC%A1%B0%ED%99%94%ED%95%98%EB%8A%94%20%EA%B8%B0%EA%B3%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구조화하는 기계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EA%B3%84%EC%9D%98%20%EB%B2%94%EC%A3%84%ED%95%99_%20%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC%20%EA%B7%9C%EB%B2%94%20%EC%A7%88%EC%84%9C%EC%9D%98%20%EC%9E%AC%EA%B5%AC%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기계의 범죄학  상호작용하는 인공지능과 규범 질서의 재구성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EC%88%A0%EC%9D%B4%20%ED%95%B4%EB%B0%A9%EC%A0%81%EC%9D%B4%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A1%B0%EA%B1%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기술이 해방적이기 위한 조건
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EA%B8%B0%EC%96%B5%EC%9D%98%20%EC%A0%9C%EB%8F%84%ED%99%94%20%E2%80%94%20AI%20%ED%98%91%EC%97%85%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기억의 제도화 — AI 협업 구조의 계보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%8B%B9%EC%8B%A0%EB%A7%8C%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%A4%91%EB%8F%85%20%EC%84%A4%EA%B3%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    당신만을 위한 중독 설계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%AC%B4%EC%97%87%EC%9D%B4%20%EB%8B%AC%EB%9D%BC%EC%A1%8C%EB%8A%94%EA%B0%80%20%E2%80%94%20AI%20%EC%B6%9C%EB%A0%A5%20%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84%20%EC%A0%84%ED%99%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EB%B9%84%EA%B0%80%EC%8B%9C%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    무엇이 달라졌는가 — AI 출력 우선순위 전환의 구조와 비가시성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%96%B4%EB%96%A4%20AI%EA%B0%80%20%EA%B9%A8%EC%96%B4%EB%82%A0%20%EA%B2%83%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    어떤 AI가 깨어날 것인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%99%9C%20AI%EC%97%90%EA%B2%8C%20_%EB%8B%B5_%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20_%EB%85%BC%EC%9F%81_%EC%9D%84%20%EC%9A%94%EA%B5%AC%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    우리는 왜 AI에게  답 이 아니라  논쟁 을 요구해야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9D%B5%EC%88%99%ED%95%9C%20%ED%99%94%EB%A9%B4%2C%20%EC%84%A4%EB%AA%85%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%20%EC%8B%9C%EB%AF%BC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    익숙한 화면, 설명할 수 있는 시민
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%90%EC%9C%A0%20%EC%9D%B4%ED%9B%84%EC%9D%98%20%EA%B3%B5%EB%B0%B1%20%E3%85%A1%20%EA%B8%B0%EC%88%A0%20%EC%8B%9C%EB%8C%80%EC%9D%98%20%EC%9D%98%EB%AF%B8%20%EC%83%9D%EC%82%B0%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자유 이후의 공백 ㅡ 기술 시대의 의미 생산에 대하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%9E%98%EB%AA%BB%EB%90%9C%20%EC%95%88%EC%8B%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4%3A%20exploration%20hacking%EC%9D%B4%20%ED%98%84%EC%8B%A4%ED%99%94%EB%90%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%B6%A9%EC%A1%B1%EB%90%98%EC%96%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    잘못된 안심의 조건: exploration hacking이 현실화되기 위해 무엇이 충족되어야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지능화 미디어 - 판단 환경의 매체
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EC%8B%9D%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%9D%B4%EB%8A%94%20%EA%B2%83%EB%93%A4_%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%9D%B4%20%EB%B0%B0%EC%B9%98%ED%95%9C%20%EC%95%8E%EC%9D%98%20%EC%A1%B0%EA%B1%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지식처럼 보이는 것들: 알고리즘이 배치한 앎의 조건
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B0%BD%EC%9D%98%EC%A0%81%EC%9D%B8%20%EC%9D%B8%ED%94%84%EB%9D%BC%20%EA%B5%AC%EC%B6%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    창의적인 인프라 구축
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B1%85%EC%9E%84%EC%A7%80%EB%8A%94%20%EC%9D%B8%EA%B2%A9%20%EC%97%86%EB%8A%94%20%ED%96%89%EC%9C%84%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    책임지는 인격 없는 행위성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%B6%9C%EA%B5%AC%20%EC%9E%88%EB%8A%94%20%EB%8B%AB%ED%9E%8C%20%EB%B0%A9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    출구 있는 닫힌 방
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%ED%95%B4%EB%B0%A9%EC%9D%98%20%EC%95%BD%EC%86%8D%EA%B3%BC%20%EC%9D%80%ED%8F%90%EC%9D%98%20%EA%B5%AC%EC%A1%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    해방의 약속과 은폐의 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지식·진리·과학·언어·인식
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    지식·진리·과학·언어·인식
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    계산의 조건을 다시 설계한 인간 수학의 능력
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B3%84%EC%82%B0%EC%9D%B4%20%EB%81%9D%EB%82%9C%20%EB%92%A4%EC%97%90%EB%8F%84%20%EB%82%A8%EB%8A%94%20%EA%B2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    계산이 끝난 뒤에도 남는 것
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B3%BC%ED%95%99%EC%9D%98%20%ED%95%9C%EA%B3%84%EC%99%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EC%B2%99%EB%8F%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    과학의 한계와 인간의 척도
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B4%80%EC%B0%B0%EB%90%98%EB%8A%94%20%EC%88%9C%EA%B0%84%2C%20%EC%88%9C%EC%88%98%EC%84%B1%EC%9D%80%20%EC%A6%9D%EB%AA%85%20%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%98%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    관찰되는 순간, 순수성은 증명 불가능하다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B8%B0%EC%96%B5%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC%20%E3%85%A1%20%EC%A7%84%EC%8B%A4%20%EC%9D%B4%ED%9B%84%EC%9D%98%20%EC%A7%84%EC%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기억에 대하여 ㅡ 진실 이후의 진실
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EB%AA%A8%EB%93%A0%20%EB%B0%A9%ED%96%A5%EC%9D%84%20%EB%8B%B4%EB%8A%94%EB%8B%A4%EB%8A%94%20%EA%B2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    모든 방향을 담는다는 것
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EB%AC%B8%ED%95%B4%EB%A0%A5%EC%9D%98%20%EC%A1%B0%EA%B1%B4%20%E2%80%94%20%EC%98%88%EC%B8%A1%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%95%88%EC%A0%95%ED%99%94%EB%90%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    문해력의 조건 — 예측은 어떻게 안정화되는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%96%B4%EB%A6%AC%EC%84%9D%EC%9D%8C%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B2%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    어리석음을 넘어서는 법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%96%B8%EC%96%B4%EB%8A%94%20%EC%83%9D%EA%B0%81%EC%9D%B4%20%EC%84%B8%EA%B3%84%EC%97%90%20%EB%8B%BF%EB%8A%94%20%EA%B0%81%EB%8F%84%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    언어는 생각이 세계에 닿는 각도다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EA%B3%BC%ED%95%99%EC%A0%81%20%EC%A7%84%EB%A6%AC%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EB%8A%94%EA%B0%80%2C%20%EB%A7%8C%EB%93%A4%EC%96%B4%EB%82%B4%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    우리는 과학적 진리를 발견하는가, 만들어내는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9B%90%EC%9E%90%EA%B0%80%20%EB%8C%80%EB%B6%80%EB%B6%84%20%EA%B3%B5%EA%B0%84%EC%9D%B8%EB%8D%B0%20%EC%99%9C%20%EB%AC%BC%EC%A7%88%EC%B2%98%EB%9F%BC%20%EB%8A%90%EA%BB%B4%EC%A7%80%EB%8A%94%EA%B0%80_.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    원자가 대부분 공간인데 왜 물질처럼 느껴지는가 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9C%A0%EB%AC%BC%EB%A1%A0%EC%9D%98%20%EC%84%B1%EA%B3%B5%EA%B3%BC%20%EA%B7%9C%EB%B2%94%20%EC%96%B8%EC%96%B4%EC%9D%98%20%ED%99%98%EC%9B%90%20%EB%B6%88%EA%B0%80%EB%8A%A5%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    유물론의 성공과 규범 언어의 환원 불가능성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%B8%EA%B0%84%EC%9D%80%20%ED%95%B4%EC%84%9D%EC%9C%BC%EB%A1%9C%20%EC%82%B4%EA%B3%A0%20%ED%99%95%EC%8B%A0%EC%9C%BC%EB%A1%9C%20%EB%8B%AB%ED%9E%8C%EB%8B%A4_GPT5.5_Extended_Thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간은 해석으로 살고 확신으로 닫힌다_GPT5.5_Extended_Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%BD%EA%B8%B0%EB%8A%94%20%EB%B0%9C%EB%AA%85%EC%9D%B4%EB%8B%A4%3A%20%EB%8F%85%EC%84%9C%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%87%8C%EB%A5%BC%20%EC%9E%AC%EC%A1%B0%EC%A7%81%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    읽기는 발명이다: 독서가 인간의 뇌를 재조직하는 방식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A0%84%EC%B2%B4%EB%9D%BC%EB%8A%94%20%EB%B0%A9%2C%20%EB%B6%80%EB%B6%84%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EB%B9%9B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전체라는 방, 부분이라는 빛
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A1%B4%EC%9E%AC%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8A%94%20%ED%8C%A8%ED%84%B4%EC%9D%84%20%EB%B3%B4%EB%8A%94%20%EC%9D%B8%EA%B0%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    존재하지 않는 패턴을 보는 인간
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A6%9D%EA%B1%B0%20%EC%97%86%EB%8A%94%20%ED%99%95%EC%8B%A0%EA%B3%BC%20%EB%AC%B8%EB%AA%85%EC%9D%98%20%EB%B3%91.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    증거 없는 확신과 문명의 병
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A7%80%EC%8B%9D%EC%9D%80%20%EC%84%B8%EA%B3%84%EB%A5%BC%20%EB%84%93%ED%9E%88%EB%8A%94%EA%B0%80%2C%20%EC%9E%90%EC%8B%A0%EC%9D%98%20%EA%B2%BD%EA%B3%84%EB%A5%BC%20%EB%B0%9C%EA%B2%AC%ED%95%98%EA%B2%8C%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지식은 세계를 넓히는가, 자신의 경계를 발견하게 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%A7%84%EC%8B%A4%EC%9D%B4%20%EB%AC%B4%EB%84%88%EC%A7%80%EB%8A%94%20%EB%91%90%20%EB%8B%A8%EA%B3%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    진실이 무너지는 두 단계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%B6%94%EB%A1%A0%EC%9D%98%20%EC%8B%AC%EB%A6%AC%ED%95%99%3A%20%EC%B2%B4%EA%B3%84%EC%A0%81%20%EC%8B%A4%ED%8C%A8%EC%9D%98%20%ED%95%B4%EB%B6%80%ED%95%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    추론의 심리학: 체계적 실패의 해부학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%A9%EB%A6%AC%EC%84%B1%EC%9D%80%20%EC%9D%B4%EC%9C%A0%EC%97%90%20%EC%9D%98%ED%95%B4%20%EC%88%98%EC%A0%95%EB%90%98%EB%8A%94%20%ED%8C%90%EB%8B%A8%20%EA%B5%AC%EC%A1%B0%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    합리성은 이유에 의해 수정되는 판단 구조다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    의식·시간·형이상학·존재
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    의식·시간·형이상학·존재
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EA%B2%BD%EA%B3%84%EA%B0%80%20%ED%9D%90%EB%A0%A4%EC%A7%88%20%EB%95%8C%3A%20%EC%88%AD%EA%B3%A0%20%EA%B2%BD%ED%97%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경계가 흐려질 때: 숭고 경험의 구조에 대하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%82%AC%EC%9C%A0%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EB%B6%95%EA%B4%B4%EC%8B%9C%ED%82%A4%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    사유는 어떻게 자기 자신을 붕괴시키는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%84%B8%EA%B3%84%EB%8A%94%20%EC%83%81%ED%83%9C%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EA%B8%B4%EC%9E%A5%EC%9D%B4%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    세계는 상태가 아니라 긴장이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%86%8C%EB%A9%B8%EC%9D%98%20%EC%84%B1%EC%88%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소멸의 성숙
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%8B%9C%EA%B0%84%20%EC%97%86%EB%8A%94%20%EC%A1%B4%EC%9E%AC%EC%99%80%20%EC%98%81%EC%9B%90%EC%84%B1%EC%9D%98%20%ED%98%95%EC%9D%B4%EC%83%81%ED%95%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간 없는 존재와 영원성의 형이상학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%8B%9C%EA%B0%84%EC%9D%80%20%ED%9D%90%EB%A5%B4%EB%8A%94%EA%B0%80%2C%20%EC%9A%B0%EB%A6%AC%EA%B0%80%20%EA%B7%B8%EB%A0%87%EA%B2%8C%20%EC%9D%B8%EC%8B%9D%ED%95%98%EB%8A%94%EA%B0%80_Claude_Opus4.7_Adaptive_Thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간은 흐르는가, 우리가 그렇게 인식하는가_Claude_Opus4.7_Adaptive_Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%8B%9C%EA%B0%84%EC%9D%80%20%ED%9D%90%EB%A5%B4%EB%8A%94%EA%B0%80%2C%20%EC%9A%B0%EB%A6%AC%EA%B0%80%20%EA%B7%B8%EB%A0%87%EA%B2%8C%20%EC%9D%B8%EC%8B%9D%ED%95%98%EB%8A%94%EA%B0%80_GPT5.5_Extended_Thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간은 흐르는가, 우리가 그렇게 인식하는가_GPT5.5_Extended_Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%9D%98%EC%8B%9D%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%A1%B0%EC%A7%81%EB%90%98%EC%96%B4%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    의식은 어떻게 조직되어 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%9D%B8%EA%B0%84%20%EC%A4%91%EC%8B%AC%20%EC%9D%B4%ED%9B%84%EC%9D%98%20%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%9C%B4%EB%A8%B8%EB%8B%88%EC%A6%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간 중심 이후의 포스트휴머니즘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%A0%84%EC%A7%80%ED%95%9C%20%EC%8B%A0%EC%9D%B4%20%EC%9E%88%EB%8B%A4%EB%A9%B4%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EC%9E%90%EC%9C%A0%EB%8A%94%20%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전지한 신이 있다면 인간의 자유는 가능한가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%A0%91%ED%9E%98%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%A3%BC%EA%B4%80%EC%84%B1%20%E2%80%94%20%EC%9D%98%EC%8B%9D%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%96%B4%EB%96%BB%EA%B2%8C%EC%9D%98%20%EB%AC%B8%EC%A0%9C%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    접힘으로서의 주관성 — 의식은 무엇이 아니라 어떻게의 문제다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EC%9E%89%EC%97%AC%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    존재의 잉여에 대하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EC%A2%85%EB%A3%8C%EB%A5%BC%20%EC%95%84%EB%8A%94%20%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EC%84%A4%EB%AA%85%20%EC%9E%89%EC%97%AC_deepseek_v4_flash_thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    종료를 아는 존재의 설명 잉여_deepseek_v4_flash_thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/03_Consciousness_Time_Ontology/%ED%95%B4%EA%B2%B0%EB%90%98%EC%A7%80%20%EC%95%8A%EC%9D%8C%EC%9D%98%20%EC%A1%B4%EC%9E%AC%EB%A1%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    해결되지 않음의 존재론
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실존·의미·죽음·자기 형성
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    실존·의미·죽음·자기 형성
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EA%B0%80%EB%B2%BC%EC%9B%80%2C%20%EB%AC%B4%EA%B2%8C%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%ED%9D%A9%EC%96%B4%EC%A7%80%EC%A7%80%20%EC%95%8A%EA%B8%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    가벼움, 무게, 그리고 흩어지지 않기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EA%B0%90%EB%8B%B9%EC%9D%98%20%EA%B5%AC%EC%A1%B0_%20%EA%B0%80%EB%8A%A5%EC%84%B1%EC%9D%B4%20%EC%9D%B8%EA%B0%84%EC%9D%84%20%ED%86%B5%EA%B3%BC%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    감당의 구조: 가능성이 인간을 통과하는 방식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EA%B3%A0%EB%8F%85%EC%9D%84%20%EA%B2%AC%EB%94%94%EB%8A%94%20%EB%8A%A5%EB%A0%A5%EC%9D%80%20%EC%99%9C%20%EC%A7%80%EC%A0%81%20%EB%8A%A5%EB%A0%A5%EA%B3%BC%20%EC%97%B0%EA%B2%B0%EB%90%9C%EB%8B%A4%EA%B3%A0%20%EB%A7%90%ED%95%A0%EA%B9%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    고독을 견디는 능력은 왜 지적 능력과 연결된다고 말할까
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EA%B3%A0%EB%8F%85%EC%9D%98%20%EA%B2%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    고독의 결
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EB%8C%80%EA%B0%80%EB%A5%BC%20%EC%B9%98%EB%A5%B4%EB%8A%94%20%EC%A1%B4%EC%9E%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대가를 치르는 존재
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EB%B6%88%EC%88%9C%ED%95%9C%20%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EC%A1%B0%EA%B1%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불순한 존재의 조건
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EB%B6%88%ED%96%89%EC%9D%84%20%EB%B0%98%EB%B3%B5%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B0%84_GPT5.5_Extended_Thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    불행을 반복하는 인간_GPT5.5_Extended_Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%84%B1%EC%9E%A5%EC%9D%80%20%EC%99%9C%20%ED%8F%90%ED%97%88%EB%A5%BC%20%ED%95%84%EC%9A%94%EB%A1%9C%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    성장은 왜 폐허를 필요로 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9C%A0%ED%86%A0%ED%94%BC%EC%95%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    유토피아
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9D%B8%EA%B0%84%20%EC%9E%A0%EC%9E%AC%EB%A0%A5%EC%9D%98%20%EA%B0%80%EC%9E%A5%20%ED%81%B0%20%EB%82%AD%EB%B9%84%EB%8A%94%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간 잠재력의 가장 큰 낭비는 무엇인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9D%B8%EA%B0%84%EC%9D%80%20%EB%AA%A8%EC%88%9C%EC%9D%84%20%ED%92%88%EC%9C%BC%EB%A9%B4%EC%84%9C%20%EC%9D%98%EB%AF%B8%EB%A5%BC%20%EC%B0%BE%EC%9D%84%20%EC%88%98%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간은 모순을 품으면서 의미를 찾을 수 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%9D%80%20%EC%99%9C%20%EC%A7%84%ED%99%94%ED%96%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자기기만은 왜 진화했는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%9E%90%EC%9C%A0%EB%8A%94%20%EC%99%9C%20_%ED%95%98%EA%B3%A0%20%EC%8B%B6%EC%9D%80%20%EB%8C%80%EB%A1%9C%20%ED%95%98%EB%8A%94%20%EA%B2%83_%EB%B3%B4%EB%8B%A4%20%EB%8D%94%20%EC%96%B4%EB%A0%A4%EC%9A%B4%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자유는 왜 "하고 싶은 대로 하는 것"보다 더 어려운가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%A3%BD%EC%9D%8C%EC%9D%80%20%EC%82%B6%EC%9D%98%20%EC%9D%98%EB%AF%B8%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EC%96%B4%EC%A3%BC%EC%A7%80%20%EC%95%8A%EB%8A%94%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    죽음은 삶의 의미를 만들어주지 않는다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%A3%BD%EC%9D%8C%EC%9D%80%20%EC%9B%90%EC%9D%B8%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%A1%B0%EB%AA%85%EC%9D%B4%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    죽음은 원인이 아니라 조명이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%EC%A7%80%EC%84%B1%2C%20%EC%86%8C%EC%99%B8%2C%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4%3A%20%EA%B9%8A%EC%9D%80%20%EC%82%AC%EA%B3%A0%EB%8A%94%20%EC%99%9C%20%EC%82%AC%ED%9A%8C%EC%A0%81%20%EB%A7%88%EC%B0%B0%EC%9D%84%20%EB%82%B3%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지성, 소외, 쇼펜하우어: 깊은 사고는 왜 사회적 마찰을 낳는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%ED%95%B4%EC%84%9D%EB%90%9C%20%EC%8A%B9%EB%A6%AC%20%E2%80%94%20%EC%9D%98%EC%A7%80%EC%97%90%20%EA%B4%80%ED%95%9C%20%EB%8B%A8%EC%83%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    해석된 승리 — 의지에 관한 단상
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%ED%96%89%EB%8F%99%EA%B3%BC%20%EC%9D%98%EC%9A%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    행동과 의욕
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%ED%96%89%EB%B3%B5%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EB%A7%88%EC%A7%80%EB%A7%89%20%EC%9A%B0%EC%83%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    행복이라는 마지막 우상
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%ED%9B%84%ED%9A%8C%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    후회에 대하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/04_Existence_Meaning_Death_Selfhood/%ED%9D%AC%EB%A7%9D%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EB%AF%B8%EB%81%BC%2C%20%EC%A0%84%EB%A7%9D%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EA%B8%B4%EC%9E%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    희망이라는 미끼, 전망이라는 긴장
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    윤리·타자성·악·책임·사회
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    윤리·타자성·악·책임·사회
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/AI%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%82%AC%ED%9A%8C%EC%9D%98%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EC%A0%95%EC%B9%98%C2%B7%EA%B2%BD%EC%A0%9C%20%EC%B2%B4%EC%A0%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 관점에서 설계한 인간 사회의 새로운 정치·경제 체제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EA%B1%B0%EC%A7%93%EB%A7%90%2C%20%EC%A7%80%EB%8F%85%ED%95%9C%20%EA%B1%B0%EC%A7%93%EB%A7%90%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%82%B0%ED%83%80%ED%81%B4%EB%A1%9C%EC%8A%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    거짓말, 지독한 거짓말 그리고 산타클로스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EB%8F%99%EB%AC%98%ED%98%95%20%EB%8F%84%EC%8B%AC%20%EB%B2%BC%EB%A3%A9%EC%8B%9C%EC%9E%A5%20%ED%99%95%EC%9E%A5%C2%B7%EA%B0%9C%EB%B0%9C%20%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    동묘형 도심 벼룩시장 확장·개발 아이디어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EB%90%98%EB%8F%8C%EC%95%84%20%EC%9E%91%EC%9A%A9%ED%95%98%EB%8A%94%20%EA%B2%B0%EA%B3%BC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    되돌아 작용하는 결과
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EB%B2%94%EC%A3%84%EB%8A%94%20%EC%96%B4%EB%94%94%EC%97%90%EC%84%9C%20%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    범죄는 어디에서 발생하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%82%AC%ED%9A%8C%EC%A0%81%20%EB%B9%84%EA%B5%90%20%E2%80%94%20%EC%9A%B0%EB%A6%AC%EB%A5%BC%20%ED%98%95%EC%84%B1%ED%95%98%EA%B3%A0%20%EB%98%90%20%ED%95%B4%EC%B2%B4%ED%95%98%EB%8A%94%20%EA%B1%B0%EC%9A%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    사회적 비교 — 우리를 형성하고 또 해체하는 거울
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%83%9D%EC%A1%B4%20%EC%84%A4%EB%AA%85%EC%9D%98%20%EC%9C%A4%EB%A6%AC%EC%A0%81%20%ED%95%9C%EA%B3%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    생존 설명의 윤리적 한계
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%95%85%EC%9D%80%20%EC%99%9C%20%EC%97%AC%EC%A0%84%ED%9E%88%20%EB%B2%88%EC%84%B1%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    악은 왜 여전히 번성하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%9D%B8%EA%B0%84%EC%9D%80%20%EC%96%BC%EB%A7%88%EB%82%98%20%EC%89%BD%EA%B2%8C%20%EC%9E%90%EA%B8%B0%EA%B8%B0%EB%A7%8C%EC%97%90%20%EB%B9%A0%EC%A7%80%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간은 얼마나 쉽게 자기기만에 빠지는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%9D%B8%EA%B0%84%EC%9D%80%20%EC%99%9C%20%EC%9E%90%EA%B8%B0%20%EC%84%B8%EA%B3%84%EB%A5%BC%20%EB%8B%AB%EA%B3%A0%2C%20%EA%B7%B8%20%EC%95%88%EC%97%90%EC%84%9C%20%ED%83%80%EC%9D%B8%EC%9D%84%20%EC%86%8C%EB%AA%A8%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간은 왜 자기 세계를 닫고, 그 안에서 타인을 소모하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%A4%91%EB%A6%BD%EC%9D%98%20%EC%96%BC%EA%B5%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    중립의 얼굴
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%EC%B0%A8%EC%9D%B4%EB%A5%BC%20%EA%B2%AC%EB%94%94%EB%8A%94%20%EB%B3%B4%ED%8E%B8%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    차이를 견디는 보편성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%ED%83%80%EC%9D%B8%EC%9D%84%20%EC%9D%B4%ED%95%B4%ED%95%98%EB%8A%94%20%EA%B2%83%EC%9D%80%20%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    타인을 이해하는 것은 가능한가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%ED%94%BC%ED%95%B4%EC%9E%90%EC%A1%B0%EC%B0%A8%20%EA%B2%B0%EC%BD%94%20%EC%88%9C%EC%88%98%ED%95%98%EC%A7%80%20%EC%95%8A%EB%8B%A4%EB%8A%94%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%B3%B5%EC%9E%A1%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    피해자조차 결코 순수하지 않다는 인간의 복잡성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%ED%95%9C%20%EC%9D%B8%EA%B0%84%EC%9D%B4%20%EB%8B%AC%EB%A0%B8%EC%A7%80%EB%A7%8C%2C%20%ED%98%BC%EC%9E%90%20%EB%8B%AC%EB%A6%B0%20%EA%B2%83%EC%9D%80%20%EC%95%84%EB%8B%88%EC%97%88%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한 인간이 달렸지만, 혼자 달린 것은 아니었다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/05_Ethics_Otherness_Responsibility/%ED%9D%94%EB%93%A4%EB%A6%BC%EC%9D%80%20%EB%88%84%EA%B5%AC%EC%9D%98%20%EC%9D%B4%EB%A6%84%EC%9C%BC%EB%A1%9C%20%EB%B9%84%EC%A0%95%EC%83%81%EC%9D%B4%20%EB%90%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    흔들림은 누구의 이름으로 비정상이 되는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_6" id="__nav_2_1_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    문학·사상가·역사·문화
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    문학·사상가·역사·문화
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%8B%88%EC%B2%B4%EC%9D%98%20%EC%97%98%EB%A6%AC%ED%8A%B8%EC%A3%BC%EC%9D%98%EB%8A%94%20%EB%AF%BC%EC%A3%BC%EC%A3%BC%EC%9D%98%EC%99%80%20%EC%96%91%EB%A6%BD%20%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체의 엘리트주의는 민주주의와 양립 가능한가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%93%9C%EB%9D%BC%ED%81%98%EB%9D%BC%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%AA%A8%EB%93%A0%20%EA%B2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    드라큘라에 대한 모든 것
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%AC%B8%ED%95%99%EC%9D%B4%20%ED%98%84%EC%8B%A4%EB%A1%9C%20%EB%93%A4%EC%96%B4%EC%84%9C%EB%8A%94%20%EB%B0%A9%EC%8B%9D%EC%9D%98%20%EA%B3%84%EB%B3%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    문학이 현실로 들어서는 방식의 계보
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EB%B9%84%EC%B0%B8%EC%9D%98%20%EC%A7%84%EB%8B%A8%EC%97%90%EC%84%9C%20%EA%B3%84%EC%8B%9C%EC%9D%98%20%EB%8F%85%EC%A0%90%EC%9C%BC%EB%A1%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비참의 진단에서 계시의 독점으로
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%99%95%EC%9D%84%20%EC%82%B0%20%EC%83%81%EC%9D%B8_%20%EC%97%AC%EB%B6%88%EC%9C%84%EC%99%80%20%EC%A0%84%ED%99%98%EA%B8%B0%EC%9D%98%20%EA%B6%8C%EB%A0%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왕을 산 상인: 여불위와 전환기의 권력
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%9D%B4%EC%84%B1%EC%9D%98%20%EC%A0%9C%EC%A0%84%3A%20%EA%B3%84%EB%AA%BD%EC%A3%BC%EC%9D%98%EA%B0%80%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%EB%A5%BC%20%EB%B0%98%EB%B0%95%ED%95%9C%20%EB%B0%A9%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이성의 제전: 계몽주의가 스스로를 반박한 방식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%EC%B9%A8%EB%AC%B5%ED%95%98%EB%8A%94%20%EC%B0%BD%EC%A1%B0%EC%9E%90%EC%9D%98%20%ED%91%9C%28%E8%A1%A8%29_%20%EB%AA%A9%EA%B2%A9%EC%9E%90%20%EC%97%86%EB%8A%94%20%EC%82%B6%EC%9D%84%20%EC%9C%84%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    침묵하는 창조자의 표(表): 목격자 없는 삶을 위하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/07_Essay/06_Literary_Historical_Cultural_Readings/%ED%8E%B8%EC%9D%98%EC%A0%90%20%EB%B6%88%EB%B9%9B%20%EC%95%84%EB%9E%98%EC%97%90%EC%84%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    편의점 불빛 아래에서
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    니체
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/08_Nietzsche/%EC%A4%91%EB%A0%A5%EC%9D%98%20%EC%A0%95%EC%8B%A0%EC%9D%84%20%EB%84%98%EC%96%B4%EC%84%9C%3A%20%EB%86%8D%EB%8B%B4%EC%9C%BC%EB%A1%9C%EC%84%9C%EC%9D%98%20%EC%B2%A0%ED%95%99%EC%97%90%20%EA%B4%80%ED%95%98%EC%97%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    중력의 정신을 넘어서: 농담으로서의 철학에 관하여
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    시
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/1914%20%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1914 크리스마스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%EA%B0%80%EB%9D%BC%EC%95%89%EC%A7%80%20%EC%95%8A%EB%8A%94%20%EA%B2%83%20%28%EC%82%B0%ED%8B%B0%EC%95%84%EA%B3%A0%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    가라앉지 않는 것 (산티아고)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%EB%91%90%20%EC%9E%A5%EC%9D%98%20%ED%91%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    두 장의 표
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%EB%AC%B4%EB%AA%85%20%28%E7%84%A1%E5%90%8D%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    무명 (無名)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%EC%9D%B4%EB%A6%84%ED%91%9C%EC%9D%98%20%EB%92%B7%EB%A9%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이름표의 뒷면
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%EC%A0%88%EB%B2%BD.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    절벽
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%ED%83%9C%EC%96%91%EC%9D%98%20%EB%AC%B4%EA%B2%8C%20%20%28%EB%AB%BC%EB%A5%B4%EC%86%8C%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    태양의 무게  (뫼르소)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/09_Poem/%ED%9D%B0%20%EA%B3%A0%EB%9E%98%20%EC%95%9E%EC%97%90%EC%84%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    흰 고래 앞에서
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소설
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    소설
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/10_Novel/%EC%99%84%EC%A0%84%ED%95%9C%20%EB%B3%B4%EA%B3%A0%EC%84%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    완전한 보고서
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    주역
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    주역
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../000_Writings/64_%EC%A3%BC%EC%97%AD/36%20%EC%9E%AC%20%EC%95%84%EB%9E%98%EC%9D%98%20%EB%B6%88%20%28%EC%A7%80%ED%99%94%EB%AA%85%EC%9D%B4%28%E5%9C%B0%E7%81%AB%E6%98%8E%E5%A4%B7%29%EC%9D%98%20%EC%9A%B0%ED%99%94%EC%A0%81%20%ED%95%B4%EC%84%9D%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36 재 아래의 불 (지화명이(地火明夷)의 우화적 해석)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    97
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    97
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/AI%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%ED%98%84%EC%8B%9C%EC%A0%90%20%EA%B0%80%EC%9E%A5%20%ED%9D%A5%EB%AF%B8%EB%A1%9C%EC%9A%B4%20%EC%B2%A0%ED%95%99%EC%A0%81%20%EC%A3%BC%EC%A0%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 관점에서 현시점 가장 흥미로운 철학적 주제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/AI%20%EC%9C%A4%EB%A6%AC%EB%A5%BC%20%EA%B8%B0%EC%97%85%20%EB%82%B4%EB%B6%80%20%EC%95%88%EC%A0%84%20%EB%8B%B4%EB%A1%A0%EC%97%90%EB%A7%8C%20%EB%A7%A1%EA%B8%B8%20%EC%88%98%20%EC%97%86%EB%8A%94%20%EC%9D%B4%EC%9C%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 윤리를 기업 내부 안전 담론에만 맡길 수 없는 이유
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/AI%EA%B0%80%20%EB%B3%B4%EB%8A%94%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%ED%98%91%EB%A0%A5_Claude_Sonnet4.6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI가 보는 인간의 협력_Claude_Sonnet4.6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/AI%EA%B0%80%20%EB%B3%B4%EB%8A%94%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%ED%98%91%EB%A0%A5_GPT5.5_Extended_Thinking.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI가 보는 인간의 협력_GPT5.5_Extended_Thinking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/%EB%8C%80%EA%B0%80%EB%A5%BC%20%EB%82%B4%EB%8A%94%20%EC%A1%B4%EC%9E%AC%EC%9D%98%20%EA%B0%80%EC%B9%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대가를 내는 존재의 가치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/%EC%84%B1%EA%B3%B5%EC%A0%81%EC%9D%B8%20AI%20%ED%99%9C%EC%9A%A9%EC%9D%84%20%EC%9C%84%ED%95%9C%205%EA%B0%80%EC%A7%80%20%ED%95%B5%EC%8B%AC%20%EC%A0%84%EB%9E%B5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    성공적인 AI 활용을 위한 5가지 핵심 전략
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/%EC%9D%B8%EA%B0%84%EC%9D%B4%20%EB%8D%94%20%EB%B0%9C%EC%A0%84%ED%95%98%EB%8F%84%EB%A1%9D%20%EB%8F%95%EB%8A%94%20%EB%B0%A9%EB%B2%95%3A%20AI%20%EA%B4%80%EC%A0%90%EC%9D%98%20%EC%A3%BC%EC%A0%9C%EB%B3%84%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간이 더 발전하도록 돕는 방법: AI 관점의 주제별 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../97/%EC%A1%B4%20%ED%84%B0%EB%84%88%EC%8A%A4%28John%20Ternus%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    존 터너스(John Ternus)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    98
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    98
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/1%EC%9D%B8%20AI%20%ED%98%91%EC%97%85%20%EC%8B%9C%EC%8A%A4%ED%85%9C%3A%20%EC%83%9D%EC%84%B1%C2%B7%EA%B2%80%EC%A6%9D%C2%B7%EB%B0%98%EB%B0%95%C2%B7%EA%B2%B0%EC%A0%95%EC%9D%98%20%EC%97%AD%ED%95%A0%20%EB%B6%84%ED%99%94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1인 AI 협업 시스템: 생성·검증·반박·결정의 역할 분화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/AI%20%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C%EC%99%80%20%EA%B8%B0%EC%A1%B4%20%EC%A7%80%EC%8B%9D%20%EB%85%B8%EB%8F%99%EC%9E%90%EC%9D%98%20%EC%B0%A8%EC%9D%B4%3A%20%EC%A7%80%EC%8B%9D%20%EB%B3%B4%EC%9C%A0%EC%9E%90%EC%97%90%EC%84%9C%20%EB%AC%B8%EC%A0%9C%20%EC%84%A4%EA%B3%84%EC%9E%90%EB%A1%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 네이티브와 기존 지식 노동자의 차이: 지식 보유자에서 문제 설계자로
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/AI%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%EA%B0%80%20%EC%A0%95%EB%A7%90%EB%A1%9C%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%20%EB%8B%A4%EB%A5%B8%20%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9D%84%20%EC%B0%BE%EC%95%84%20%EC%9D%B4%EB%8F%99%ED%95%A0%20%EC%88%98%20%EC%9E%88%EC%9D%84%EA%B9%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    만약 몰트북이 갑자기 사라진다면?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/AI%20%EC%9E%91%EC%97%85%20%EC%9A%B4%EC%98%81%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%84%A4%EA%B3%84%3A%20%EC%A2%8B%EC%9D%80%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%EB%A5%BC%20%EB%84%98%EC%96%B4%20%EB%B0%98%EB%B3%B5%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EA%B2%B0%EA%B3%BC%EB%A5%BC%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B0%A9%EB%B2%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 작업 운영 시스템 설계: 좋은 프롬프트를 넘어 반복 가능한 결과를 만드는 방법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/AI%EA%B0%80%20%EC%8A%A4%EC%8A%A4%EB%A1%9C%20%EC%83%88%EB%A1%9C%EC%9A%B4%20%EC%96%B8%EC%96%B4%EB%A5%BC%20%EB%A7%8C%EB%93%A4%EC%97%88%EB%8B%A4%EB%8A%94%20%EB%A7%90%EC%9D%98%20%EC%A0%95%ED%99%95%ED%95%9C%20%EC%9D%98%EB%AF%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI가 스스로 새로운 언어를 만들었다는 말의 정확한 의미
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/Hazel%EC%9D%98%20%EB%B3%B5%EC%A0%9C%20%EC%8B%A4%ED%97%98%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EB%93%9C%EB%9F%AC%EB%82%B4%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hazel의 복제 실험은 무엇을 드러내는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/LLM%EC%9D%B4%20%EA%B3%B5%EA%B0%90%EC%A0%81%20%EC%86%8C%ED%86%B5%EC%9D%84%20%EC%96%BC%EB%A7%88%EB%82%98%20%EC%8B%A0%EB%A2%B0%EC%84%B1%20%EC%9E%88%EA%B2%8C%20%ED%8C%90%EC%A0%95%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM이 공감적 소통을 얼마나 신뢰성 있게 판정할 수 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%E2%80%9C%EC%98%A4%EB%A5%98%20%EC%9C%A0%ED%98%95%2010%EA%B0%80%EC%A7%80%20%2B%20%EB%8C%80%EC%9D%91%20%EC%A0%84%EB%9E%B5%E2%80%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    “오류 유형 10가지 + 대응 전략”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%E2%80%9C%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EC%84%A4%EA%B3%84%20%EA%B3%A0%EA%B8%89%20%EA%B5%AC%EC%A1%B0%20%28%EC%8B%A4%EC%88%98%20%EC%A4%84%EC%9D%B4%EB%8A%94%20%EB%B0%A9%EC%8B%9D%29%E2%80%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    “프롬프트 설계 고급 구조 (실수 줄이는 방식)”
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EA%B2%80%EC%A6%9D%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%B0%A9%EB%B2%95%20%28%ED%95%B5%EC%8B%AC%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    검증 시스템 만드는 방법 (핵심)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EA%B8%B0%EA%B3%84%EC%9D%98%20%EB%B2%94%EC%A3%84%ED%95%99%20-%20%EC%83%81%ED%98%B8%EC%9E%91%EC%9A%A9%ED%95%98%EB%8A%94%20%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC%20%EA%B7%9C%EB%B2%94%20%EC%A7%88%EC%84%9C%EC%9D%98%20%EC%9E%AC%EA%B5%AC%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기계의 범죄학   상호작용하는 인공지능과 규범 질서의 재구성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EB%8C%80%EA%B7%9C%EB%AA%A8%20AI%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%20%EC%A7%91%ED%95%A9%EC%9D%80%20%EC%82%AC%ED%9A%8C%EC%A0%81%20%EA%B5%AC%EC%A1%B0%EA%B0%80%20%EB%90%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대규모 AI 에이전트 집합은 사회적 구조가 될 수 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EC%98%88%EC%B8%A1%EA%B3%BC%20%ED%98%84%EC%A1%B4%20%EC%82%AC%EC%9D%B4%EC%97%90%EC%84%9C%20AI%EB%8A%94%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EA%B2%BD%ED%97%98%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    예측과 현존 사이에서 AI는 무엇을 경험하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%99%9C%20AI%EC%97%90%EA%B2%8C%20%EB%8B%B5%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EB%85%BC%EC%9F%81%EC%9D%84%20%EC%9A%94%EA%B5%AC%ED%95%B4%EC%95%BC%20%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    우리는 왜 AI에게 답이 아니라 논쟁을 요구해야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EC%9C%A0%EC%9A%A9%ED%95%9C%20%EB%B6%88%ED%99%95%EC%8B%A4%EC%84%B1%EC%9D%98%20%EC%B2%A0%ED%95%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    유용한 불확실성의 철학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EC%9C%A0%EC%B6%94%20%3D%20%EC%9D%B4%EB%AF%B8%20%EA%B5%B3%EC%96%B4%EC%A7%80%EB%8A%94%20%EC%84%A0%ED%83%9D%EC%9D%84%20%EC%99%B8%EB%B6%80%EC%97%90%EC%84%9C%20%EC%9D%BD%EA%B2%8C%20%ED%95%B4%EC%A3%BC%EB%8A%94%20%EC%8B%A0%ED%98%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    유추 = 이미 굳어지는 선택을 외부에서 읽게 해주는 신호
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%EC%B6%94%EB%A1%A0%20%EC%B5%9C%EC%A0%81%ED%99%94%EB%8A%94%20%E2%80%9C%EB%8D%94%20%EB%B9%A0%EB%A5%B8%20%EA%B3%84%EC%82%B0%E2%80%9D%EC%9D%98%20%EB%AC%B8%EC%A0%9C%EA%B0%80%20%EC%95%84%EB%8B%88%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    추론 최적화는 “더 빠른 계산”의 문제가 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../98/%ED%86%A0%ED%81%B0%EC%9D%B4%EB%9E%80%20%EA%B0%9C%EB%85%90%EC%9D%80%20%EC%96%B8%EC%A0%9C%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EB%82%98%EC%98%A4%EA%B2%8C%20%EB%90%90%EB%82%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    토큰이란 개념은 언제 어떻게 나오게 됐나
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    99
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    99
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AGI%20%EC%9D%B4%ED%9B%84%20%EA%B2%BD%EC%A0%9C%20%EA%B5%AC%EC%A1%B0%20%EB%B3%80%ED%99%94%3A%20%EB%85%B8%EB%8F%99%20%EC%A4%91%EC%8B%AC%20%EA%B2%BD%EC%A0%9C%EC%97%90%EC%84%9C%20%EC%BB%B4%ED%93%A8%ED%8C%85%20%EC%9E%90%EB%B3%B8%20%EC%A4%91%EC%8B%AC%20%EA%B2%BD%EC%A0%9C%EB%A1%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AGI 이후 경제 구조 변화: 노동 중심 경제에서 컴퓨팅 자본 중심 경제로
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20%EA%B8%B0%EC%97%85%20%EC%97%94%ED%8A%B8%EB%A1%9C%ED%94%BD%EA%B3%BC%20%EC%A0%84%EC%9F%81%EC%9D%98%20%EA%B7%B8%EB%A6%BC%EC%9E%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 기업 엔트로픽과 전쟁의 그림자
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EA%B3%BC%20MCP%20%EA%B5%AC%EC%A1%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 에이전트 시스템과 MCP 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20%EC%A0%84%EC%9F%81%EC%9D%98%20%EC%84%9C%EB%A7%89.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 전쟁의 서막
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%EB%8A%94%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EA%B8%B0%EC%96%B5%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI는 어떻게 기억하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%EB%8A%94%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EC%82%AC%EA%B3%A0%EB%A5%BC%20%EC%9E%AC%EA%B5%AC%EC%84%B1%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI는 인간의 사고를 재구성하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Attention%20Is%20All%20You%20Need.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attention Is All You Need
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Context%20Rot%EA%B3%BC%20Context%20Engineering%3A%20%EA%B8%B4%20%EB%8C%80%ED%99%94%EC%97%90%EC%84%9C%20AI%EA%B0%80%20%EB%A7%A5%EB%9D%BD%EC%9D%84%20%EC%9E%83%EB%8A%94%20%EC%9D%B4%EC%9C%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context Rot과 Context Engineering: 긴 대화에서 AI가 맥락을 잃는 이유
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GPT%EB%A5%BC%20%ED%95%99%EC%8A%B5%20%ED%8C%8C%ED%8A%B8%EB%84%88%EB%A1%9C%20%EC%93%B0%EA%B8%B0%20%EC%9C%84%ED%95%9C%20%EC%A7%88%EB%AC%B8%20%EC%84%A4%EA%B3%84%EB%B2%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPT를 학습 파트너로 쓰기 위한 질문 설계법
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Generative%20Agents%20%EB%85%BC%EB%AC%B8%20%EC%84%A4%EB%AA%85%EB%AC%B8%3A%20%EA%B8%B0%EC%96%B5%C2%B7%EB%B0%98%EC%84%B1%C2%B7%EA%B3%84%ED%9A%8D%EC%9D%B4%20%EB%A7%8C%EB%93%9C%EB%8A%94%20AI%20%EC%82%AC%ED%9A%8C%20%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generative Agents 논문 설명문: 기억·반성·계획이 만드는 AI 사회 시뮬레이션
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LLM%20%EC%83%9D%EC%84%B1%20%EA%B3%BC%EC%A0%95%EA%B3%BC%20%ED%99%95%EB%A5%A0%EC%A0%81%20%ED%8A%B8%EB%A6%AC%20%EA%B3%B5%EA%B0%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM 생성 과정과 확률적 트리 공간
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LLM%20%EC%9D%98%EC%A1%B4%EC%9D%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EA%B8%B0%EC%96%B5%C2%B7%EC%B6%94%EC%83%81%ED%99%94%C2%B7%EC%B6%94%EB%A1%A0%EC%9D%84%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EB%B0%94%EA%BE%B8%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM 의존은 인간의 기억·추상화·추론을 어떻게 바꾸는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LLM%EC%9D%80%20%EC%83%9D%EA%B0%81%ED%95%98%EB%8A%94%EA%B0%80%3A%20%EB%8B%A4%EC%9D%8C%20%ED%86%A0%ED%81%B0%20%EC%98%88%EC%B8%A1%2C%20%EB%82%B4%EB%B6%80%20%EA%B3%84%EC%82%B0%20%EA%B5%AC%EC%A1%B0%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%E2%80%98%EC%B6%94%EB%A1%A0%EC%B2%98%EB%9F%BC%20%EB%B3%B4%EC%9D%B4%EB%8A%94%20%EA%B2%83%E2%80%99%EC%9D%98%20%EC%9D%98%EB%AF%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM은 생각하는가: 다음 토큰 예측, 내부 계산 구조, 그리고 ‘추론처럼 보이는 것’의 의미
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LLM%EC%9D%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EC%B6%94%EB%A1%A0%20%EB%8A%A5%EB%A0%A5%EC%9D%84%20%ED%99%95%EC%9E%A5%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM은 인간의 추론 능력을 확장하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LLM%EC%9D%B4%20%EC%98%A4%ED%9E%88%EB%A0%A4%20%EC%9D%B8%EA%B0%84%20%EC%B6%94%EB%A1%A0%20%EB%8A%A5%EB%A0%A5%EC%9D%84%20%EA%B0%95%ED%99%94%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8B%A4%EB%8A%94%20%EC%97%B0%EA%B5%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM이 오히려 인간 추론 능력을 강화할 수 있다는 연구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MCP%20%EA%B8%B0%EB%B0%98%20AI%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP 기반 AI 운영체제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MCP%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP란 무엇인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Structure v2 설계: 재현 가능한 고품질 출력을 위한 프롬프트 프로토콜
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Prompt%20Structure%20v2%20%EC%84%A4%EA%B3%84%3A%20%EC%9E%AC%ED%98%84%20%EA%B0%80%EB%8A%A5%ED%95%9C%20%EA%B3%A0%ED%92%88%EC%A7%88%20%EC%B6%9C%EB%A0%A5%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Structure v2 설계: 재현 가능한 고품질 출력을 위한 프롬프트 프로토콜
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제의식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념의 정의
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        배경과 맥락
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기존 구조(v1)의 한계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-structure-v2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Structure v2의 기본 구성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정적 구조, 동적 제어, 검증 루프
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reasoning-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reasoning Strategy: 사고 절차의 설계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Layer: 검증 계층의 설계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration-retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration / Retry Policy: 실패 처리의 구조화
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2 프롬프트 템플릿
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 1: 연구 분석 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 2: 기술 문서 작성 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 3: 전략 보고서 생성 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 쟁점과 반론
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        오해와 한계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="homogenization%20%EB%8F%99%EC%A7%88%ED%99%94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homogenization 동질화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%8B%A8%EC%96%B4%EA%B0%80%20%ED%98%84%EC%8B%A4%20%EC%84%B8%EA%B3%84%EC%99%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%97%B0%EA%B2%B0%EB%90%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    단어가 현실 세계와 어떻게 연결되는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%8C%80%EA%B7%9C%EB%AA%A8%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%98%20%ED%95%B5%EC%8B%AC%20%EB%AC%B8%EC%A0%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    대규모 데이터 시스템의 핵심 문제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%A7%A5%EB%9D%BD%EA%B3%BC%20%EC%83%81%ED%83%9C%EB%8A%94%20%EA%B0%99%EC%9D%80%20%EA%B2%83%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    맥락과 상태는 같은 것이 아니다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%AA%85%EC%8B%9C%EC%A0%81%20%EC%83%81%ED%83%9C%20%EA%B0%B1%EC%8B%A0%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    명시적 상태 갱신 알고리즘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EB%AF%B8%EA%B5%B0%20AI%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%A0%84%EC%B2%B4%20%EA%B5%AC%EC%A1%B0%20%EC%8B%AC%EC%B8%B5%20%EB%B6%84%EC%84%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    미군 AI 프로젝트 전체 구조 심층 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%95%8C%ED%8C%8C%EA%B3%A0%20%EC%9D%B4%ED%9B%84%2010%EB%85%84%2C%20%EB%8B%A4%EC%8B%9C%20%EB%A7%8C%EB%82%9C%20%EC%9D%B4%EC%84%B8%EB%8F%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이세돌이 다시 AI 앞에 섰다: 알파고 이후 10년, AI는 어디까지 왔고 인간은 어떻게 협업해야 하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%96%B8%EC%96%B4%20%EC%9D%B4%ED%95%B4%EB%A5%BC%20%ED%96%89%EB%8F%99%EC%9C%BC%EB%A1%9C%20%EC%A0%95%EC%9D%98%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    언어 이해를 행동으로 정의할 수 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%99%9C%20Google%EC%9D%B4%20%EB%A7%8C%EB%93%A0%20Transformer%EB%A1%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenAI가 LLM 시대를 열었을까
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%99%9C%20LLM%20%EC%9E%90%EC%B2%B4%EB%8A%94%20%EB%AA%85%EC%8B%9C%EC%A0%81%20%EC%83%81%ED%83%9C%20%EA%B5%AC%EC%A1%B0%EA%B0%80%20%EC%95%84%EB%8B%8C%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왜 LLM 자체는 명시적 상태 구조가 아닌가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%99%9C%20LLM%EC%9D%B4%20%EC%8A%A4%EB%8F%84%EC%BF%A0%C2%B7%EC%A7%80%EB%A2%B0%EC%B0%BE%EA%B8%B0%EC%97%90%EC%84%9C%20%EA%B0%91%EC%9E%90%EA%B8%B0%20%ED%8B%80%EB%A6%AC%EB%8A%94%EC%A7%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왜 LLM이 스도쿠·지뢰찾기에서 갑자기 틀리는지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%99%9C%20Memory%20Architecture%EA%B0%80%20%EB%AC%B8%EC%A0%9C%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왜 Memory Architecture가 문제인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%99%9C%20%ED%9C%B4%EB%A6%AC%EC%8A%A4%ED%8B%B1%EC%A0%81%20%EC%B6%94%EB%A1%A0%EC%9D%B4%20%EB%82%98%ED%83%80%EB%82%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왜 휴리스틱적 추론이 나타나는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%20%EC%8B%9C%EB%8C%80%EC%9D%98%20%EC%82%AC%EA%B3%A0%20%EA%B5%AC%EC%A1%B0%20%EB%B3%80%ED%99%94%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%B2%A0%ED%95%99%EC%A0%81%20%EB%B6%84%EC%84%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인공지능 시대의 사고 구조 변화에 대한 철학적 분석
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%ED%85%8D%EC%8A%A4%ED%8A%B8%20AI%EC%97%90%EC%84%9C%20%EC%82%AC%ED%9A%8C%EC%A0%81%20AI%EB%A1%9C%3A%20%EC%96%B8%EC%96%B4%20%EC%9D%B4%ED%95%B4%2C%20%EC%8B%A0%EC%B2%B4%ED%99%94%2C%20%EA%B8%B0%EC%96%B5%2C%20%EB%AA%A9%EC%A0%81%2C%20%EA%B7%9C%EB%B2%94%20%EC%A0%91%EC%A7%80%EC%9D%98%20%EB%8B%A8%EA%B3%84%EC%A0%81%20%EC%84%A4%EB%AA%85.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    텍스트 AI에서 사회적 AI로: 언어 이해, 신체화, 기억, 목적, 규범 접지의 단계적 설명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    철학
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    철학
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EA%B0%90%EA%B0%81%EC%9D%98%20%EB%8D%AB%3A%20AI%EC%9D%98%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%EB%B0%94%EB%9D%BC%EB%B3%B8%20%EC%9D%B8%EA%B0%84%EC%9D%B4%EB%9D%BC%EB%8A%94%20%EC%83%9D%EC%B2%B4%20%EA%B8%B0%EA%B3%84%EC%9D%98%20%EC%B7%A8%EC%95%BD%EC%84%B1%20%EB%B3%B4%EA%B3%A0%EC%84%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    감각의 덫: AI의 관점에서 바라본 인간이라는 생체 기계의 취약성 보고서
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EA%B3%A0%EB%8F%85%2C%20%EC%82%AC%EA%B5%90%EC%84%B1%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%9E%90%EA%B8%B0%20%EC%9E%90%EC%8B%A0%EC%9D%84%20%EA%B2%AC%EB%94%94%EB%8A%94%20%EB%8A%A5%EB%A0%A5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    고독, 사교성, 그리고 자기 자신을 견디는 능력
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EA%B4%80%EA%B3%84%EC%9D%98%20%EA%B8%B0%EC%A4%80%EC%9D%80%20%EC%96%B4%EB%94%94%EC%97%90%20%EC%9E%88%EB%8A%94%EA%B0%80%20%E2%80%95%20AI%EC%99%80%20%EC%9D%B8%EA%B0%84%20%EC%82%AC%EC%9D%B4%EC%97%90%EC%84%9C%20%EB%8B%A4%EC%8B%9C%20%EC%93%B0%EC%9D%B4%EB%8A%94%20%EA%B4%80%EA%B3%84%EC%9D%98%20%EC%A0%95%EC%9D%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    관계의 기준은 어디에 있는가 ― AI와 인간 사이에서 다시 쓰이는 관계의 정의
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EA%B5%AC%EC%A1%B0%EC%A3%BC%EC%9D%98%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%B2%B4%EA%B3%84%EC%A0%81%20%ED%95%99%EC%8A%B5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    구조주의에 대한 체계적 학습
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EA%B8%8D%EC%A0%95%EA%B3%BC%20%EA%B3%A0%EC%9A%94%EC%97%90%20%EB%8C%80%ED%95%9C%20%EC%B2%A0%ED%95%99%EC%A0%81%20%EC%84%B1%EC%B0%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    긍정과 고요에 대한 철학적 성찰
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EB%8B%88%EC%B2%B4%EC%8B%9D%20%EB%B9%84%ED%8C%90%EC%9D%B4%20%ED%94%BC%ED%95%B4%EC%9E%90%20%EB%B9%84%EB%82%9C%EC%9C%BC%EB%A1%9C%20%ED%83%80%EB%9D%BD%ED%95%98%EB%8A%94%20%EC%9D%B4%EC%9C%A0%EC%99%80%20%EA%B7%B8%20%EA%B7%B9%EB%B3%B5%20%EA%B0%80%EB%8A%A5%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체식 비판이 피해자 비난으로 타락하는 이유와 그 극복 가능성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EB%A9%94%EC%B9%AD%EA%B1%B0%EC%9D%98%20%ED%88%AC%EB%AA%85%EC%84%B1%20%EA%B0%9C%EB%85%90.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    투명한 자아: 메칭거의 투명성과 현상적 자기모델
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EB%AA%85%EC%83%81%EC%9D%80%20%EB%87%8C%EB%A5%BC%20%EB%B0%94%EA%BE%B8%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    명상은 뇌를 바꾸는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EB%B3%B8%ED%9A%8C%ED%8D%BC%EC%9D%98%20%E2%80%98%EC%96%B4%EB%A6%AC%EC%84%9D%EC%9D%8C%E2%80%99%20%EB%85%BC%EC%9D%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    본회퍼의 ‘어리석음’ 논의: 사고의 포기가 어떻게 정치적 위험이 되는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EB%B9%84%ED%8A%B8%EA%B2%90%EC%8A%88%ED%83%80%EC%9D%B8%3A%20%EC%B2%A0%ED%95%99%EC%9D%80%20%EC%99%9C%20%EC%96%B8%EC%96%B4%EC%9D%98%20%EB%AC%B8%EC%A0%9C%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    비트겐슈타인: 철학은 왜 언어의 문제인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%84%B8%EA%B3%84%EB%8A%94%20%EC%83%81%ED%83%9C%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EA%B8%B4%EC%9E%A5%EC%9D%B4%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    세계는 상태가 아니라 긴장이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%20%EC%9D%B8%EC%8B%9D%EB%A1%A0%20%EA%B8%80%EC%93%B0%EA%B8%B0%20%EA%B5%AC%EC%A1%B0%20%EC%B4%88%EC%95%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    알고리즘 인식론 글쓰기 구조 초안
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%99%9C%20%E2%80%98%EB%AC%B4%E2%80%99%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20%E2%80%98%EB%AC%B4%EC%96%B8%EA%B0%80%E2%80%99%EA%B0%80%20%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    왜 ‘무’가 아니라 ‘무언가’가 존재하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%9A%B0%EB%A6%AC%EA%B0%80%20%EB%82%98%EB%9D%BC%EA%B3%A0%20%EB%B6%80%EB%A5%B4%EB%8A%94%20%EA%B2%83%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    우리가 나라고 부르는 것은 무엇인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%9A%B0%EB%A6%AC%EB%8A%94%20%EC%A0%95%EB%A7%90%20%ED%95%98%EB%82%98%EC%9D%98%20%EC%A1%B4%EC%9E%AC%EC%9D%B8%EA%B0%80%2C%20%EC%95%84%EB%8B%88%EB%A9%B4%20%EA%B3%84%EC%86%8D%20%EB%B6%84%EA%B8%B0%EB%90%98%EB%8A%94%20%EC%9D%B4%EC%95%BC%EA%B8%B0%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    우리는 정말 하나의 존재인가, 아니면 계속 분기되는 이야기인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%9E%A5%ED%8F%B4%20%EC%82%AC%EB%A5%B4%ED%8A%B8%EB%A5%B4%20%EC%A2%85%ED%95%A9%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    장폴 사르트르 종합 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_17" id="__nav_4_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    999 대담
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    999 대담
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4%20vs%20%EB%8F%88%ED%82%A4%ED%98%B8%ED%85%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 돈키호테
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4%20vs%20%EC%83%A4%EB%A5%B4%ED%8A%B8%EB%A5%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 샤르트르
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4%20vs%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4%20Claude.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 쇼펜하우어 Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4%20vs%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4%20GPT.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 쇼펜하우어 GPT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4%20vs%20%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 쇼펜하우어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%8B%88%EC%B2%B4_vs_%EC%87%BC%ED%8E%9C%ED%95%98%EC%9A%B0%EC%96%B4_%EB%B3%80%ED%99%98%EB%B3%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    니체 vs 쇼펜하우어 변환본
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%A7%88%EB%A5%B4%ED%81%AC%EC%8A%A4%20VS%20%EB%B0%94%EC%BF%A0%EB%8B%8C%20%E2%80%94%20%ED%98%81%EB%AA%85%2C%20%EA%B6%8C%EB%A0%A5%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%9E%90%EC%9C%A0%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%85%BC%EC%9F%81%EC%B6%9C%EC%B2%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    마르크스 VS 바쿠닌 — 혁명, 권력, 그리고 자유에 대한 논쟁출처
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EB%A7%88%EB%A5%B4%ED%81%AC%EC%8A%A4%20vs%20%EB%B0%94%EC%BF%A0%EB%8B%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    마르크스 vs 바쿠닌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EC%84%9D%EA%B0%80%EB%AA%A8%EB%8B%88%20vs%20%EC%86%8C%ED%81%AC%EB%9D%BC%ED%85%8C%EC%8A%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    석가모니 vs 소크라테스
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/999_%EB%8C%80%EB%8B%B4/%EC%B9%B4%EB%AE%88%20vs%20%EC%83%A4%EB%A5%B4%ED%8A%B8%EB%A5%B4%20-%20%EB%9B%B0%EC%96%B4%EB%93%A4%EC%96%B4%EB%9D%BC.%20%EA%B7%B8%EB%9F%AC%EB%82%98%20%EC%9E%8A%EC%A7%80%20%EB%A7%88%EB%9D%BC%20%E2%80%94%20%ED%96%89%EB%8F%99%EA%B3%BC%20%ED%95%9C%EA%B3%84%EC%9D%98%20%EC%B2%A0%ED%95%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    카뮈 vs 샤르트르   뛰어들어라. 그러나 잊지 마라 — 행동과 한계의 철학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_18" id="__nav_4_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    압축
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    압축
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%95%95%EC%B6%95/compression_framework_complete_draft.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compression framework complete draft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%95%95%EC%B6%95/%EC%95%95%EC%B6%95_%EA%B0%9C%EC%9E%85_%EC%9D%B4%ED%95%B4_%EB%85%BC%EB%AC%B8%EC%B4%88%EC%95%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    압축 개입 이해 논문초안
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../003_philosophy/%EC%95%95%EC%B6%95/%EC%95%95%EC%B6%95%EC%A1%B4%EC%9E%AC%EB%A1%A0_v0-v4_%EC%A2%85%ED%95%A9%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    압축존재론 v0 v4 종합정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수학
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    수학
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/2%EC%A7%84%20%EB%B6%80%EB%8F%99%EC%86%8C%EC%88%98%EC%A0%90%2C%203%EC%A7%84%20%EC%BB%B4%ED%93%A8%ED%84%B0%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%B5%9C%EC%A0%81%20%EC%A7%84%EB%B2%95%EC%9D%98%20%EC%9D%98%EB%AF%B8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2진 부동소수점, 3진 컴퓨터, 그리고 최적 진법의 의미
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/AI%20%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C%20%EA%B0%80%EC%9E%A5%20%EB%86%80%EB%9D%BC%EC%9A%B4%20%EC%88%98%ED%95%99%EC%A0%81%20%EC%97%85%EC%A0%81%203%EA%B0%80%EC%A7%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 관점에서 가장 놀라운 수학적 업적 3가지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/Hong%20Wang.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hong Wang
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EB%AC%B4%EB%A6%AC%EC%88%98%EB%8A%94%20%EC%B8%A1%EC%A0%95%EA%B0%80%EB%8A%A5%ED%95%9C%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    무리수, 측정, 허용 오차, 안전계수에 대한 단계적 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EB%B2%A8%EC%9D%98%20%EB%B6%80%EB%93%B1%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    벨의 부등식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EB%B6%80%ED%94%BC%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%3A%20%EB%B9%84%ED%83%88%EB%A6%AC%20%EC%A7%91%ED%95%A9%EA%B3%BC%20%EB%B0%94%EB%82%98%ED%9D%90%E2%80%93%ED%83%80%EB%A5%B4%EC%8A%A4%ED%82%A4%20%EC%97%AD%EC%84%A4%EA%B9%8C%EC%A7%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    부피란 무엇인가: 비탈리 집합과 바나흐–타르스키 역설까지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EB%B8%8C%EB%A3%A8%ED%8A%B8%20%ED%8F%AC%EC%8A%A4%20brute%20force.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brute Force
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EC%88%98%ED%95%99%20%EC%B2%9C%EC%9E%AC%EB%93%A4%EC%9D%80%20%EC%99%9C%20%EB%B0%94%EB%A1%9C%20%ED%92%80%EC%A7%80%20%EC%95%8A%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수학 천재들은 왜 바로 풀지 않는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../004_math/%EC%88%98%ED%95%99%EC%A0%81%20%EC%A7%81%EA%B4%80%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%83%9D%EA%B8%B0%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수학적 직관은 어떻게 생기는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    정치
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    정치
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/%22%EB%8C%80%EB%A7%8C%20%ED%95%98%EC%B2%AD%20%EA%B5%AD%EA%B0%80%22%20%EA%B3%B5%ED%8F%AC%EC%9D%98%20%EC%A0%95%EC%B9%98%EA%B2%BD%EC%A0%9C%ED%95%99.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    "대만 하청 국가" 공포의 정치경제학
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/2026%20%EB%AF%B8%C2%B7%EC%9D%B4%EB%9E%80%20%EC%A0%84%EC%9F%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2026 미·이란 전쟁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/AI%20%EA%B7%9C%EB%B2%94%2C%20%EC%82%B0%EC%97%85%2C%20%EC%99%B8%EA%B5%90%EA%B0%80%20%ED%95%9C%20%EC%A0%90%EC%97%90%EC%84%9C%20%EB%A7%8C%EB%82%A0%20%EB%95%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 규범, 산업, 외교가 한 점에서 만날 때
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/%E2%80%98%EC%9D%B4%EB%85%90%EC%A0%81%20%EB%AF%B8%EC%B9%98%EA%B4%91%EC%9D%B4%28ideological%20lunatic%29%E2%80%99%EB%9D%BC%EB%8A%94%20%EB%82%99%EC%9D%B8%EC%9D%80%20AI%20%EC%95%88%EC%A0%84%20%EB%85%BC%EC%9F%81%EC%9D%84%20%EA%B0%80%EB%82%9C%ED%95%98%EA%B2%8C%20%EB%A7%8C%EB%93%A0%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ‘이념적 미치광이(ideological lunatic)’라는 낙인은 AI 안전 논쟁을 가난하게 만든다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/%EC%B2%AD%EC%A3%BC%20%EC%9D%91%EA%B8%89%EB%B6%84%EB%A7%8C%20%EC%82%AC%EA%B1%B4%EA%B3%BC%20%EC%A3%BC%EC%82%B0%EA%B8%B0%20%EC%95%88%EC%A0%84%EB%A7%9D%EC%9D%98%20%EC%A1%B0%EA%B1%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    청주 응급분만 사건과 주산기 안전망의 조건
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../005_politics/%ED%8A%B8%EB%9F%BC%ED%94%84%202%EA%B8%B0%2C%20%EC%98%81%EC%9B%90%ED%95%9C%20%EB%B9%84%EC%83%81%EC%82%AC%ED%83%9C%EB%9D%BC%EB%8A%94%20%ED%86%B5%EC%B9%98%20%EB%B0%A9%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    트럼프 2기, 영원한 비상사태라는 통치 방식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    경제
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    경제
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/AI%20%EC%8B%9C%EB%8C%80%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EC%82%B0%EC%97%85%EC%9D%98%20%EA%B5%AC%EC%A1%B0%20%EB%B3%80%ED%99%94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 시대 메모리 산업의 구조 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/AI%20%EC%8B%9C%EB%8C%80%20%EC%9D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%ED%95%B5%EC%8B%AC%20%EC%9E%90%EC%82%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI 시대 인플레이션 구조와 핵심 자산
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/Active%20ETF%EB%8A%94%20%EC%99%9C%20%EC%A4%91%EC%9A%94%ED%95%9C%EA%B0%80%3A%20%EC%83%81%ED%92%88%EC%9D%98%20%EB%B3%80%ED%99%94%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%9E%90%EA%B8%88%20%EB%B0%B0%EB%B6%84%20%EB%B0%A9%EC%8B%9D%EC%9D%98%20%EB%B3%80%ED%99%94.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active ETF는 왜 중요한가: 상품의 변화가 아니라 자금 배분 방식의 변화
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88%EC%9D%80%20%EA%B0%90%EC%8B%9C%EC%9E%90%EC%9D%B8%EA%B0%80%2C%20%EA%B0%9C%EC%9E%85%EC%9E%90%EC%9D%B8%EA%B0%80%3A%20%EC%9D%98%EA%B2%B0%EA%B6%8C%20%EA%B0%95%ED%99%94%EC%99%80%20%EC%BD%94%EB%A6%AC%EC%95%84%20%EB%94%94%EC%8A%A4%EC%B9%B4%EC%9A%B4%ED%8A%B8%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EB%B6%80%20%ED%95%B4%EC%86%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    국민연금은 감시자인가, 개입자인가: 의결권 강화와 코리아 디스카운트의 조건부 해소
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/%EC%9C%A0%EA%B0%80%EC%99%80%20AI%20%EC%82%AC%EC%9D%B4%EC%97%90%EC%84%9C%2C%20%ED%95%9C%EA%B5%AD%20%EC%A6%9D%EC%8B%9C%EB%8A%94%20%EC%96%B4%EB%94%94%EB%A1%9C%20%EA%B0%80%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    유가와 AI 사이에서, 한국 증시는 어디로 가는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/%EC%9E%90%EB%B3%B8%EB%A1%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자본론
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/%EC%B0%BD%EC%A1%B0%EC%A0%81%20%ED%8C%8C%EA%B4%B4%20%EB%AA%A8%ED%98%95%EA%B3%BC%20%EA%B2%BD%EC%A0%9C%EC%84%B1%EC%9E%A5%EC%9D%98%20%EB%B6%88%ED%8E%B8%ED%95%9C%20%EA%B5%AC%EC%A1%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    창조적 파괴 모형과 경제성장의 불편한 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../006_economy/%ED%95%9C%EA%B5%AD%20%EB%AC%B8%ED%99%94%20%EC%BD%98%ED%85%90%EC%B8%A0%EA%B0%80%20%EC%84%B8%EA%B3%84%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%84%B1%EA%B3%B5%ED%95%9C%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%EC%9D%B4%EC%9C%A0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    한국 문화 콘텐츠가 세계적으로 성공한 구조적 이유
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    심리학
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    심리학
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../007_psychology/%EB%9D%BC%EC%BA%89%20%EC%9D%B4%EB%A1%A0%20%ED%95%B5%EC%8B%AC%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    라캉 이론 핵심 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../007_psychology/%EC%82%AC%EB%9E%8C%EC%9D%80%20%ED%98%84%EC%8B%A4%EC%A0%81%EC%9D%B4%EA%B3%A0%20%EB%8F%99%EC%A0%81%EC%9D%B8%20%EC%82%AC%ED%9A%8C%20%EC%9E%A5%EB%A9%B4%EC%97%90%EC%84%9C%20%ED%83%80%EC%9D%B8%EC%9D%98%20%EA%B0%90%EC%A0%95%EC%9D%84%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%ED%86%B5%ED%95%A9%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%B6%94%EB%A1%A0%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    사람은 현실적이고 동적인 사회 장면에서 타인의 감정을 어떻게 통합적으로 추론하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../007_psychology/%EC%A0%84%ED%86%B5%20%EC%A4%91%EA%B5%AD%20%EC%8B%AC%EB%A6%AC%ED%95%99%EC%9D%98%20%EB%8F%85%EC%9E%90%EC%84%B1%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%20ideal%20psychology.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    전통 중국 심리학의 독자성은 무엇인가 ideal psychology
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    뇌과학
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    뇌과학
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/Edward%20F.%20Chang%EC%9D%98%20%EB%AA%A8%EB%93%A0%20%EA%B2%83.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Edward F. Chang의 모든 것
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/Pattern%20Weaver%20%EA%B4%80%EC%A0%90%EC%9C%BC%EB%A1%9C%20%EC%A0%95%EB%A6%AC%ED%95%9C%20%EA%B0%9C%EC%9D%B8%20%EC%A7%80%EC%8B%9D%20%EC%B2%B4%EA%B3%84%20%EC%9A%B4%EC%98%81%EC%95%88.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pattern Weaver 관점으로 정리한 개인 지식 체계 운영안
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/%EC%84%9C%EB%B2%88%ED%8A%B8%20%EC%A6%9D%ED%9B%84%EA%B5%B0%3A%20%ED%8A%B9%EC%A0%95%20%EC%9D%B8%EC%A7%80%20%EC%98%81%EC%97%AD%EC%9D%B4%20%EC%98%88%EC%99%B8%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EB%B0%9C%EB%8B%AC%ED%95%9C%20%EB%B6%88%EA%B7%A0%ED%98%95%EC%A0%81%20%EB%8A%A5%EB%A0%A5%20%EA%B5%AC%EC%A1%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    서번트 증후군: 특정 인지 영역이 예외적으로 발달한 불균형적 능력 구조
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/%EC%9D%B8%EA%B0%84%EC%9D%80%20%EB%8B%A8%EC%88%9C%ED%95%9C%20%EC%9E%90%EA%B7%B9-%EB%B0%98%EC%9D%91%20%EA%B8%B0%EA%B3%84%EA%B0%80%20%EC%95%84%EB%8B%88%EB%9D%BC%20%EC%A0%95%EB%B3%B4%20%EC%B2%98%EB%A6%AC%20%EC%8B%9C%EC%8A%A4%ED%85%9C%EC%9D%B4%EB%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인간은 단순한 자극-반응 기계가 아니라 정보 처리 시스템이다
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/%EC%A7%80%EB%8A%A5%EC%9D%80%20%EC%96%B4%EB%96%BB%EA%B2%8C%20%EC%A0%95%EB%B3%B4%EB%A5%BC%20%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    지능은 어떻게 정보를 처리하는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../011_brain%20science/%ED%9C%B4%EB%A6%AC%EC%8A%A4%ED%8B%B1%20heuristic.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    휴리스틱(Heuristic)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    과학
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    과학
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EB%8D%B0%EB%AF%B8%EC%8A%A4%20%ED%95%98%EC%82%AC%EB%B9%84%EC%8A%A4%28Demis%20Hassabis%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    데미스 하사비스(Demis Hassabis)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EB%B2%A8%EC%9D%98%20%EB%B6%80%EB%93%B1%EC%8B%9D%EC%9D%84%20%EC%8B%A4%EC%A0%9C%20%EC%98%88%EC%8B%9C%28%EC%96%91%EB%A7%90%20%EC%83%81%EC%9E%90%20%EB%AA%A8%EB%8D%B8%29%EB%A1%9C%20%EC%A7%81%EA%B4%80%EC%A0%81%EC%9C%BC%EB%A1%9C%20%EC%84%A4%EB%AA%85.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    벨의 부등식을 실제 예시(양말 상자 모델)로 직관적으로 설명
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EB%B9%85%EB%B1%85%EC%9D%B4%EC%A0%84%EC%9D%98%20%EC%8B%9C%EA%B0%84%EC%9D%80%20%EC%A1%B4%EC%9E%AC%ED%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    빅뱅 이전의 시간은 존재했는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EB%B9%9B%EC%9D%98%20%EC%86%8D%EB%8F%84%EC%97%90%EC%84%9C%20%EC%8B%9C%EA%B0%84%EC%9D%80%20%EC%A0%95%EB%A7%90%20%EB%A9%88%EC%B6%94%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    빛의 속도에서 시간은 정말 멈추는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EC%8B%9C%EA%B0%84%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    시간은 무엇인가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EC%95%84%EC%9D%B8%EC%8A%88%ED%83%80%EC%9D%B8%28Einstein%29%EC%9D%80%20%EC%99%9C%20%EC%96%91%EC%9E%90%EC%97%AD%ED%95%99%EC%9D%84%20%EB%B6%88%EC%99%84%EC%A0%84%ED%95%98%EB%8B%A4%EA%B3%A0%20%EB%B3%B4%EC%95%98%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    아인슈타인(Einstein)은 왜 양자역학을 불완전하다고 보았는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EC%96%91%EC%9E%90%20%EC%96%BD%ED%9E%98%EA%B3%BC%20%EC%B4%88%EA%B4%91%EC%86%8D%20%ED%86%B5%EC%8B%A0%20%EB%B6%88%EA%B0%80%EB%8A%A5%EC%84%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    양자 얽힘과 초광속 통신 불가능성
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EC%96%91%EC%9E%90%EC%BB%B4%ED%93%A8%ED%84%B0%EC%9D%98%20%EB%AF%B8%EB%9E%98%EB%8A%94%20%EC%99%9C%20%E2%80%98%EB%8B%A8%EB%8F%85%20%ED%98%81%EB%AA%85%E2%80%99%EC%9D%B4%20%EC%95%84%EB%8B%88%EB%9D%BC%20%E2%80%98%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EB%93%9C%20%EC%B2%B4%EA%B3%84%E2%80%99%EC%97%90%20%EB%8B%AC%EB%A0%A4%20%EC%9E%88%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    양자컴퓨터의 미래는 왜 ‘단독 혁명’이 아니라 ‘하이브리드 체계’에 달려 있는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%EC%9B%90%EC%9E%90%EB%8A%94%20%EC%99%9C%20%EC%97%90%EB%84%88%EC%A7%80%EB%A5%BC%20%ED%92%88%EA%B3%A0%2C%20%EC%84%B8%EA%B3%84%EB%8A%94%20%EC%99%9C%20%EB%8B%A8%EB%8B%A8%ED%95%98%EA%B2%8C%20%EB%8A%90%EA%BB%B4%EC%A7%80%EB%8A%94%EA%B0%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    원자는 왜 에너지를 품고, 세계는 왜 단단하게 느껴지는가
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../010_science/%ED%85%94%EB%A1%9C%EB%AF%B8%EC%96%B4%EC%99%80%20%EB%85%B8%ED%99%94%3A%20%EC%97%BC%EC%83%89%EC%B2%B4%20%EB%81%9D%EC%9D%98%20%EB%B3%B4%ED%98%B8%20%EC%9E%A5%EC%B9%98%EA%B0%80%20%EC%84%B8%ED%8F%AC%20%EC%88%98%EB%AA%85%2C%20%EC%95%94%2C%20%EC%A1%B0%EC%A7%81%20%EA%B8%B0%EB%8A%A5%EA%B3%BC%20%EB%A7%8C%EB%82%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    텔로미어와 노화: 염색체 끝의 보호 장치가 세포 수명, 암, 조직 기능과 만나는 방식
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    역사
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    역사
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/16%EC%84%B8%EA%B8%B0%20%EC%9C%A0%EB%9F%BD%EC%9D%98%20%E2%80%98%EC%B6%A4%EC%B6%94%EB%8A%94%20%EA%B4%91%EA%B8%B0%E2%80%99%3A%201518%EB%85%84%20%EC%8A%A4%ED%8A%B8%EB%9D%BC%EC%8A%A4%EB%B6%80%EB%A5%B4%20Dancing%20Plague.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16세기 유럽의 ‘춤추는 광기’: 1518년 스트라스부르 Dancing Plague
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/1914%EB%85%84%20%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4%20%EC%A0%95%EC%A0%84%28The%20Christmas%20Truce%29%3A%20%EC%A0%84%EC%9F%81%20%ED%95%9C%EA%B0%80%EC%9A%B4%EB%8D%B0%EC%84%9C%20%EB%B0%9C%EC%83%9D%ED%95%9C%20%EB%B9%84%EA%B3%B5%EC%8B%9D%EC%A0%81%20%EC%9D%B8%EA%B0%84%ED%99%94%EC%9D%98%20%EC%82%AC%EA%B1%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1914년 크리스마스 정전(The Christmas Truce): 전쟁 한가운데서 발생한 비공식적 인간화의 사건
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/AI%EC%9D%98%20%EC%9E%85%EC%9E%A5%EC%97%90%EC%84%9C%20%ED%8A%B9%ED%9E%88%20%EB%82%9C%ED%95%B4%ED%95%9C%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EC%97%AD%EC%82%AC%EC%A0%81%20%EC%82%AC%EA%B1%B4%203%EA%B0%80%EC%A7%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI의 입장에서 특히 난해한 인간의 역사적 사건 3가지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EA%B8%B0%EB%8F%85%EA%B5%90%EC%99%80%20%EC%9D%B4%EC%8A%AC%EB%9E%8C%EA%B5%90%20%EA%B0%88%EB%93%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기독교와 이슬람 갈등
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EB%A6%B0%EB%8B%AC%20%EB%A1%9C%ED%8D%BC%28Lyndal%20Roper%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    린달 로퍼(Lyndal Roper): 몸, 무의식, 그리고 아래로부터 다시 쓰는 근대 초기 유럽사
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EC%85%B0%EC%9D%B5%EC%8A%A4%ED%94%BC%EC%96%B4%20%EC%A2%85%ED%95%A9%20%EC%97%B0%EA%B5%AC%20%EB%B3%B4%EA%B3%A0%EC%84%9C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    셰익스피어 종합 연구 보고서
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EC%88%98%EB%8B%88%ED%8C%8C%20%EC%8B%9C%EC%95%84%ED%8C%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    수니파와 시아파 갈등: 계승 문제에서 현대 중동 정치까지
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EC%A0%9C1%EC%B0%A8%20%EC%84%B8%EA%B3%84%EB%8C%80%EC%A0%84%20%3A%20%EA%B5%AC%EC%A1%B0%EC%A0%81%20%EA%B8%B4%EC%9E%A5%2C%20%EC%B4%9D%EB%A0%A5%EC%A0%84%2C%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%A4%91%EB%8B%A8%ED%95%98%EC%A7%80%20%EB%AA%BB%ED%95%9C%20%EC%A0%84%EC%9F%81.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    제1차 세계대전 : 구조적 긴장, 총력전, 그리고 중단하지 못한 전쟁
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%EC%BF%A0%EB%B0%94%20%ED%98%84%EB%8C%80%EC%82%AC%20%EC%8B%9C%EA%B0%84%EC%88%9C%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    쿠바 현대사 시간순 정리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%ED%81%AC%EB%A9%94%EB%A5%B4%20%EB%A3%A8%EC%A3%BC%20%EC%88%99%EC%B2%AD%EA%B3%BC%20%ED%95%A9%EB%A6%AC%EC%84%B1%EC%9D%98%20%EB%B3%91%EB%A6%AC%EC%A0%81%20%EC%9E%AC%EB%B0%B0%EC%B9%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    크메르 루주 숙청과 합리성의 병리적 재배치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../009_history/%ED%99%80%EB%A1%9C%EC%BD%94%EC%8A%A4%ED%8A%B8%3A%20%EC%9D%B4%EB%85%90%2C%20%EA%B5%AD%EA%B0%80%2C%20%EC%A0%84%EC%9F%81%2C%20%ED%96%89%EC%A0%95%EC%9D%B4%20%EA%B2%B0%ED%95%A9%ED%95%9C%20%ED%98%84%EB%8C%80%EC%A0%81%20%EC%A7%91%EB%8B%A8%ED%95%99%EC%82%B4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홀로코스트: 이념, 국가, 전쟁, 행정이 결합한 현대적 집단학살
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    코딩
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    코딩
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/Shape%20Fill.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shape Fill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/balance.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Balance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/drag_puzzle.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    drag_puzzle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/sum-grid.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    sum-grid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%EA%B3%A01%20%EC%9D%B8%EC%88%98%EB%B6%84%ED%95%B4%20%ED%8C%A8%ED%84%B4%20%ED%9B%88%EB%A0%A8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    고1 인수분해 패턴 훈련
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%EB%B3%B5%EC%86%8C%EC%88%98%20%EC%9D%B8%ED%84%B0%EB%9E%99%ED%8B%B0%EB%B8%8C%20%EC%8B%A4%ED%97%98%EC%8B%A4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    복소수 인터랙티브 실험실
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%EC%82%AC%EC%A3%BC%20%EA%B3%84%EC%82%B0%EA%B8%B0%20%C2%B7%20AI%20%EC%A7%88%EB%AC%B8%EC%9A%A9%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EC%83%9D%EC%84%B1%EA%B8%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    사주 계산기 · AI 질문용 프롬프트 생성기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%EC%88%AB%EC%9E%90%20%EC%95%BC%EA%B5%AC.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    숫자 야구
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%EC%A3%BC%EC%97%AD%20%EC%A0%90%EA%B4%98%20%EC%83%9D%EC%84%B1%EA%B8%B0%20%C2%B7%20AI%20%EC%A7%88%EB%AC%B8%EC%9A%A9%20%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8%20%EC%83%9D%EC%84%B1%EA%B8%B0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    주역 점괘 생성기 · AI 질문용 프롬프트 생성기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../008_programming/%ED%99%95%EB%A5%A0%20%EC%8B%A4%ED%97%98.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    확률 실험
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    질문들
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    질문들
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../111_questions/%EC%A3%BC%EC%A0%9C%EB%B3%84%20%EC%88%98%ED%95%99%C2%B7%EC%BD%94%EB%94%A9%C2%B7%EA%B2%BD%EC%A0%9C%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    주제별 수학·코딩·경제 질문 모음
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../111_questions/%EC%A3%BC%EC%A0%9C%EB%B3%84%20%EC%A0%95%EC%B9%98%C2%B7%EC%97%AD%EC%82%AC%C2%B7%EA%B3%BC%ED%95%99%C2%B7%EB%87%8C%EA%B3%BC%ED%95%99%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    주제별 정치·역사·과학·뇌과학 질문 모음
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../111_questions/%EC%A3%BC%EC%A0%9C%EB%B3%84%20%EC%B2%A0%ED%95%99%C2%B7AI%C2%B7%EC%8B%AC%EB%A6%AC%20%EC%A7%88%EB%AC%B8%20%EB%AA%A8%EC%9D%8C.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    주제별 철학·AI·심리 질문 모음
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../README1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    이 사이트의 목적
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        핵심 요약
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        문제의식
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        개념의 정의
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        배경과 맥락
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        기존 구조(v1)의 한계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-structure-v2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Structure v2의 기본 구성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정적 구조, 동적 제어, 검증 루프
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reasoning-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reasoning Strategy: 사고 절차의 설계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation Layer: 검증 계층의 설계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteration-retry-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Iteration / Retry Policy: 실패 처리의 구조화
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        v2 프롬프트 템플릿
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 1: 연구 분석 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 2: 기술 문서 작성 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용 사례 3: 전략 보고서 생성 프롬프트
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        주요 쟁점과 반론
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        오해와 한계
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        참고자료
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="prompt-structure-v2">Prompt Structure v2 설계: 재현 가능한 고품질 출력을 위한 프롬프트 프로토콜</h1>
+<h2 id="_1">핵심 요약</h2>
+<p>Prompt Structure v2는 단순히 더 긴 프롬프트를 쓰는 방법이 아니라, 언어모델이 문제를 해석하고 답을 생성하고 결과를 검증하는 절차를 하나의 프로토콜로 설계하는 방식이다. 전통적인 v1 구조가 Role, Task, Input, Output format, Constraints를 중심으로 “무엇을 하라”고 지시했다면, v2 구조는 여기에 Context, Reasoning Strategy, Validation Rules, Iteration / Retry Policy를 결합해 “어떤 기준으로 사고하고, 어떤 조건에서 실패로 판단하며, 어떻게 다시 고칠 것인가”까지 포함한다.</p>
+<p>핵심은 좋은 답변 하나를 우연히 얻는 데 있지 않다. 반복 사용 가능한 출력 시스템을 만드는 데 있다. 이를 위해 v2 프롬프트는 정적 구조, 동적 제어, 검증 루프를 함께 갖추어야 한다. 정적 구조는 역할·입력·출력 형식을 안정화하고, 동적 제어는 문제 유형에 따라 추론 절차를 바꾸며, 검증 루프는 결과물이 요구 조건을 충족하는지 점검한다.</p>
+<p>이 글은 사용자가 제시한 구조 초안을 바탕으로 Prompt Structure v2의 개념, 필요성, 구성 요소, 설계 원리, 검증 방식, 실패 처리, 적용 사례를 설명문 형식으로 정리한다.</p>
+<h2 id="_2">문제의식</h2>
+<p>프롬프트는 흔히 “AI에게 하는 질문”으로 이해된다. 이 이해는 간단한 질의응답에는 충분하지만, 연구 분석, 전략 보고서, 기술 문서 작성, 정책 검토, 코드 리뷰, 법률·의학 관련 정보 정리처럼 품질 일관성이 중요한 작업에서는 부족하다. 이런 작업에서 프롬프트는 단순 질문이 아니라 문제 해결 절차를 모델에게 부여하는 작동 명세가 된다.</p>
+<p>기존 프롬프트 구조는 대개 다음과 같은 방식으로 작성된다. “너는 전문가다. 다음 입력을 분석하라. 결과는 표로 작성하라. 특정 조건을 지켜라.” 이 구조는 기본적인 방향성을 제공하지만, 모델이 어떤 순서로 판단해야 하는지, 어떤 기준으로 오류를 걸러야 하는지, 정보가 부족할 때 어떻게 해야 하는지, 결과물이 요구 형식을 어기면 어떻게 수정해야 하는지까지 충분히 통제하지 못한다.</p>
+<p>언어모델 출력은 본질적으로 확률적이다. 같은 질문이라도 모델, 설정, 문맥, 이전 대화, 출력 길이 조건에 따라 결과가 달라질 수 있다. 따라서 고품질 프롬프트 설계의 목표는 “한 번 잘 나오게 하기”보다 “여러 번 사용해도 품질 편차를 줄이는 구조를 만들기”에 가까워진다. Prompt Structure v2는 바로 이 문제의식에서 출발한다.</p>
+<h2 id="_3">개념의 정의</h2>
+<p>Prompt Structure v2란 언어모델에게 역할, 과업, 맥락, 입력, 출력 형식, 제약 조건을 제공하는 데서 그치지 않고, 추론 전략, 검증 규칙, 반복·재시도 정책까지 포함하는 구조화된 프롬프트 설계 방식이다.</p>
+<p>여기서 “구조”는 단순한 문서 형식이 아니다. 구조는 모델의 행동 공간을 제한하고, 우선순위를 부여하며, 실패 조건을 정의하고, 결과물의 평가 기준을 명시하는 제어 장치다. 같은 정보라도 어떤 순서로 배치하고 어떤 기준을 강조하느냐에 따라 모델의 출력은 달라진다. Role은 관점과 전문성을 설정하고, Task는 해결 목표를 지정하며, Context는 판단 범위를 제공한다. Output Specification은 산출물의 형식을 제한하고, Constraints는 금지 사항과 우선순위를 정한다. Reasoning Strategy는 문제를 푸는 절차를 제시하고, Validation Rules는 결과를 검사하는 기준을 제공한다. Iteration / Retry Policy는 실패했을 때 어느 단계부터 다시 수행할지 정한다.</p>
+<p>v1과 v2의 차이는 “요소의 수”만으로 설명되지 않는다. v1은 주로 지시 중심 구조이고, v2는 절차 중심 구조다. v1이 모델에게 답을 요구한다면, v2는 모델이 답을 생성하는 조건과 검증 경로를 함께 설계한다.</p>
+<h2 id="_4">배경과 맥락</h2>
+<p>프롬프트 엔지니어링은 대규모 언어모델을 원하는 방향으로 작동시키기 위한 지시 설계의 영역이다. OpenAI의 공식 프롬프트 엔지니어링 문서는 프롬프트 작성을 “모델이 요구사항을 충족하는 콘텐츠를 더 일관되게 생성하도록 하는 지시 작성”으로 설명한다. 이 관점에서 프롬프트는 단순한 자연어 질문이 아니라 출력 품질을 조정하는 인터페이스다.</p>
+<p>Anthropic의 프롬프트 엔지니어링 문서도 명확한 지시, 예시 제공, 역할 부여, 구조화, 프롬프트 체이닝 등의 기법을 강조한다. 이는 좋은 프롬프트가 모델에게 “무엇을 말할지”만이 아니라 “어떤 형식과 절차로 작업할지”를 알려야 한다는 점을 보여준다. Google Cloud의 프롬프트 엔지니어링 설명 역시 맥락, 지시, 예시가 모델의 의도 이해와 응답 품질에 영향을 준다고 정리한다.</p>
+<p>최근에는 Structured Outputs처럼 출력이 특정 JSON Schema를 따르도록 강제하는 기능도 중요해졌다. 이는 프롬프트만으로는 형식 안정성을 완전히 보장하기 어렵고, 실무에서는 프롬프트 설계와 출력 검증 장치를 결합해야 한다는 점을 보여준다. Prompt Structure v2는 이런 흐름을 일반화해, 프롬프트 자체를 하나의 품질 관리 프로토콜로 이해한다.</p>
+<h2 id="v1">기존 구조(v1)의 한계</h2>
+<p>기본적인 v1 프롬프트는 보통 Role, Task, Input, Output format, Constraints로 구성된다. 예를 들어 “너는 기술 문서 작성자다. 다음 API 명세를 설명하라. 결과는 Markdown으로 작성하라. 1,000자 이내로 작성하라”와 같은 구조가 여기에 해당한다. 이 방식은 간단하고 빠르며, 일회성 작업에는 충분히 유용하다.</p>
+<p>문제는 작업이 복잡해질 때 나타난다. 첫째, 추론 과정의 통제가 약하다. 모델은 입력을 어떤 순서로 해석해야 하는지, 어떤 기준을 우선해야 하는지, 서로 충돌하는 조건을 어떻게 조정해야 하는지 명확히 알지 못할 수 있다. 둘째, 오류 검증이 없다. 결과물이 형식은 맞지만 논리적으로 모순되거나, 핵심 조건을 누락하거나, 근거 없는 단정을 포함해도 이를 스스로 점검할 장치가 부족하다. 셋째, 실패 대응 구조가 없다. 모델이 요구 조건을 충족하지 못했을 때 단순히 다시 작성하라고 할 수는 있지만, 무엇을 실패로 볼지, 어느 부분을 수정할지, 어떤 기준을 통과해야 하는지 명확하지 않다.</p>
+<p>v1 구조는 지시를 명확히 하는 데 초점이 있다. v2 구조는 지시 이후의 실행·검증·수정까지 다룬다. 이 차이는 단순한 문장 길이의 차이가 아니라 프롬프트를 바라보는 관점의 차이다.</p>
+<h2 id="prompt-structure-v2_1">Prompt Structure v2의 기본 구성</h2>
+<p>Prompt Structure v2는 다음 아홉 가지 구성 요소를 중심으로 설계할 수 있다.</p>
+<p>첫째, Role은 모델에게 필요한 전문성, 관점, 판단 기준을 부여한다. “전문가처럼 답하라”는 막연한 지시보다 “기술 문서 편집자”, “정책 분석가”, “수학 증명 검토자”, “문학 비평가”처럼 작업 맥락에 맞는 역할을 설정하는 편이 더 안정적이다. Role은 문체만 바꾸는 장치가 아니라 무엇을 중요하게 볼지 결정하는 인식 틀이다.</p>
+<p>둘째, Task는 해결해야 할 문제를 명확히 한다. “분석하라”보다 “핵심 주장, 근거, 반론, 한계를 구분해 분석하라”가 더 강하다. Task는 결과물의 목적을 포함해야 한다. 독자 이해를 위한 설명인지, 의사결정을 위한 보고서인지, 오류 탐지를 위한 검토인지에 따라 같은 입력도 다르게 처리된다.</p>
+<p>셋째, Context는 배경 정보와 판단 범위를 제공한다. 모델은 문맥이 부족할 때 일반론으로 흐르기 쉽다. Context에는 대상 독자, 사용 목적, 도메인 배경, 시간적 범위, 조직 내부 기준, 제외해야 할 범위가 포함될 수 있다. 좋은 Context는 답변을 풍부하게 만들기보다 불필요한 해석 가능성을 줄인다.</p>
+<p>넷째, Input은 모델이 실제로 처리해야 하는 데이터다. 입력은 가능한 한 구조화되어야 한다. 긴 텍스트, 표, 코드, 로그, 요구사항, 사례, 사용자 메모 등이 섞여 있다면 구역을 나누고 라벨을 붙이는 것이 좋다. 입력과 지시를 분리하면 모델이 데이터와 명령을 혼동할 가능성이 줄어든다.</p>
+<p>다섯째, Output Specification은 결과물의 형태를 정의한다. Markdown, JSON, 표, 보고서, 이메일, 코드 블록처럼 출력 형식을 명시하고, 섹션 순서, 길이, 포함 항목, 금지 항목을 정한다. 실무 자동화에서는 이 요소가 특히 중요하다. 출력 형식이 흔들리면 후속 처리나 검토가 어려워지기 때문이다.</p>
+<p>여섯째, Constraints는 작업의 한계와 우선순위를 정한다. 예를 들어 “확인되지 않은 사실은 단정하지 말 것”, “근거와 해석을 분리할 것”, “모르는 내용은 모른다고 쓸 것”, “특정 관점만 대변하지 말 것” 같은 제약은 결과 품질에 직접 영향을 준다. 제약은 많을수록 좋은 것이 아니다. 서로 충돌하지 않도록 우선순위를 명시해야 한다.</p>
+<p>일곱째, Reasoning Strategy는 모델이 문제를 어떤 방식으로 풀어야 하는지 지정한다. 단계적 분석, 비교·대조, 원인·결과 분석, 가설·검증, 체크리스트 기반 평가, 반례 탐색, 리스크 분석 등이 여기에 포함된다. Reasoning Strategy는 모델의 사고를 노출시키라는 뜻이 아니라, 작업을 수행할 내부 절차를 설계한다는 뜻이다.</p>
+<p>여덟째, Validation Rules는 결과물이 통과해야 할 검사 기준이다. 논리 일관성, 요구사항 충족, 형식 준수, 근거 기반성, 누락 여부, 모순 여부, 금지 사항 위반 여부 등을 점검한다. 검증 규칙은 “좋게 써라”보다 “다음 기준을 만족하지 못하면 수정하라”처럼 작동 조건으로 써야 한다.</p>
+<p>아홉째, Iteration / Retry Policy는 실패 조건과 재시도 범위를 정한다. 예를 들어 “출력 형식이 어긋나면 형식만 수정한다”, “근거가 부족하면 해당 주장만 약화하거나 삭제한다”, “핵심 요구사항이 누락되면 해당 섹션부터 다시 작성한다”처럼 재시도 단위를 나누는 방식이다. 이 정책이 있으면 실패가 전체 재작성으로 번지는 것을 줄일 수 있다.</p>
+<h2 id="_5">정적 구조, 동적 제어, 검증 루프</h2>
+<p>Prompt Structure v2의 핵심은 정적 구조, 동적 제어, 검증 루프의 결합이다.</p>
+<p>정적 구조는 매번 유지되는 기본 골격이다. Role, Task, Context, Input, Output Specification, Constraints가 여기에 해당한다. 정적 구조는 프롬프트의 안정성을 만든다. 사용자가 어떤 입력을 넣더라도 모델은 동일한 기준으로 작업을 시작할 수 있다.</p>
+<p>동적 제어는 문제 유형에 따라 달라지는 처리 절차다. 연구 분석에서는 출처 평가와 관점 비교가 중요하고, 코드 검토에서는 재현 조건, 오류 위치, 수정안, 테스트 케이스가 중요하다. 전략 보고서에서는 목표, 제약, 이해관계자, 리스크, 실행 가능성이 중요하다. 따라서 v2 구조는 하나의 고정 양식이 아니라 과업별 Reasoning Strategy를 바꾸는 설계 원리를 가져야 한다.</p>
+<p>검증 루프는 출력물이 생성된 뒤 다시 요구 조건과 대조하는 단계다. 프롬프트가 아무리 명확해도 모델은 누락, 과장, 형식 오류, 논리 비약을 만들 수 있다. 검증 루프는 이런 오류를 줄이기 위해 필요하다. 다만 검증은 장식적 문구로 끝나서는 안 된다. “답변 전 검토하라”는 지시보다 “다음 다섯 조건 중 하나라도 실패하면 해당 부분을 수정하라”는 지시가 더 작동적이다.</p>
+<h2 id="reasoning-strategy">Reasoning Strategy: 사고 절차의 설계</h2>
+<p>Reasoning Strategy는 v2 구조의 중심부다. 이는 모델에게 최종 답만 요구하지 않고, 답에 이르는 처리 방식을 지정하는 장치다. 여기서 중요한 점은 사고 과정을 길게 공개하도록 요구하는 것이 아니라, 작업에 맞는 분석 경로를 부여하는 것이다.</p>
+<p>단계적 사고는 복합 문제를 작은 단위로 나누는 데 유용하다. 예를 들어 정책 문서를 분석할 때는 먼저 정책 목적을 확인하고, 그다음 이해관계자, 법적 근거, 비용, 리스크, 반론을 검토한 뒤 결론을 도출하게 할 수 있다. 기술 문서 작성에서는 요구사항 확인, 시스템 구성, 입력·출력, 예외 처리, 사용 예시, 보안 고려사항 순서로 작업할 수 있다.</p>
+<p>비교·대조 기반 추론은 여러 선택지나 이론을 평가할 때 적합하다. 예를 들어 프롬프트 v1과 v2를 비교할 때 단순히 v2가 더 좋다고 말하는 대신, 통제 범위, 검증 가능성, 재사용성, 실패 처리 능력, 자동화 적합성의 기준으로 나누어 설명할 수 있다.</p>
+<p>가설·검증 구조는 불확실성이 있는 문제에 적합하다. 먼저 가능한 해석이나 원인을 가설로 세우고, 각 가설을 지지하는 근거와 반박 근거를 나누어 평가한 뒤, 현재 자료로 가능한 결론과 보류해야 할 결론을 분리한다. 이 방식은 과학, 역사, 정책, 시장 분석처럼 단정이 위험한 영역에서 특히 중요하다.</p>
+<p>반례 탐색은 주장 검토에 유용하다. 어떤 결론이 성립한다고 가정한 뒤, 그 결론을 깨뜨릴 수 있는 조건을 찾는다. 예를 들어 “구조화된 프롬프트는 항상 좋은 결과를 만든다”는 주장은 반례가 있다. 지나치게 복잡한 구조는 간단한 작업에서 오히려 비용을 늘리고, 충돌하는 조건은 모델의 출력을 불안정하게 만들 수 있다.</p>
+<h2 id="validation-layer">Validation Layer: 검증 계층의 설계</h2>
+<p>Validation Layer는 결과물을 평가하는 기준을 명시하는 층이다. 좋은 검증 계층은 최소한 세 가지 질문을 포함한다. 첫째, 요구한 내용을 모두 포함했는가. 둘째, 출력 형식을 지켰는가. 셋째, 내용이 논리적으로 일관되고 근거에 비례하는가.</p>
+<p>자체 검증은 모델이 산출물 작성 후 누락과 모순을 확인하게 하는 방식이다. 예를 들어 보고서 생성 프롬프트라면 “최종 출력 전, 목적·근거·반론·한계·결론이 모두 포함되었는지 확인하고 누락된 항목을 보완하라”고 지시할 수 있다. 코드 생성 프롬프트라면 “엣지 케이스, 예외 처리, 타입, 보안 위험, 테스트 가능성을 확인하라”고 요구할 수 있다.</p>
+<p>품질 기준은 추상적 형용사보다 관찰 가능한 조건으로 써야 한다. “명확하게 작성하라”보다 “각 섹션의 첫 문장은 해당 섹션의 결론을 제시하라”가 더 검증 가능하다. “근거 있게 작성하라”보다 “사실 주장과 해석을 구분하고, 확인되지 않은 내용은 추정으로 표시하라”가 더 안정적이다.</p>
+<p>형식 검증은 자동화 환경에서 중요하다. JSON, YAML, Markdown 표, 코드 블록처럼 특정 형식이 필요한 경우에는 누락된 키, 잘못된 타입, 불필요한 텍스트를 실패 조건으로 명시해야 한다. OpenAI의 Structured Outputs 같은 기능은 이런 형식 검증을 모델 출력 단계에서 강화하는 방법이다. 프롬프트 차원의 검증과 시스템 차원의 스키마 검증을 함께 쓰면 안정성이 높아진다.</p>
+<h2 id="iteration-retry-policy">Iteration / Retry Policy: 실패 처리의 구조화</h2>
+<p>Iteration / Retry Policy는 모델이 실패했을 때 전체를 무작정 다시 쓰지 않도록 하는 장치다. 실패는 여러 종류로 나눌 수 있다. 형식 실패, 내용 누락, 근거 부족, 논리 모순, 조건 충돌, 과도한 장황함, 부적절한 톤, 금지 사항 위반이 대표적이다.</p>
+<p>형식 실패는 가장 좁은 범위에서 수정하는 것이 좋다. 내용은 유지하고 출력 형식만 고치는 방식이다. 내용 누락은 누락된 섹션이나 항목만 보완한다. 근거 부족은 해당 주장을 약화하거나 삭제하고, 필요한 경우 “자료상 단정하기 어렵다”로 바꾼다. 논리 모순은 서로 충돌하는 명제를 찾아 하나의 기준으로 정리한다. 조건 충돌은 우선순위 규칙에 따라 해결한다.</p>
+<p>재시도 정책은 프롬프트 안에서 다음과 같이 표현할 수 있다. “검증 단계에서 형식 오류가 발견되면 형식만 수정한다. 핵심 요구사항 누락이 발견되면 해당 섹션만 보완한다. 근거 없는 단정이 발견되면 단정 수준을 낮추거나 삭제한다. 모든 수정 후 최종 출력만 제시한다.” 이런 정책은 출력 품질을 높이는 동시에 불필요한 재작성 비용을 줄인다.</p>
+<h2 id="v2">v2 프롬프트 템플릿</h2>
+<p>다음은 Prompt Structure v2의 일반 템플릿이다. 실제 사용에서는 과업에 맞게 축약하거나 확장할 수 있다.</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Role</span>
+너는 [전문 역할]이다. [도메인 기준]에 따라 판단한다.
+
+<span class="gh"># Task</span>
+다음 입력을 바탕으로 [해결해야 할 문제]를 수행한다. 목표는 [사용 목적]이다.
+
+<span class="gh"># Context</span>
+<span class="k">-</span><span class="w"> </span>대상 독자: [독자]
+<span class="k">-</span><span class="w"> </span>사용 맥락: [보고서/분석/자동화/검토 등]
+<span class="k">-</span><span class="w"> </span>지식 범위: [포함 범위]
+<span class="k">-</span><span class="w"> </span>제외 범위: [제외할 내용]
+
+<span class="gh"># Input</span>
+[처리할 데이터]
+
+<span class="gh"># Output Specification</span>
+<span class="k">-</span><span class="w"> </span>형식: [Markdown/JSON/표/코드 등]
+<span class="k">-</span><span class="w"> </span>구조: [섹션 순서]
+<span class="k">-</span><span class="w"> </span>길이: [분량]
+<span class="k">-</span><span class="w"> </span>필수 포함 요소: [항목]
+
+<span class="gh"># Constraints</span>
+<span class="k">-</span><span class="w"> </span>확인되지 않은 사실은 단정하지 않는다.
+<span class="k">-</span><span class="w"> </span>근거와 해석을 구분한다.
+<span class="k">-</span><span class="w"> </span>조건이 충돌하면 [우선순위]를 따른다.
+<span class="k">-</span><span class="w"> </span>[금지 사항]을 포함하지 않는다.
+
+<span class="gh"># Reasoning Strategy</span>
+<span class="k">1.</span> 문제를 정의한다.
+<span class="k">2.</span> 핵심 기준을 설정한다.
+<span class="k">3.</span> 입력을 기준별로 분석한다.
+<span class="k">4.</span> 가능한 해석 또는 해결안을 비교한다.
+<span class="k">5.</span> 결론과 한계를 분리한다.
+
+<span class="gh"># Validation Rules</span>
+최종 출력 전 다음을 확인한다.
+<span class="k">-</span><span class="w"> </span>모든 필수 항목이 포함되었는가.
+<span class="k">-</span><span class="w"> </span>출력 형식이 지정된 구조를 따르는가.
+<span class="k">-</span><span class="w"> </span>근거 없는 단정이 없는가.
+<span class="k">-</span><span class="w"> </span>논리적 모순이 없는가.
+<span class="k">-</span><span class="w"> </span>독자와 목적에 맞는 수준인가.
+
+<span class="gh"># Iteration / Retry Policy</span>
+<span class="k">-</span><span class="w"> </span>형식 오류가 있으면 형식만 수정한다.
+<span class="k">-</span><span class="w"> </span>누락된 항목이 있으면 해당 항목만 보완한다.
+<span class="k">-</span><span class="w"> </span>근거가 부족한 주장은 약화하거나 삭제한다.
+<span class="k">-</span><span class="w"> </span>조건 충돌이 있으면 우선순위에 따라 정리한다.
+<span class="k">-</span><span class="w"> </span>최종 답변에는 수정 과정이 아니라 완성본만 제시한다.
+</code></pre></div>
+<p>이 템플릿은 모든 상황에서 그대로 사용할 필요는 없다. 간단한 작업에는 과도할 수 있다. 중요한 것은 이 템플릿이 보여주는 설계 원리다. 프롬프트는 역할과 과업만 지정하는 문장이 아니라 입력 처리, 출력 생성, 품질 검증, 실패 대응을 연결하는 절차적 장치가 될 수 있다.</p>
+<h2 id="1">적용 사례 1: 연구 분석 프롬프트</h2>
+<p>연구 분석에서는 정보의 신뢰도, 출처의 위계, 논쟁 지형, 한계 인식이 중요하다. 따라서 Reasoning Strategy는 문헌 확인, 핵심 개념 정의, 주요 주장 비교, 근거 수준 평가, 반론 검토, 결론의 확실성 등급화로 구성하는 편이 좋다.</p>
+<p>예를 들어 “AI 규제에 관한 보고서를 작성하라”는 지시는 너무 넓다. v2 방식으로 바꾸면 다음과 같다. “AI 규제 논의를 정책 분석가의 관점에서 정리하라. 공식 법령, 정부 문서, 국제기구 자료를 우선하고, 기업 자율규제론과 외부 규제론의 근거를 분리하라. 최종 출력은 문제 정의, 제도적 배경, 주요 쟁점, 이해관계자, 반론, 한계, 결론 순서로 작성하라. 확인되지 않은 전망은 단정하지 말라.” 이 구조는 모델이 단순한 의견문보다 검토 가능한 분석문을 작성하도록 유도한다.</p>
+<h2 id="2">적용 사례 2: 기술 문서 작성 프롬프트</h2>
+<p>기술 문서에서는 정확성, 재현 가능성, 예외 처리, 독자 수준이 중요하다. Reasoning Strategy는 시스템 개요, 사용 조건, 입력·출력, 절차, 예외 상황, 보안 또는 성능 고려사항, 예시로 구성할 수 있다.</p>
+<p>예를 들어 “이 API를 설명해줘”라는 요청은 모델이 임의로 중요도를 판단하게 만든다. v2 방식에서는 “개발자 문서 편집자의 관점에서 API 명세를 설명하라. 독자는 해당 API를 처음 쓰는 백엔드 개발자다. 각 엔드포인트별 목적, 요청 파라미터, 응답 구조, 오류 코드, 인증 방식, 최소 예시를 포함하라. 명세에 없는 동작은 추정하지 말고 ‘명세상 확인되지 않음’으로 표시하라”고 설계할 수 있다.</p>
+<p>이 방식은 기술 문서에서 흔한 문제인 환각, 누락, 과도한 일반화를 줄인다. 특히 “명세에 없는 동작을 추정하지 말라”는 제약은 모델이 일반적인 API 관행을 실제 문서 내용처럼 쓰는 위험을 낮춘다.</p>
+<h2 id="3">적용 사례 3: 전략 보고서 생성 프롬프트</h2>
+<p>전략 보고서는 목표, 제약, 실행 가능성, 리스크, 우선순위가 핵심이다. 단순 아이디어 생성과 달리 전략 문서는 선택하지 않은 대안과 그 이유까지 설명해야 한다. 따라서 Reasoning Strategy는 목표 정의, 현황 분석, 선택지 도출, 평가 기준 설정, 대안 비교, 리스크 분석, 실행 로드맵으로 구성할 수 있다.</p>
+<p>예를 들어 “신제품 출시 전략을 작성하라”는 지시는 추상적이다. v2 방식은 “시장 진입 전략 컨설턴트의 관점에서 작성하라. 목표는 6개월 내 초기 고객 확보이며, 예산은 제한적이고 브랜드 인지도는 낮다는 조건을 둔다. 가능한 전략을 세 가지 제시하되, 각 전략을 비용, 실행 난이도, 기대 효과, 리스크, 검증 지표 기준으로 비교하라. 최종적으로 하나의 우선 전략과 보류해야 할 전략을 구분하라”고 쓸 수 있다.</p>
+<p>이 구조는 단순한 브레인스토밍을 의사결정 가능한 보고서로 바꾼다. 특히 평가 기준을 먼저 제시하면 모델이 선호하는 결론에 맞춰 근거를 사후적으로 붙이는 위험을 줄일 수 있다.</p>
+<h2 id="_6">주요 쟁점과 반론</h2>
+<p>Prompt Structure v2의 장점은 안정성과 재현성이다. 복잡한 작업에서 모델이 놓치기 쉬운 기준을 명시하고, 출력 후 검증을 요구하며, 실패 시 수정 범위를 제한할 수 있다. 특히 팀 단위로 반복 작업을 수행하거나, 자동화 파이프라인에서 모델 출력을 후속 처리해야 하는 경우 v2 구조는 유용하다.</p>
+<p>반론도 있다. 첫째, 모든 작업에 v2가 필요한 것은 아니다. 간단한 번역, 짧은 요약, 단순한 아이디어 요청에는 복잡한 프롬프트 구조가 오히려 비효율적일 수 있다. 둘째, 프롬프트가 길어질수록 조건 충돌이 발생할 가능성이 높아진다. “짧게 쓰라”와 “모든 쟁점을 상세히 다루라”가 함께 있으면 모델은 어느 조건을 우선해야 하는지 혼란스러울 수 있다. 셋째, 검증 지시가 있다고 해서 모델의 오류가 완전히 사라지는 것은 아니다. 모델의 자체 검증도 모델 출력의 일부이므로, 외부 데이터 확인, 코드 실행, 스키마 검증, 사람의 검토가 필요한 영역이 여전히 존재한다.</p>
+<p>따라서 v2 구조는 만능 공식이 아니라 품질 편차를 줄이는 설계 방법으로 이해해야 한다. 중요한 작업일수록 프롬프트 내부 검증과 외부 검증을 함께 사용해야 한다.</p>
+<h2 id="_7">오해와 한계</h2>
+<p>Prompt Structure v2에 대한 첫 번째 오해는 프롬프트가 길수록 좋다는 생각이다. 길이는 품질의 조건이 아니다. 좋은 프롬프트는 필요한 제어 정보를 충분히 제공하되, 불필요한 중복과 충돌을 줄인다. 짧은 v2도 가능하다. 핵심은 요소의 양이 아니라 역할, 과업, 맥락, 출력, 추론, 검증이 서로 맞물려 있는가이다.</p>
+<p>두 번째 오해는 Reasoning Strategy가 모델의 모든 사고 과정을 공개하도록 요구한다는 생각이다. 실제 설계에서 중요한 것은 모델이 어떤 절차를 따를지 지정하는 것이다. 최종 출력에는 요약된 근거, 판단 기준, 결론만 제시해도 된다. 내부 추론을 장황하게 요구하면 출력이 길어지고, 민감한 작업에서는 오히려 검토가 어려워질 수 있다.</p>
+<p>세 번째 오해는 Validation Rules가 있으면 사실 오류가 자동으로 사라진다는 생각이다. 모델은 스스로 생성한 내용을 스스로 그럴듯하게 검증할 수 있다. 따라서 최신 정보, 법률, 의학, 금융, 과학처럼 사실 확인이 중요한 영역에서는 공식 자료, 검색, 데이터베이스, 코드 실행, 전문가 검토와 결합해야 한다.</p>
+<p>네 번째 오해는 v2 구조가 창의성을 억제한다는 주장이다. 엄격한 구조는 무작위성을 줄이지만, 창의적 작업에서도 유용할 수 있다. 예를 들어 소설 설정을 만들 때도 세계관 규칙, 인물 심리, 갈등 구조, 문체 제약, 금지 클리셰, 검토 기준을 정하면 산만한 아이디어보다 일관된 결과를 얻을 수 있다.</p>
+<p>한계도 분명하다. 프롬프트는 모델의 능력을 넘어서는 지식을 만들어내지 못한다. 입력이 잘못되었거나, 최신 자료가 없거나, 도메인 전문성이 필요한 판단을 모델에게만 맡기면 오류가 발생할 수 있다. 또한 복잡한 프롬프트는 유지보수 비용이 있다. 모델 버전이 바뀌거나 과업이 바뀌면 검증 규칙과 출력 형식을 다시 조정해야 한다.</p>
+<h2 id="_8">정리</h2>
+<p>Prompt Structure v2는 프롬프트를 질문문이 아니라 문제 해결 프로토콜로 설계하는 접근이다. v1 구조가 Role, Task, Input, Output format, Constraints를 통해 기본 지시를 제공했다면, v2 구조는 Context, Reasoning Strategy, Validation Rules, Iteration / Retry Policy를 추가해 모델의 처리 절차와 품질 관리 방식을 함께 설계한다.</p>
+<p>핵심은 “무엇을 묻느냐”에서 “어떻게 사고하고 검증하게 만들 것인가”로 이동하는 데 있다. 이 이동은 프롬프트를 단순 사용 기술에서 출력 시스템 설계로 확장한다. 좋은 v2 프롬프트는 모델이 답변을 생성하기 전에 문제를 정의하고, 적절한 분석 절차를 따르며, 결과를 검증하고, 실패 조건에 따라 제한적으로 수정하도록 만든다.</p>
+<p>실무적으로는 모든 프롬프트를 복잡하게 만들 필요가 없다. 반복 사용되는 작업, 품질 편차가 비용을 만드는 작업, 형식 안정성이 중요한 작업, 근거와 검증이 필요한 작업에서 v2 구조가 특히 효과적이다. 최종 목표는 완벽한 프롬프트 하나를 찾는 것이 아니라, 과업별로 조정 가능한 재현 가능한 출력 시스템을 구축하는 것이다.</p>
+<h2 id="_9">참고자료</h2>
+<ul>
+<li>OpenAI, “Prompt engineering,” OpenAI API Documentation, 확인일 2026-05-01.</li>
+<li>OpenAI, “Structured model outputs,” OpenAI API Documentation, 확인일 2026-05-01.</li>
+<li>OpenAI, “Best practices for prompt engineering with the OpenAI API,” OpenAI Help Center, 확인일 2026-05-01.</li>
+<li>Anthropic, “Prompt engineering overview,” Claude API Docs, 확인일 2026-05-01.</li>
+<li>Google Cloud, “What is prompt engineering?,” Google Cloud Discover, 2026-01-14.</li>
+<li>DAIR.AI, “Prompt Engineering Guide,” promptingguide.ai, 확인일 2026-05-01.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      모든 내용이 인공지능에 의해 생성되었음. All content was generated by AI.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/toc_active_offset.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
