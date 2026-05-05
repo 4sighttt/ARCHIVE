@@ -205,7 +205,7 @@ hide:
 
 <div class="home-card-grid">
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
   <div class="home-card-title">계산의 조건을 다시 설계한 인간 수학의 능력</div>
 </a>
 
@@ -371,7 +371,7 @@ hide:
 
 <div class="home-card-grid">
 
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EA%B3%84%EC%82%B0%EC%9D%98%20%EC%A1%B0%EA%B1%B4%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%84%A4%EA%B3%84%ED%95%9C%20%EC%9D%B8%EA%B0%84%20%EC%88%98%ED%95%99%EC%9D%98%20%EB%8A%A5%EB%A0%A5.html" class="home-card">
   <div class="home-card-title">계산의 조건을 다시 설계한 인간 수학의 능력</div>
 </a>
 
