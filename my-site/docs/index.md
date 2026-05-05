@@ -205,6 +205,10 @@ hide:
 
 <div class="home-card-grid">
 
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%BD%EA%B8%B0%EB%8A%94%20%EB%B0%9C%EB%AA%85%EC%9D%B4%EB%8B%A4%3A%20%EB%8F%85%EC%84%9C%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%87%8C%EB%A5%BC%20%EC%9E%AC%EC%A1%B0%EC%A7%81%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
+  <div class="home-card-title">읽기는 발명이다: 독서가 인간의 뇌를 재조직하는 방식</div>
+</a>
+
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/03_Consciousness_Time_Ontology/%EA%B2%BD%EA%B3%84%EA%B0%80%20%ED%9D%90%EB%A0%A4%EC%A7%88%20%EB%95%8C%3A%20%EC%88%AD%EA%B3%A0%20%EA%B2%BD%ED%97%98%EC%9D%98%20%EA%B5%AC%EC%A1%B0%EC%97%90%20%EB%8C%80%ED%95%98%EC%97%AC.html" class="home-card">
   <div class="home-card-title">경계가 흐려질 때: 숭고 경험의 구조에 대하여</div>
 </a>
@@ -247,10 +251,6 @@ hide:
   
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EC%A7%80%EB%8A%A5%ED%99%94%20%EB%AF%B8%EB%94%94%EC%96%B4%20-%20%ED%8C%90%EB%8B%A8%20%ED%99%98%EA%B2%BD%EC%9D%98%20%EB%A7%A4%EC%B2%B4.html" class="home-card">
   <div class="home-card-title">지능화 미디어 - 판단 환경의 매체</div>
-</a>
-
-<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/01_AI_Technology_Digital_Condition/%EB%B3%B4%ED%98%B8%ED%95%98%EB%8A%94%20%EC%A7%80%EB%8A%A5%EC%9D%98%20%EA%B6%8C%ED%95%9C%20%EA%B2%BD%EA%B3%84%20%E2%80%94%20%EC%98%81%ED%99%94%20%E3%80%8A%EB%82%98%EC%9D%98%20%EB%A7%88%EB%8D%94%E3%80%8B%EB%A1%9C%20%EB%B3%B8%20%EA%B0%95%ED%95%9C%20AI%EC%9D%98%20%EC%9C%A4%EB%A6%AC.html" class="home-card">
-  <div class="home-card-title">보호하는 지능의 권한 경계 — 영화 《나의 마더》로 본 강한 AI의 윤리</div>
 </a>
 
 </div>
@@ -367,9 +367,13 @@ hide:
 </details>
 
 <details class="essay-section">
-<summary>지식·진리·과학·언어·인식 (19)</summary>
+<summary>지식·진리·과학·언어·인식 (20)</summary>
 
 <div class="home-card-grid">
+
+<a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%EC%9D%BD%EA%B8%B0%EB%8A%94%20%EB%B0%9C%EB%AA%85%EC%9D%B4%EB%8B%A4%3A%20%EB%8F%85%EC%84%9C%EA%B0%80%20%EC%9D%B8%EA%B0%84%EC%9D%98%20%EB%87%8C%EB%A5%BC%20%EC%9E%AC%EC%A1%B0%EC%A7%81%ED%95%98%EB%8A%94%20%EB%B0%A9%EC%8B%9D.html" class="home-card">
+  <div class="home-card-title">읽기는 발명이다: 독서가 인간의 뇌를 재조직하는 방식</div>
+</a>
 
 <a href="https://4sighttt.github.io/ARCHIVE/000_Writings/07_Essay/02_Knowledge_Truth_Science_Language/%ED%95%B4%EC%84%9D%EC%9D%84%20%EB%8B%A4%EC%8B%9C%20%EC%97%B4%EA%B8%B0%20%EC%9C%84%ED%95%B4%20%EB%AC%B4%EC%97%87%EC%9D%B4%20%ED%95%84%EC%9A%94%ED%95%9C%EA%B0%80_Claude_Sonnet4.6.html" class="home-card">
   <div class="home-card-title">해석을 다시 열기 위해 무엇이 필요한가_Claude_Sonnet4.6</div>
